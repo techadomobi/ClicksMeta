@@ -27,7 +27,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#020617]">
+    <section className="relative overflow-hidden bg-[#020617]">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#2563eb]/15 rounded-full blur-[150px] animate-gradient-shift" />
@@ -45,7 +45,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#020617_70%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-28 pb-20 md:pt-32 md:pb-32 w-full">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 md:py-16 lg:py-20 xl:py-24">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* Left Content */}
           <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>

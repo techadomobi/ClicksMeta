@@ -13,7 +13,7 @@ function App() {
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] text-white">
       <Navbar />
 
-      <main className="pt-24 md:pt-28">
+      <main className="pt-20 md:pt-24">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />

@@ -98,13 +98,13 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-7 flex flex-col transition-all duration-700 ${
+              className={`card-glow relative flex h-full flex-col rounded-2xl p-7 transition-all duration-700 ${
                 isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               } ${
                 plan.gradient
-                  ? "bg-gradient-to-br from-[#0a1628] to-[#0f2847] text-white shadow-2xl shadow-blue-500/15 border border-white/10 lg:scale-105 z-10"
-                  : "bg-[#050b16] text-white shadow-md shadow-black/40 border border-white/5 hover:shadow-xl hover:border-white/15"
-              } card-glow`}
+                  ? "border border-white/10 bg-gradient-to-br from-[#0a1628] to-[#0f2847] text-white shadow-2xl shadow-blue-500/15 ring-1 ring-[#1fb6ff]/30"
+                  : "border border-white/5 bg-[#050b16] text-white shadow-md shadow-black/40 hover:border-white/15 hover:shadow-xl"
+              }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {plan.popular && (
