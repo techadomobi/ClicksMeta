@@ -25,7 +25,7 @@ const plans = [
   },
   {
     name: "Starter Plan",
-    price: "$29",
+    price: "$49",
     period: "/ month",
     description: "For small teams getting started.",
     features: [
@@ -40,7 +40,7 @@ const plans = [
   },
   {
     name: "Professional Plan",
-    price: "$79",
+    price: "$149",
     period: "/ month",
     description: "For growing marketing teams.",
     features: [
@@ -56,7 +56,7 @@ const plans = [
   },
   {
     name: "Enterprise Plan",
-    price: "$149",
+    price: "$249",
     period: "/ month",
     description: "For large organizations.",
     features: [
