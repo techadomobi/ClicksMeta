@@ -2,8 +2,9 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
-import demoRequestRouter from './routes/demo-request.js'
 import dotenv from 'dotenv'
+import demoRequestRouter from './routes/demo-request.js'
+import contactRouter from './routes/contact.js'
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.get('/health', (req, res) => {
 })
 
 app.use('/api/demo-request', demoRequestRouter)
+app.use('/api/contact', contactRouter)
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Not Found' })
