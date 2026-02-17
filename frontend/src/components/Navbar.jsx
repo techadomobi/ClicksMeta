@@ -144,7 +144,10 @@ export function Navbar() {
                 )}
 
                 {openDropdown === item.label && isMega && (
-                  <div className="absolute left-0 top-full pt-3 animate-scale-in" style={{ transformOrigin: "top left" }}>
+                  <div
+                    className="absolute left-1/2 top-full -translate-x-1/2 pt-3 animate-scale-in"
+                    style={{ transformOrigin: "top center" }}
+                  >
                     <div className="grid min-w-[960px] max-w-[960px] grid-cols-[1.35fr_1.35fr_0.9fr] gap-8 rounded-[42px] border border-[#f0e9da] bg-white px-10 py-8 text-[#0f1a3d] shadow-[0_28px_70px_rgba(5,10,29,0.35)]">
                       {[0, 1].map((col) => (
                         <div key={col}>
