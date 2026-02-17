@@ -6,6 +6,7 @@ import {
   Menu,
   X,
   ChevronDown,
+  ArrowRight,
   BarChart3,
   Receipt,
   Megaphone,
@@ -144,44 +145,45 @@ export function Navbar() {
 
                 {openDropdown === item.label && isMega && (
                   <div className="absolute left-0 top-full pt-3 animate-scale-in" style={{ transformOrigin: "top left" }}>
-                    <div className="grid gap-6 rounded-3xl border border-white/10 bg-[#0f1f3d]/95 p-6 shadow-2xl shadow-black/40 backdrop-blur-3xl lg:grid-cols-[2fr_1.2fr] min-w-[720px]">
-                      <div className="grid gap-6 md:grid-cols-2">
-                        {item.sections.map((section) => (
-                          <div key={section.title}>
-                            <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-3">{section.title}</p>
-                            <div className="space-y-2">
-                              {section.items.map(({ label, icon: Icon }) => (
-                                <a
-                                  key={label}
-                                  href="#"
-                                  className="flex items-center gap-3 rounded-2xl px-3.5 py-2.5 text-sm text-white/70 transition-all hover:bg-white/5 hover:text-white"
-                                >
-                                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5">
-                                    <Icon className="h-4 w-4" />
-                                  </span>
-                                  {label}
-                                </a>
-                              ))}
-                            </div>
+                    <div className="grid min-w-[960px] max-w-[960px] grid-cols-[1.35fr_1.35fr_0.9fr] gap-8 rounded-[42px] border border-[#f0e9da] bg-white px-10 py-8 text-[#0f1a3d] shadow-[0_28px_70px_rgba(5,10,29,0.35)]">
+                      {[0, 1].map((col) => (
+                        <div key={col}>
+                          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#8d91b0]">
+                            {item.sections[col].title}
+                          </p>
+                          <div className="space-y-3">
+                            {item.sections[col].items.map(({ label, icon: Icon }) => (
+                              <a
+                                key={label}
+                                href="#"
+                                className="flex items-center gap-4 rounded-[26px] border border-transparent bg-[#f5f6ff] px-4 py-3 text-sm font-semibold text-[#152046] transition hover:-translate-y-0.5 hover:border-[#ebedff]"
+                              >
+                                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-inner shadow-white/70">
+                                  <Icon className="h-5 w-5 text-[#0f1a3d]" />
+                                </span>
+                                {label}
+                              </a>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                      <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-white/50 mb-4">Best in Class</p>
-                        <div className="space-y-3">
+                        </div>
+                      ))}
+
+                      <div className="rounded-[36px] bg-gradient-to-b from-[#fefeff] via-[#f5f7ff] to-[#eef3ff] p-5">
+                        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#8d91b0]">Best in Class</p>
+                        <div className="space-y-4">
                           {item.spotlight.map(({ label, icon: Icon }) => (
                             <a
                               key={label}
                               href="#"
-                              className="flex items-center justify-between gap-3 rounded-2xl bg-[#111f3b]/70 px-4 py-3 text-sm text-white/80 transition hover:bg-[#152448]"
+                              className="flex items-center justify-between rounded-[30px] bg-white px-4 py-4 text-sm font-semibold text-[#101735] shadow-[0_20px_50px_rgba(16,25,66,0.15)] transition hover:-translate-y-0.5"
                             >
-                              <div className="flex items-center gap-3">
-                                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1a2e57] text-[#8ec5ff]">
-                                  <Icon className="h-4 w-4" />
+                              <span className="flex items-center gap-3">
+                                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#dfebff] text-[#0f2f88]">
+                                  <Icon className="h-5 w-5" />
                                 </span>
-                                <span>{label}</span>
-                              </div>
-                              <span className="text-base text-white/40">→</span>
+                                {label}
+                              </span>
+                              <ArrowRight className="h-4.5 w-4.5 text-[#6b76a9]" />
                             </a>
                           ))}
                         </div>
