@@ -113,7 +113,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1.5 lg:flex">
+        <div className="relative hidden items-center gap-1.5 lg:flex">
           {navItems.map((item) => {
             const isMega = item.type === "mega"
             const isList = item.type === "list"
@@ -122,7 +122,7 @@ export function Navbar() {
             return (
               <div
                 key={item.label}
-                className="relative"
+                className={isMega ? "" : "relative"}
                 onMouseEnter={() => hasDropdown && setOpenDropdown(item.label)}
                 onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
               >
