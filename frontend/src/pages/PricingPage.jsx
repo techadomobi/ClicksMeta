@@ -73,7 +73,7 @@ export function PricingPage() {
       <div className="mx-auto w-full max-w-5xl px-4 text-center sm:px-6">
         <p className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
           <span className="text-[#006fbd]">Start </span>
-          <span className="text-[#ff7f23]">15 days </span>
+          <span className="text-[#1f6bff]">15 days </span>
           <span className="text-[#006fbd]">free trial!</span>
         </p>
         <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#1fb6ff]/20 bg-white px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-[#2177ff]">

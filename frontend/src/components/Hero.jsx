@@ -45,7 +45,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#020617_70%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 md:py-16 lg:py-20 xl:py-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 pt-6 pb-12 md:pt-8 md:pb-16 lg:pt-10 lg:pb-20 xl:pt-12 xl:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* Left Content */}
           <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>

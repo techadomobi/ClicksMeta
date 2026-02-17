@@ -75,7 +75,7 @@ export function Pricing() {
   const { ref, isInView } = useInView()
 
   return (
-    <section className="py-28 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] relative overflow-hidden" id="pricing">
+    <section className="pt-16 pb-24 lg:pt-20 lg:pb-28 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] relative overflow-hidden" id="pricing">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2563eb]/[0.15] rounded-full blur-[160px]" />
 
       <div ref={ref} className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
