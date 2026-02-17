@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ShieldCheck, Users, Zap, Globe2 } from "lucide-react"
+import { buildApiUrl } from "@/lib/api-base"
 
 const planOptions = [
   {
@@ -57,10 +58,6 @@ const initialFormState = {
 const inputClasses =
   "w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#ff6f3c]/60 focus:ring-2 focus:ring-[#ff6f3c]/30 focus:outline-none"
 
-const backendBase =
-  (import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? "") || ""
-const apiEndpoint = `${backendBase}/api/demo-request`
-
 export function DemoRequestPage() {
   const [formData, setFormData] = useState(initialFormState)
   const [status, setStatus] = useState({ state: "idle", message: "" })
@@ -92,7 +89,7 @@ export function DemoRequestPage() {
         password: formData.password,
       }
 
-      const response = await fetch(apiEndpoint, {
+      const response = await fetch(buildApiUrl("/api/demo-request"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

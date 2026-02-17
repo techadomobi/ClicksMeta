@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, PhoneCall } from "lucide-react"
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ""
+import { buildApiUrl } from "@/lib/api-base"
 
 const defaultContactMethods = [
   {
@@ -40,7 +39,7 @@ export function ContactPage() {
 
     async function loadContactInfo() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/contact`, { signal: controller.signal })
+        const response = await fetch(buildApiUrl("/api/contact"), { signal: controller.signal })
         if (!response.ok) throw new Error("Failed to load contact details.")
         const data = await response.json()
         setContactInfo(data)
@@ -88,7 +87,7 @@ export function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      const response = await fetch(buildApiUrl("/api/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
