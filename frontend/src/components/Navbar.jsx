@@ -78,7 +78,7 @@ const navItems = [
     items: [
       { label: "Customer Success", href: "/#testimonials" },
       { label: "Security & Compliance", href: "/#features" },
-      { label: "About Us", href: "/contact" },
+      { label: "About Us", href: "/" },
     ],
   },
 ]

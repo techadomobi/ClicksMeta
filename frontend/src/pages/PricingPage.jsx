@@ -40,7 +40,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "$149",
+    price: "$1749",
     period: "/mo",
     tagline: "Best plan for enterprise",
     features: [

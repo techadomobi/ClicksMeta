@@ -13,8 +13,8 @@ const contactMethods = [
   {
     title: "Call Us",
     description: "Speak directly with our team",
-    value: "7055275529",
-    href: "tel:7055275529",
+    value: "+1 (555) 000-0000",
+    href: "tel:+15550000000",
     icon: PhoneCall,
     accent: "from-[#7c4dff] to-[#5c6bc0]",
   },
