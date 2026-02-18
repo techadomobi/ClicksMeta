@@ -8,6 +8,7 @@ import { LoginPage } from "./pages/LoginPage"
 import { DemoRequestPage } from "./pages/DemoRequestPage"
 import { PricingPage } from "./pages/PricingPage"
 import { FooterInfoPage } from "./pages/FooterInfoPage"
+import { CareerPage } from "./pages/CareerPage"
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/careers" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/demorequest" element={<DemoRequestPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/info/:slug" element={<FooterInfoPage />} />
+          <Route path="/:slug" element={<FooterInfoPage />} />
         </Routes>
       </main>
 
