@@ -58,7 +58,7 @@ export function Footer() {
                                 to="/"
                                 className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-2xl"
                             >
-                                <BrandLogo />
+                                <BrandLogo pointerClassName="text-white" textClassName="text-white" textSizeClass="text-3xl" size="lg" />
                             </Link>
                             <p className="text-white/35 text-sm leading-relaxed mb-6 max-w-xs">
                                 Powerful analytics & tracking platform for advertisers, affiliates, and agencies. One platform to manage all your campaigns.
