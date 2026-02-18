@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 import { useCountUp } from "@/hooks/use-in-view"
 
 const bottomStats = [
-  { label: "Active Users", end: 10000, suffix: "+", caption: "Marketers worldwide" },
-  { label: "Campaigns Tracked", end: 50000, suffix: "+", caption: "Performance workflows" },
-  { label: "Revenue Generated", end: 312, suffix: "M+", caption: "Attributed revenue" },
+  { label: "Active Users", end: 120, suffix: "+", caption: "Marketers worldwide" },
+  { label: "Campaigns Tracked", end: 15000, suffix: "+", caption: "Performance workflows" },
+  { label: "Revenue Generated", end: 50, suffix: "M+", caption: "Attributed revenue" },
   { label: "Countries", end: 180, suffix: "+", caption: "Global coverage" },
 ]
 
