@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import logo from "../assets/clicksmeta-logo.png"
+import { BrandLogo } from "./BrandLogo"
 
 const footerLinks = [
     {
@@ -54,10 +54,11 @@ export function Footer() {
                     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
                         {/* Brand */}
                         <div className="lg:col-span-2">
-                            <Link to="/" className="flex items-center gap-2.5">
-                                <span className="text-xl font-bold text-white tracking-tight">
-                                    <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto brightness-0 invert" />
-                                </span>
+                            <Link
+                                to="/"
+                                className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-2xl"
+                            >
+                                <BrandLogo />
                             </Link>
                             <p className="text-white/35 text-sm leading-relaxed mb-6 max-w-xs">
                                 Powerful analytics & tracking platform for advertisers, affiliates, and agencies. One platform to manage all your campaigns.
