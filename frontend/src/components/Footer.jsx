@@ -6,7 +6,7 @@ import { footerNav } from "@/data/footerContent"
 
 const socialLinks = [
     { name: "LinkedIn", href: "https://www.linkedin.com/company/clicksmeta", icon: Linkedin },
-    { name: "X (Twitter)", href: "https://x.com/offers_meta", icon: Twitter },
+    { name: "X (Twitter)", href: "https://x.com/clicks_meta", icon: Twitter },
     { name: "Facebook", href: "https://www.facebook.com/getclicksmeta/", icon: Facebook },
     { name: "Instagram", href: "https://www.instagram.com/clicksmeta", icon: Instagram },
     { name: "YouTube", href: "https://www.youtube.com/@ClicksMeta", icon: Youtube },
