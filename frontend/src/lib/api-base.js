@@ -5,12 +5,13 @@ export function getApiBaseUrl() {
     return normalized
   }
 
-  if (import.meta.env.DEV) {
-    return "http://localhost:4000"
-  }
-
   if (typeof window !== "undefined" && window.location) {
     return window.location.origin
+  }
+
+  if (typeof process !== "undefined" && process.env?.VERCEL_URL) {
+    const protocol = process.env.VERCEL_URL.startsWith("http") ? "" : "https://"
+    return `${protocol}${process.env.VERCEL_URL}`.replace(/\/$/, "")
   }
 
   return ""

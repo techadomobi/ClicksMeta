@@ -1,7 +1,8 @@
 "use client"
 
-export function BrandLogo({ className = "", textClassName = "text-white" }) {
+export function BrandLogo({ className = "", textClassName = "text-white", iconClassName = "text-white" }) {
   const containerClass = ["flex items-center gap-3", className].filter(Boolean).join(" ")
+  const iconClasses = ["h-9 w-9 drop-shadow-[0_4px_18px_rgba(31,182,255,0.65)]", iconClassName].filter(Boolean).join(" ")
 
   return (
     <span className={containerClass} aria-label="ClicksMeta logo">
@@ -9,7 +10,7 @@ export function BrandLogo({ className = "", textClassName = "text-white" }) {
         viewBox="0 0 64 64"
         role="img"
         aria-hidden="true"
-        className="h-9 w-9 text-white drop-shadow-[0_4px_18px_rgba(31,182,255,0.65)]"
+        className={iconClasses}
       >
         <path
           fill="currentColor"

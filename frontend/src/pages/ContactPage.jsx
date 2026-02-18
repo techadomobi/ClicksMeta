@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, PhoneCall } from "lucide-react"
 import { buildApiUrl } from "@/lib/api-base"
+import { BrandLogo } from "@/components/BrandLogo"
 
 const defaultContactMethods = [
   {
@@ -108,9 +109,16 @@ export function ContactPage() {
     <section className="min-h-screen w-full bg-gradient-to-br from-[#fdfdff] via-[#eef3ff] to-[#d9e6ff] py-16">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 text-[#0d1b3d] sm:px-6 lg:flex-row">
         <div className="flex-1 space-y-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#dfe4ff] bg-white px-5 py-2 text-sm font-semibold text-[#4d5cd8] shadow-[0_10px_30px_rgba(77,92,216,0.15)]">
-            Contact Us
-          </span>
+          <div className="flex flex-col gap-4">
+            <BrandLogo
+              className="text-[#142152]"
+              iconClassName="text-[#142152]"
+              textClassName="text-[#142152]"
+            />
+            <span className="inline-flex w-max items-center gap-2 rounded-full border border-[#dfe4ff] bg-white px-5 py-2 text-sm font-semibold text-[#4d5cd8] shadow-[0_10px_30px_rgba(77,92,216,0.15)]">
+              Contact Us
+            </span>
+          </div>
           <div>
             <p className="text-4xl font-bold leading-tight text-[#142152] sm:text-5xl">
               Let&apos;s Create Something Amazing Together

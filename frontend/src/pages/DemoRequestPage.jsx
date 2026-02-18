@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ShieldCheck, Users, Zap, Globe2 } from "lucide-react"
 import { buildApiUrl } from "@/lib/api-base"
+import { BrandLogo } from "@/components/BrandLogo"
 
 const planOptions = [
   {
@@ -116,7 +117,8 @@ export function DemoRequestPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 text-white sm:px-6">
-      <div className="mb-10 text-center space-y-3">
+      <div className="mb-10 text-center space-y-4">
+        <BrandLogo className="mx-auto justify-center" iconClassName="text-white" textClassName="text-white" />
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
           Request Demo
         </span>

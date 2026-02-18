@@ -36,7 +36,7 @@ function validateContact(body = {}) {
   return { isValid: issues.length === 0, payload, issues }
 }
 
-async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'GET') {
     return res.status(200).json(defaultContactInfo)
   }
@@ -58,5 +58,3 @@ async function handler(req, res) {
   res.setHeader('Allow', ['GET', 'POST'])
   return res.status(405).json({ error: `Method ${req.method} not allowed.` })
 }
-
-module.exports = handler
