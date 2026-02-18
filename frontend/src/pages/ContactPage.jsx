@@ -34,6 +34,7 @@ export function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [status, setStatus] = useState({ type: null, message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [localErrors, setLocalErrors] = useState({})
 
   useEffect(() => {
     const controller = new AbortController()
@@ -80,11 +81,34 @@ export function ContactPage() {
   function handleChange(event) {
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    setLocalErrors((prev) => ({ ...prev, [name]: null }))
+  }
+
+  function validateForm() {
+    const errors = {}
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters."
+    }
+    const email = formData.email.trim()
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = "Provide a valid email address."
+    }
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      errors.message = "Message should be at least 10 characters."
+    }
+    setLocalErrors(errors)
+    return Object.keys(errors).length === 0
   }
 
   async function handleSubmit(event) {
     event.preventDefault()
     setStatus({ type: null, message: "" })
+
+    if (!validateForm()) {
+      setStatus({ type: "error", message: "Please fix the highlighted fields." })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -167,10 +191,13 @@ export function ContactPage() {
                 name="name"
                 placeholder="Enter your full name"
                 required
+                minLength={2}
+                aria-invalid={Boolean(localErrors.name)}
                 value={formData.name}
                 onChange={handleChange}
                 className={inputClasses}
               />
+              {localErrors.name && <p className="mt-1 text-xs text-red-500">{localErrors.name}</p>}
             </label>
             <label className="text-sm font-semibold text-[#4d597b]">
               Email Address *
@@ -179,10 +206,12 @@ export function ContactPage() {
                 name="email"
                 placeholder="your@email.com"
                 required
+                aria-invalid={Boolean(localErrors.email)}
                 value={formData.email}
                 onChange={handleChange}
                 className={inputClasses}
               />
+              {localErrors.email && <p className="mt-1 text-xs text-red-500">{localErrors.email}</p>}
             </label>
           </div>
 
@@ -194,9 +223,12 @@ export function ContactPage() {
               className={textareaClasses}
               placeholder={contactInfo?.sampleMessage || "Tell us about your project or how we can help you..."}
               required
+              minLength={10}
+              aria-invalid={Boolean(localErrors.message)}
               value={formData.message}
               onChange={handleChange}
             />
+            {localErrors.message && <p className="mt-1 text-xs text-red-500">{localErrors.message}</p>}
           </label>
 
           {status.message && (
