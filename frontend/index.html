@@ -1,102 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#030a1d" />
+<head>
+  <meta charset="UTF-8" />
 
-    <!-- Title & SEO -->
-    <title>ClicksMeta – Enterprise Marketing & Affiliate Tracking Platform</title>
-    <meta
-      name="description"
-      content="ClicksMeta helps brands and affiliates track, optimize, and scale performance marketing campaigns with real-time analytics and fraud detection."
-    />
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030a1d" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+  <!-- Title & SEO -->
+  <title>ClicksMeta – Enterprise Marketing & Affiliate Tracking Platform</title>
+  <meta name="description"
+    content="ClicksMeta helps brands and affiliates track, optimize, and scale performance marketing campaigns with real-time analytics and fraud detection." />
 
-    <!-- Open Graph (Social Preview) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="ClicksMeta – Enterprise Marketing Platform" />
-    <meta
-      property="og:description"
-      content="Track, optimize, and scale affiliate campaigns with real-time intelligence."
-    />
-    <meta property="og:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
-    <meta property="og:url" content="https://clicksmeta.com" />
+  <!-- Favicon (Browser Tab Icon) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ClicksMeta – Enterprise Marketing Platform" />
-    <meta
-      name="twitter:description"
-      content="Enterprise-grade affiliate and performance tracking software."
-    />
-    <meta name="twitter:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ClicksMeta – Enterprise Marketing Platform" />
+  <meta property="og:description"
+    content="Track, optimize, and scale affiliate campaigns with real-time intelligence." />
+  <meta property="og:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
+  <meta property="og:url" content="https://clicksmeta.com" />
 
-    <!-- Structured Data (Google Logo Recognition) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ClicksMeta",
-        "url": "https://clicksmeta.com",
-        "logo": "https://clicksmeta.com/clicksmeta-logo.png"
-      }
-    </script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ClicksMeta – Enterprise Marketing Platform" />
+  <meta name="twitter:description"
+    content="Enterprise-grade affiliate and performance tracking software." />
+  <meta name="twitter:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
 
-    <!-- Preload Navbar Styling -->
-    <style>
-      body {
-        margin: 0;
-        background: #030a1d;
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-      }
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ClicksMeta",
+    "url": "https://clicksmeta.com",
+    "logo": "https://clicksmeta.com/clicksmeta-logo.png"
+  }
+  </script>
 
-      .preload-navbar {
-        position: sticky;
-        top: 0;
-        z-index: 60;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 28px;
-        background: linear-gradient(90deg, #030a1d, #050d24);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        color: #ffffff;
-      }
+  <!-- Preload Navbar Styling -->
+  <style>
+    body {
+      margin: 0;
+      background: #030a1d;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
 
-      .preload-navbar img {
-        height: 40px;
-        width: auto;
-      }
+    .preload-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #030a1d, #050d24);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
 
-      body.app-mounted .preload-navbar {
-        display: none;
-      }
-    </style>
-  </head>
+    .preload-navbar img {
+      height: 40px;
+      width: auto;
+    }
 
-  <body>
-    <!-- Preload Header -->
-    <header class="preload-navbar">
-      <img src="/clicksmeta-logo.png" alt="ClicksMeta Logo" />
-      <strong>ClicksMeta</strong>
-    </header>
+    body.app-mounted .preload-navbar {
+      display: none;
+    }
+  </style>
+</head>
 
-    <!-- React Root -->
-    <div id="root"></div>
+<body>
 
-    <script>
-      window.addEventListener("load", () => {
-        document.body.classList.add("app-mounted");
-      });
-    </script>
+  <!-- Preload Header -->
+  <header class="preload-navbar">
+    <img src="/clicksmeta-logo.png" alt="ClicksMeta Logo" />
+    <strong>ClicksMeta</strong>
+  </header>
 
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- React Root -->
+  <div id="root"></div>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("app-mounted");
+    });
+  </script>
+
+  <script type="module" src="/src/main.jsx"></script>
+
+</body>
 </html>
