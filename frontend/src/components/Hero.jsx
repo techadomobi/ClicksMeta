@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, TrendingUp, Users, DollarSign, Target, Zap } from "lucide-react"
 import { useCountUp } from "@/hooks/use-in-view"
-import { BrandLogo } from "@/components/BrandLogo"
+import logo from "../assets/clicksmeta-logo.png"
 
 const stats = [
   { icon: TrendingUp, label: "Referrals", value: "1,250", change: "+12%" },
@@ -51,10 +51,17 @@ export function Hero() {
           {/* Left Content */}
           <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-sm">
-              <BrandLogo showText={false} />
-              <span className="text-sm text-white/65 font-medium">Performance Marketing Platform</span>
+              <img
+                src={logo}
+                alt="ClicksMeta Logo"
+                className="h-5 w-auto brightness-0 invert"
+              />
+              <span className="text-sm text-white/65 font-medium">
+                Performance Marketing Platform
+              </span>
               <Zap className="w-3.5 h-3.5 text-[#06b6d4]" />
             </div>
+
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tight space-y-2">
               <span className="text-balance block">

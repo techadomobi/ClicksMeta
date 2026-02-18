@@ -23,7 +23,7 @@ import {
   Users,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { BrandLogo } from "./BrandLogo"
+import logo from "../assets/clicksmeta-logo.png"
 
 const platformSections = [
   {
@@ -107,12 +107,10 @@ export function Navbar() {
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link
-          to="/"
-          className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-xl"
-          aria-label="ClicksMeta home"
-        >
-          <BrandLogo size="xl" textSizeClass="text-3xl" />
+        <Link to="/" className="flex items-center gap-2.5">
+          <span className="text-xl font-bold text-white tracking-tight">
+            <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto brightness-0 invert" />
+          </span>
         </Link>
 
         <div className="relative hidden items-center gap-1.5 lg:flex">

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ShieldCheck, Users, Zap, Globe2 } from "lucide-react"
 import { buildApiUrl } from "@/lib/api-base"
-import { BrandLogo } from "@/components/BrandLogo"
+import logo from "../assets/clicksmeta-logo.png"
 
 const planOptions = [
   {
@@ -145,7 +145,13 @@ export function DemoRequestPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 text-white sm:px-6">
       <div className="mb-10 text-center space-y-4">
-        <BrandLogo className="mx-auto justify-center" pointerClassName="text-white" textClassName="text-white" />
+        <div className="flex justify-center">
+          <img
+            src={logo}
+            alt="ClicksMeta Logo"
+            className="h-10 w-auto"
+          />
+        </div>
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
           Request Demo
         </span>
@@ -177,28 +183,28 @@ export function DemoRequestPage() {
 
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-wide text-white/50">Pick your plan</p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {planOptions.map((plan) => (
-              <label
-                key={plan.id}
-                className={`rounded-2xl border p-4 transition-all cursor-pointer ${formData.plan === plan.id ? "border-[#ff6f3c] bg-[#ff6f3c]/10" : "border-white/10 bg-white/[0.02] hover:border-white/30"}`}
-              >
-                <input
-                  type="radio"
-                  name="plan"
-                  value={plan.id}
-                  checked={formData.plan === plan.id}
-                  onChange={handleChange}
-                  className="sr-only"
-                />
-                <p className="text-base font-semibold">{plan.name}</p>
-                <p className="text-xs text-[#ffb995] font-semibold uppercase tracking-wide mt-1">{plan.highlight}</p>
-                <p className="text-sm text-white/60 mt-2">{plan.desc}</p>
-              </label>
-            ))}
+            <div className="grid gap-4 md:grid-cols-3">
+              {planOptions.map((plan) => (
+                <label
+                  key={plan.id}
+                  className={`rounded-2xl border p-4 transition-all cursor-pointer ${formData.plan === plan.id ? "border-[#ff6f3c] bg-[#ff6f3c]/10" : "border-white/10 bg-white/[0.02] hover:border-white/30"}`}
+                >
+                  <input
+                    type="radio"
+                    name="plan"
+                    value={plan.id}
+                    checked={formData.plan === plan.id}
+                    onChange={handleChange}
+                    className="sr-only"
+                  />
+                  <p className="text-base font-semibold">{plan.name}</p>
+                  <p className="text-xs text-[#ffb995] font-semibold uppercase tracking-wide mt-1">{plan.highlight}</p>
+                  <p className="text-sm text-white/60 mt-2">{plan.desc}</p>
+                </label>
+              ))}
+            </div>
+            {fieldErrors.plan && <p className="text-xs text-red-400">{fieldErrors.plan}</p>}
           </div>
-          {fieldErrors.plan && <p className="text-xs text-red-400">{fieldErrors.plan}</p>}
-        </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
             {reassurance.map(({ icon: Icon, title, description }) => (
@@ -294,7 +300,7 @@ export function DemoRequestPage() {
                 className="h-14 w-full appearance-none rounded-2xl border border-white/10 bg-white/5 pl-12 pr-10 text-white focus:border-[#ff6f3c]/60 focus:ring-2 focus:ring-[#ff6f3c]/30"
               >
                 {["India", "United States", "United Kingdom", "United Arab Emirates", "Singapore", "Australia"].map((country) => (
-                  <option key={country} value={country} className="bg-[#050b19] text-black">
+                  <option key={country} value={country} className="bg-[#050b19] text-white">
                     {country}
                   </option>
                 ))}
