@@ -134,7 +134,7 @@ export function ContactPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 text-[#0d1b3d] sm:px-6 lg:flex-row">
         <div className="flex-1 space-y-8">
           <div className="flex flex-col gap-4">
-            <BrandLogo variant="light" textClassName="text-[#142152]" />
+            <BrandLogo variant="light" textClassName="text-[#142152]" textSizeClass="text-2xl" size="lg" />
             <span className="inline-flex w-max items-center gap-2 rounded-full border border-[#dfe4ff] bg-white px-5 py-2 text-sm font-semibold text-[#4d5cd8] shadow-[0_10px_30px_rgba(77,92,216,0.15)]">
               Contact Us
             </span>

@@ -10,7 +10,7 @@ export function SignupPage() {
     <section className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-4 pb-16 pt-6 text-white sm:px-6 lg:pb-24 lg:pt-10">
       <header className="space-y-3 text-center">
         <div className="flex justify-center">
-          <BrandLogo showText textClassName="text-white" />
+          <BrandLogo showText textClassName="text-white" textSizeClass="text-3xl" size="lg" />
         </div>
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#a5b4fc]">
           Start today

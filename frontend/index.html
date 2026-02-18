@@ -8,9 +8,57 @@
     <meta property="og:image" content="https://bolt.new/static/og_default.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <style>
+      .preload-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 28px;
+        background: linear-gradient(90deg, #030a1d, #050d24);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #f8fbff;
+      }
+      .preload-navbar__logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .preload-navbar__logo svg {
+        width: 60px;
+        height: 60px;
+        filter: drop-shadow(0 8px 20px rgba(31, 182, 255, 0.4));
+      }
+      body.app-mounted .preload-navbar {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <header class="preload-navbar">
+      <div class="preload-navbar__logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="#050c1f" />
+          <path d="M21 6v40.6l6.4-7 7.8 17.7 7.6-2.6-7.1-15.8h13.5L21 6Z" fill="#f5f7ff" />
+          <path d="M44 7.5 52 3" stroke="#f5f7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M50 24h10" stroke="#f5f7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M49.5 40 58 45" stroke="#f5f7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>ClicksMeta</span>
+      </div>
+    </header>
     <div id="root"></div>
+    <script>
+      window.addEventListener("load", () => {
+        document.body.classList.add("app-mounted")
+      })
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
