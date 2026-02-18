@@ -81,7 +81,7 @@ export function Footer() {
                                 <ul className="flex flex-col gap-3">
                                     {col.links.map((link) => {
                                         const linkKey = link.slug || link.href || link.label
-                                        const destination = link.href || (link.slug ? `/info/${link.slug}` : "#")
+                                        const destination = link.href || (link.slug ? `/${link.slug}` : "#")
                                         return (
                                             <li key={linkKey}>
                                                 <Link to={destination} className="text-sm text-white/35 hover:text-white/60 transition-colors">
