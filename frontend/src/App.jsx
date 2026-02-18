@@ -7,6 +7,7 @@ import { SignupPage } from "./pages/SignupPage"
 import { LoginPage } from "./pages/LoginPage"
 import { DemoRequestPage } from "./pages/DemoRequestPage"
 import { PricingPage } from "./pages/PricingPage"
+import { FooterInfoPage } from "./pages/FooterInfoPage"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/demorequest" element={<DemoRequestPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/info/:slug" element={<FooterInfoPage />} />
         </Routes>
       </main>
 

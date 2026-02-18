@@ -9,15 +9,12 @@ export function LoginPage() {
   return (
     <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-white sm:px-6 lg:pb-24">
       <div className="space-y-3 text-center">
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
           <img
             src={logo}
             alt="ClicksMeta Logo"
-            className="h-10 w-auto"
+            className="h-10 w-auto brightness-0 invert"
           />
-          <span className="text-3xl font-semibold text-white">
-            ClicksMeta
-          </span>
         </div>
 
         <h1 className="text-4xl font-semibold tracking-tight text-white">Welcome back</h1>

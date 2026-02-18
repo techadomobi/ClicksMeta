@@ -2,25 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import logo from "../assets/clicksmeta-logo.png"
-
-const footerLinks = [
-    {
-        title: "Products",
-        links: ["Campaign Management", "Marketing Analytics", "Automated Payout", "Fraud Detection", "Easy Automation"],
-    },
-    {
-        title: "Solutions",
-        links: ["E-Commerce", "Fintech", "Banking", "Travel", "Media & Network", "SaaS"],
-    },
-    {
-        title: "Resources",
-        links: ["Blog", "Documentation", "API Reference", "Case Studies", "Help Center"],
-    },
-    {
-        title: "Company",
-        links: ["About Us", "Careers", "Contact", "Privacy Policy", "Terms of Service"],
-    },
-]
+import { footerNav } from "@/data/footerContent"
 
 export function Footer() {
     return (
@@ -85,26 +67,21 @@ export function Footer() {
                         </div>
 
                         {/* Link columns */}
-                        {footerLinks.map((col) => (
+                        {footerNav.map((col) => (
                             <div key={col.title}>
                                 <h4 className="text-white font-semibold text-sm mb-5">{col.title}</h4>
                                 <ul className="flex flex-col gap-3">
-                                    {col.links.map((link) => (
-                                        <li key={link}>
-                                            {link === "Contact" ? (
-                                                <Link
-                                                    to="/contact"
-                                                    className="text-sm text-white/35 hover:text-white/60 transition-colors"
-                                                >
-                                                    {link}
+                                    {col.links.map((link) => {
+                                        const linkKey = link.slug || link.href || link.label
+                                        const destination = link.href || (link.slug ? `/info/${link.slug}` : "#")
+                                        return (
+                                            <li key={linkKey}>
+                                                <Link to={destination} className="text-sm text-white/35 hover:text-white/60 transition-colors">
+                                                    {link.label}
                                                 </Link>
-                                            ) : (
-                                                <a href="#" className="text-sm text-white/35 hover:text-white/60 transition-colors">
-                                                    {link}
-                                                </a>
-                                            )}
-                                        </li>
-                                    ))}
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                         ))}
