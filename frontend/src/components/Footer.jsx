@@ -1,8 +1,16 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import logo from "../assets/clicksmeta-logo.png"
 import { footerNav } from "@/data/footerContent"
+
+const socialLinks = [
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/clicksmeta", icon: Linkedin },
+    { name: "X (Twitter)", href: "https://x.com/offers_meta", icon: Twitter },
+    { name: "Facebook", href: "https://www.facebook.com/getclicksmeta/", icon: Facebook },
+    { name: "Instagram", href: "https://www.instagram.com/clicksmeta", icon: Instagram },
+    { name: "YouTube", href: "https://www.youtube.com/@ClicksMeta", icon: Youtube },
+]
 
 export function Footer() {
     return (
@@ -94,13 +102,16 @@ export function Footer() {
                         {new Date().getFullYear()} ClicksMeta. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
-                        {["Twitter", "LinkedIn", "GitHub"].map((social) => (
+                        {socialLinks.map(({ name, href, icon: Icon }) => (
                             <a
-                                key={social}
-                                href="#"
-                                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-xs text-white/35 hover:bg-white/10 hover:text-white/60 transition-all font-medium"
+                                key={name}
+                                href={href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-all"
+                                aria-label={name}
                             >
-                                {social[0]}
+                                <Icon className="w-4 h-4" />
                             </a>
                         ))}
                     </div>
