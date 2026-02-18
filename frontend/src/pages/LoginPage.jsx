@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import { BrandLogo } from "@/components/BrandLogo"
 
 const inputClasses =
   "mt-2 h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#1fb6ff]"
@@ -8,6 +9,9 @@ export function LoginPage() {
   return (
     <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-white sm:px-6 lg:pb-24">
       <div className="space-y-3 text-center">
+        <div className="flex justify-center">
+          <BrandLogo showText textClassName="text-white" />
+        </div>
         <h1 className="text-4xl font-semibold tracking-tight text-white">Welcome back</h1>
         <p className="text-base text-white/60">Log in to continue to ClicksMeta</p>
       </div>
