@@ -10,6 +10,6 @@ export const demoRequestSchema = z.object({
   planId: z.string().min(1),
   planName: z.string().min(2).optional(),
   skypeId: z.string().optional().nullable(),
-  domain: z.union([z.string().url(), z.literal('')]).optional(),
-  password: z.string().min(6)
+  domain: z.union([z.string().url(), z.literal('')]).optional().nullable(),
+  message: z.string().max(2000).optional().nullable()
 })

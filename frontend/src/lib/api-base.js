@@ -18,9 +18,9 @@ export function getApiBaseUrl() {
 
 export function buildApiUrl(path = "/") {
   const base = getApiBaseUrl()
-  const safePath = path.startsWith("/") ? path : /
+  const safePath = path.startsWith("/") ? path : `/${path}`
   if (!base) {
     return safePath
   }
-  return ${base}
+  return `${base}${safePath}`
 }
