@@ -2,16 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/clicksmeta-favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/clicksmeta-favicon.svg" />
-    <link rel="mask-icon" href="/clicksmeta-favicon.svg" color="#2622f4" />
-    <meta name="theme-color" content="#030a1d" />
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enterprise Marketing Platform UI/UX</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="theme-color" content="#030a1d" />
+
+    <!-- Title & SEO -->
+    <title>ClicksMeta – Enterprise Marketing & Affiliate Tracking Platform</title>
+    <meta
+      name="description"
+      content="ClicksMeta helps brands and affiliates track, optimize, and scale performance marketing campaigns with real-time analytics and fraud detection."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- Open Graph (Social Preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ClicksMeta – Enterprise Marketing Platform" />
+    <meta
+      property="og:description"
+      content="Track, optimize, and scale affiliate campaigns with real-time intelligence."
+    />
+    <meta property="og:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
+    <meta property="og:url" content="https://clicksmeta.com" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:title" content="ClicksMeta – Enterprise Marketing Platform" />
+    <meta
+      name="twitter:description"
+      content="Enterprise-grade affiliate and performance tracking software."
+    />
+    <meta name="twitter:image" content="https://clicksmeta.com/clicksmeta-logo.png" />
+
+    <!-- Structured Data (Google Logo Recognition) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ClicksMeta",
+        "url": "https://clicksmeta.com",
+        "logo": "https://clicksmeta.com/clicksmeta-logo.png"
+      }
+    </script>
+
+    <!-- Preload Navbar Styling -->
     <style>
+      body {
+        margin: 0;
+        background: #030a1d;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
       .preload-navbar {
         position: sticky;
         top: 0;
@@ -22,45 +67,36 @@
         padding: 14px 28px;
         background: linear-gradient(90deg, #030a1d, #050d24);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        color: #f8fbff;
+        color: #ffffff;
       }
-      .preload-navbar__logo {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
+
+      .preload-navbar img {
+        height: 40px;
+        width: auto;
       }
-      .preload-navbar__logo svg {
-        width: 72px;
-        height: 72px;
-        filter: drop-shadow(0 8px 20px rgba(38, 34, 244, 0.45));
-      }
+
       body.app-mounted .preload-navbar {
         display: none;
       }
     </style>
   </head>
+
   <body>
+    <!-- Preload Header -->
     <header class="preload-navbar">
-      <div class="preload-navbar__logo">
-        <svg viewBox="0 0 64 64" aria-hidden="true" fill="#2622f4" stroke="#2622f4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 6v39.4l10.3-10.7 13.6 29.5 12.4-4.6-11.7-25.9h23.7L7 6Z" stroke="none" />
-          <path d="M43 6 56 1" fill="none" />
-          <path d="M48 26h16" fill="none" />
-          <path d="M48 44l12 7" fill="none" />
-        </svg>
-        <span style="color:#2622f4">ClicksMeta</span>
-      </div>
+      <img src="/clicksmeta-logo.png" alt="ClicksMeta Logo" />
+      <strong>ClicksMeta</strong>
     </header>
+
+    <!-- React Root -->
     <div id="root"></div>
+
     <script>
       window.addEventListener("load", () => {
-        document.body.classList.add("app-mounted")
-      })
+        document.body.classList.add("app-mounted");
+      });
     </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
