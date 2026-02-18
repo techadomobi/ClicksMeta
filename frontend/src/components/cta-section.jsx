@@ -21,7 +21,7 @@ export function CTASection() {
 
       <div ref={ref} className={`relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-sm">
-          <BrandLogo showText={false} className="text-white" />
+          <BrandLogo showText={false} pointerClassName="text-white" />
           <Sparkles className="w-3.5 h-3.5 text-[#06b6d4]" />
           <span className="text-sm text-white/60 font-medium">Built for performance teams</span>
         </div>

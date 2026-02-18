@@ -10,7 +10,7 @@ export function LoginPage() {
     <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-white sm:px-6 lg:pb-24">
       <div className="space-y-3 text-center">
         <div className="flex justify-center">
-          <BrandLogo showText textClassName="text-white" textSizeClass="text-3xl" size="lg" />
+          <BrandLogo showText pointerClassName="text-white" textClassName="text-white" textSizeClass="text-3xl" size="lg" />
         </div>
         <h1 className="text-4xl font-semibold tracking-tight text-white">Welcome back</h1>
         <p className="text-base text-white/60">Log in to continue to ClicksMeta</p>
