@@ -9,6 +9,8 @@ import { DemoRequestPage } from "./pages/DemoRequestPage"
 import { PricingPage } from "./pages/PricingPage"
 import { FooterInfoPage } from "./pages/FooterInfoPage"
 import { CareerPage } from "./pages/CareerPage"
+import { BlogPage } from "./pages/BlogPage"
+import { EcommercePage } from "./pages/EcommercePage"
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/demorequest" element={<DemoRequestPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/ecommerce" element={<EcommercePage />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/:slug" element={<FooterInfoPage />} />
         </Routes>
       </main>

@@ -63,12 +63,11 @@ const navItems = [
     spotlight: platformSpotlight,
   },
   { label: "Pricing", href: "/pricing" },
-  { label: "Careers", href: "/career" },
   {
     label: "Resources",
     type: "list",
     items: [
-      { label: "Blog", href: "/#features" },
+      { label: "Blog", href: "/blog" },
       { label: "Case Studies", href: "/#testimonials" },
       { label: "Documentation", href: "/contact" },
     ],
