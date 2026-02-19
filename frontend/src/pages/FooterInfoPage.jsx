@@ -13,6 +13,10 @@ import {
 import { footerPageContent } from "@/data/footerContent"
 import { footerDesignConfig } from "@/data/footerDesign"
 import { Button } from "@/components/ui/button"
+import { AutomatedPayoutExperience } from "./AutomatedPayoutExperience"
+import { FintechExperience } from "./FintechExperience"
+import { SaasExperience } from "./SaasExperience"
+import { TravelExperience } from "./TravelExperience"
 
 const highlightIcons = [Sparkles, Workflow, ShieldCheck, Compass, Layers, BookOpenCheck, UsersRound]
 
@@ -118,6 +122,18 @@ const slugVariants = slugList.reduce((acc, slug, index) => {
 
 export function FooterInfoPage() {
   const { slug } = useParams()
+  if (slug === "automated-payout") {
+    return <AutomatedPayoutExperience />
+  }
+  if (slug === "fintech") {
+    return <FintechExperience />
+  }
+  if (slug === "saas") {
+    return <SaasExperience />
+  }
+  if (slug === "travel") {
+    return <TravelExperience />
+  }
   const content = footerPageContent[slug]
 
   if (!content) {
