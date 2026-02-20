@@ -11,6 +11,9 @@ import { FooterInfoPage } from "./pages/FooterInfoPage"
 import { CareerPage } from "./pages/CareerPage"
 import { BlogPage } from "./pages/BlogPage"
 import { EcommercePage } from "./pages/EcommercePage"
+import { CustomerSuccessPage } from "./pages/CustomerSuccessPage"
+import { SecurityCompliancePage } from "./pages/SecurityCompliancePage"
+import { AboutUsPage } from "./pages/AboutUsPage"
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/ecommerce" element={<EcommercePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/customer-success" element={<CustomerSuccessPage />} />
+          <Route path="/security-compliance" element={<SecurityCompliancePage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/:slug" element={<FooterInfoPage />} />
         </Routes>
       </main>

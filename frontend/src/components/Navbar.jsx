@@ -74,15 +74,15 @@ const navItems = [
       { label: "Help Center", href: "/help-center" },
     ],
   },
-  {
-    label: "Why ClicksMeta",
-    type: "list",
-    items: [
-      { label: "Customer Success", href: "/#testimonials" },
-      { label: "Security & Compliance", href: "/#features" },
-      { label: "About Us", href: "/" },
-    ],
-  },
+      {
+        label: "Why ClicksMeta",
+        type: "list",
+        items: [
+          { label: "Customer Success", href: "/customer-success" },
+          { label: "Security & Compliance", href: "/security-compliance" },
+          { label: "About Us", href: "/about-us" },
+        ],
+      },
 ]
 
 export function Navbar() {
