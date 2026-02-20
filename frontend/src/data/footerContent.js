@@ -59,24 +59,59 @@ export const footerPageContent = {
     ],
     sections: [
       {
-        title: "Operational visibility",
+        title: "Manage campaigns from one cockpit",
         description:
-          "Live widgets for spend, revenue, ROI, and traffic quality remove tab fatigue and let leaders act quickly.",
+          "Mirror Trackier's centralized command center by editing settings, tracking performance, and optimizing launches without juggling spreadsheets.",
         bullets: [
-          "Cross-network attribution with currency normalization.",
-          "Pacing forecasts vs. target budgets with automatic variance flags.",
-          "Smart suggestions surface segments that deserve extra spend or throttling.",
+          "Centralized dashboards highlight spend, pacing, and ROI at a glance.",
+          "Bulk targeting pushes geo, device, or creative changes across campaigns in one motion.",
+          "Metric tiles reveal clicks, conversions, and fraud risk for fast decision-making.",
         ],
+        outcome: "Operators manage, optimize, and conquer without tab fatigue.",
       },
       {
-        title: "Team-ready workflows",
+        title: "Campaign wizards & playbooks",
         description:
-          "Launch briefs, checklists, and change logs stay tied to each campaign so every contributor knows the latest context.",
+          "Guided flows make it simple to launch new campaigns with pre-configured goals, budgets, and targeting, just like Trackier's step-by-step builders.",
         bullets: [
-          "Reusable launch templates covering tags, budgeting, and creative QA.",
-          "Notifications sync to Slack or email the moment KPIs change.",
-          "Executive-friendly exports share insights without manual slide work.",
+          "Start from templates to launch with pre-configured settings in minutes.",
+          "Customization controls tailor messaging, audiences, and payouts to each goal.",
+          "Test variations and spotlight winners with built-in experimentation.",
         ],
+        outcome: "Teams ship more campaigns without sacrificing precision.",
+      },
+      {
+        title: "Allowed traffic channels",
+        description:
+          "Define which sources are permitted so your budget focuses on the right inventory and risky placements are blocked automatically.",
+        bullets: [
+          "Specify approved sources per campaign, publisher, or geo.",
+          "Automated fraud checks reduce fake clicks and low-quality traffic.",
+          "Target specific sites, apps, or categories for more relevant audiences.",
+        ],
+        outcome: "Confidence that every dollar flows through trusted supply.",
+      },
+      {
+        title: "Featured and creative asset management",
+        description:
+          "Prioritize top campaigns, share spotlight placements with publishers, and manage creative assets from a single locker.",
+        bullets: [
+          "Highlight impactful campaigns to drive more visitors and conversions.",
+          "Streamline creative workflows with centralized upload/edit/versioning.",
+          "Support multiple ad formats so messages stay on-brand everywhere.",
+        ],
+        outcome: "Campaigns stay fresh, compliant, and ready for cross-channel rotation.",
+      },
+      {
+        title: "Accolades & proof",
+        description:
+          "Surface testimonial panels, ratings, and badges to match Trackier's credibility cues when pitching stakeholders.",
+        bullets: [
+          "Showcase G2, Capterra, and TrustRadius scores next to automation stats.",
+          "Embed rotating customer quotes tied to conversion or quality lifts.",
+          "Mirror award badges so enterprise buyers see third-party validation.",
+        ],
+        outcome: "Stakeholders trust the platform as much as operators already do.",
       },
     ],
   },
@@ -96,19 +131,65 @@ export const footerPageContent = {
     ],
     sections: [
       {
-        title: "Metric storytelling",
+        title: "Smart links & routing",
         description:
-          "Modular cards, funnels, and cohort visuals translate raw numbers into insights that even non-technical leaders appreciate.",
+          "Recreate Trackier's smart links to automatically route traffic toward the best-performing offers while feeding analytics with behavioral context.",
         bullets: [
-          "Drag-and-drop board builder for every team persona.",
-          "Instant comparisons to previous periods or sibling campaigns.",
-          "Digest emails keep executives aligned without logging in.",
+          "Route traffic to relevant offers using behavioral targeting and UTM parameters.",
+          "Distribute visits across multiple campaigns without manual intervention.",
+          "Automatically remove underperforming offers to protect ROI.",
         ],
+        outcome: "Traffic stays efficient and every click is measured with clarity.",
       },
       {
-        title: "Data governance",
+        title: "Workflow automation",
+        description: "Automate funnel triggers, pausing, and approvals based on conversion thresholds or CRM signals.",
+        bullets: [
+          "Block underperforming sources once conversion rate thresholds dip.",
+          "Pause inactive campaigns to prevent wasted ad spend.",
+          "Approve publishers or offers based on defined criteria for faster onboarding.",
+        ],
+        outcome: "Marketers focus on strategy while repetitive tasks run themselves.",
+      },
+      {
+        title: "Offer health & link testing",
+        description: "Keep customer journeys intact by validating offers, redirections, and landing page accuracy.",
+        bullets: [
+          "Automated link testing prevents lost traffic and highlights broken flows.",
+          "Preview URL mismatch alerts ensure landing pages stay correct.",
+          "Monitor hop count to optimize redirection speed and data capture.",
+        ],
+        outcome: "Every click lands on the right destination with verifiable analytics.",
+      },
+      {
+        title: "Data import & enrichment",
+        description: "Bulk upload conversions, publishers, and CRM data to keep analytics in sync.",
+        bullets: [
+          "Migrate existing platform data via CSV uploads with minimal lift.",
+          "Bulk edit historical conversions to support predictive analytics.",
+          "Upload conversion data when postback connections fail to keep reports accurate.",
+        ],
+        outcome: "Dashboards reflect the complete truth even when integrations glitch.",
+      },
+      {
+        title: "Link test & async validation",
+        description: "Scan links for broken connections before they impact app installs or social journeys.",
+        bullets: [
+          "Verify CPI redirection to app stores or landing pages.",
+          "Troubleshoot postback test failures with publishers or CRM systems.",
+          "Confirm every tracking URL points to the right ClicksMeta endpoint.",
+        ],
+        outcome: "Analytics teams trust the data powering their reports.",
+      },
+      {
+        title: "Accolades & social proof",
         description:
-          "Audit trails, transformation logs, and role-based access maintain trust when multiple systems feed data into the platform.",
+          "Borrow Trackier's testimonial sections to show G2, Capterra, and TrustRadius scores alongside customer wins.",
+        bullets: [
+          "Highlight real quotes from growth, ops, and media leaders.",
+          "Display badges and star ratings inside the analytics narrative.",
+        ],
+        outcome: "Stakeholders see proof that automation and analytics pay off.",
       },
     ],
   },
@@ -155,14 +236,69 @@ export const footerPageContent = {
     ],
     sections: [
       {
-        title: "Always-on monitoring",
+        title: "Real-time fraud detection",
         description:
-          "Heatmaps, timelines, and inventory health scores reveal suspicious activity before it touches billing cycles.",
+          "Analyze traffic as it arrives to prevent immediate fraud, protect campaign performance, and maintain advertiser relationships.",
+        bullets: [
+          "Block fraudulent activity the moment it triggers suspicious thresholds.",
+          "Filter bad traffic to improve KPIs across every offer.",
+          "Keep advertiser trust high with continuously cleansed supply.",
+        ],
+        outcome: "Revenue stays protected during flash sales and peak seasons.",
       },
       {
-        title: "Actionable outcomes",
+        title: "Fraud reports and analytics",
         description:
-          "Automations can pause, redirect, or require manual review with a couple of clicks.",
+          "Reveal trends, sources, and geos behind suspicious activity with detailed reports modeled after Trackier's dashboards.",
+        bullets: [
+          "Identify fraud patterns down to campaign, publisher, and country.",
+          "Share actionable data with stakeholders to guide corrective actions.",
+          "Refine campaign strategy faster using fraud insights.",
+        ],
+        outcome: "Teams move from reacting to forecasting where fraud strikes next.",
+      },
+      {
+        title: "Click and conversion validation",
+        description:
+          "Multiple validation rules confirm clicks and conversions are legitimate before payouts are approved.",
+        bullets: [
+          "Filter bot and proxy-based fraud for cleaner metrics.",
+          "Validate device IDs to confirm conversions originate from real hardware.",
+          "Prevent duplicate conversions from the same source.",
+        ],
+        outcome: "Finance only pays for genuine traffic.",
+      },
+      {
+        title: "Customizable fraud rules",
+        description:
+          "Create campaign-specific rule stacks and custom actions so blocking, redirecting, or flagging risky traffic is instant.",
+        bullets: [
+          "Specific rule setup per offer or vertical.",
+          "Custom actions define what happens when rules are triggered.",
+          "Targeted fraud prevention applies different playbooks to each campaign.",
+        ],
+        outcome: "Ops handles nuance without writing code.",
+      },
+      {
+        title: "Multiple integrations",
+        description:
+          "Connect third-party anti-fraud tools, data points, and coverage options so detection is flexible and thorough.",
+        bullets: [
+          "Enhanced detection through external data feeds.",
+          "Choice of integrations to match regional or product needs.",
+          "Comprehensive protection that scales with your program.",
+        ],
+        outcome: "A layered defense that mirrors Trackier's ecosystem.",
+      },
+      {
+        title: "Accolades & proof",
+        description:
+          "Bring in testimonial-style proof, ratings, and badges to show how fraud prevention boosts conversions.",
+        bullets: [
+          "Highlight G2, Capterra, and TrustRadius scores tied to fraud wins.",
+          "Include quotes from digital leaders who doubled revenue after cleaning traffic.",
+        ],
+        outcome: "Stakeholders see that secure growth is possible today.",
       },
     ],
   },
@@ -182,14 +318,69 @@ export const footerPageContent = {
     ],
     sections: [
       {
-        title: "Publish with confidence",
+        title: "Global partner payments on autopilot",
         description:
-          "Dry-run rules against historical data to preview the impact before pushing live.",
+          "Route payouts in local currencies, cut conversion fees, and keep accounting teams aligned without spreadsheet gymnastics.",
+        bullets: [
+          "Pay partners in their preferred currency for a better payout experience.",
+          "Reduce conversion fees by batching multi-currency payments with better FX.",
+          "Track multi-currency payouts in one ledger for simplified reconciliation.",
+        ],
+        outcome: "Invoices to instant partner payments, sorted.",
       },
       {
-        title: "Documented ownership",
+        title: "Automated invoicing & reconciliation",
         description:
-          "Every workflow stores creator, purpose, and change history for future teammates.",
+          "Let automations generate invoices, assign IDs, and match disbursements so finance teams stay audit-ready.",
+        bullets: [
+          "Auto-generate invoices using templates tied to thresholds and cadence.",
+          "Customize invoice IDs to track regions, partners, or campaigns.",
+          "Run automated reconciliation by matching invoices with payments instantly.",
+        ],
+        outcome: "Close the books faster with verifiable records.",
+      },
+      {
+        title: "Managed payments with compliance guardrails",
+        description:
+          "Trackier-style managed payments ensure taxes, payment history, and security safeguards are baked into every payout workflow.",
+        bullets: [
+          "Central payment reconciliation tools keep history at your fingertips.",
+          "Full visibility across every transaction with searchable payment history.",
+          "Secure payment processing protects against fraud and losses.",
+        ],
+        outcome: "Finance teams trust the automation as much as operators do.",
+      },
+      {
+        title: "Proactive support & self-service",
+        description:
+          "Give teams 24/7 help, in-platform assistance, and self-service assets so payout automations never stall.",
+        bullets: [
+          "Multi-platform support choices for every communication style.",
+          "In-platform help lets operators get answers without leaving the workflow.",
+          "Self-service resources offer answers anytime, even off-hours.",
+        ],
+        outcome: "Automation stays online because humans stay informed.",
+      },
+      {
+        title: "Smart payouts tuned to performance",
+        description:
+          "Design payout logic that reacts to performance, peak hours, or special events with fine-grained control.",
+        bullets: [
+          "Mix and match payout structures by metric, event, or tier.",
+          "Multiple time-slot configuration fine-tunes peak-hour incentives.",
+          "Payout prioritization logic ensures the right rules apply every time.",
+        ],
+        outcome: "Partners feel seen and motivated when rewards fit reality.",
+      },
+      {
+        title: "Accolades & appreciation",
+        description:
+          "Mirror Trackier's ratings and quotes so teams see proof that automation improves growth and relationships.",
+        bullets: [
+          "Showcase G2, Capterra, and TrustRadius scores next to automation wins.",
+          "Highlight customer testimonials about achieving 2x growth with smoother payouts.",
+        ],
+        outcome: "Stakeholders buy into automation backed by social proof.",
       },
     ],
   },
@@ -252,14 +443,60 @@ export const footerPageContent = {
     },
     sections: [
       {
-        title: "Offer orchestration",
+        title: "Secure tracking & offer orchestration",
         description:
-          "Run localized campaigns with automated approvals, compliance notes, and templated assets.",
+          "Bundle localized offers, disclosures, and creatives before launch so branch teams, affiliates, and media partners distribute only approved assets.",
+        bullets: [
+          "Automate approvals with compliance notes tracked per market.",
+          "Auto-expire creatives when rates, APRs, or eligibility windows change.",
+          "One workspace keeps copy decks, disclosures, and creative history auditable.",
+        ],
+        outcome: "Faster launches with a provable compliance trail.",
       },
       {
-        title: "Executive-ready insights",
+        title: "White-label partner experiences",
         description:
-          "KPIs map directly to deposit growth, card activations, and digital adoption goals.",
+          "Mirror your brand across portals so agencies, branches, and influencers log into a trustworthy, cohesive banking hub.",
+        bullets: [
+          "Consistent branding across domains, palettes, and typography.",
+          "Customizable partner dashboards surface only the KPIs each role needs.",
+          "Dedicated support workflows route requests to the right analyst or RM.",
+        ],
+        outcome: "Franchise-ready experiences without spawning extra microsites.",
+      },
+      {
+        title: "Decision-grade reporting",
+        description:
+          "Granular analytics expose which partners, audiences, and journeys drive visible deposit, card, and lending growth.",
+        bullets: [
+          "Real-time performance snapshots for funnel KPIs and geography.",
+          "Report templates tuned to each banking product or leadership audience.",
+          "Fraud signals appear alongside results so risky traffic is filtered fast.",
+          "Automated digests keep RM and finance teams aligned without exports.",
+        ],
+        outcome: "Executives get board-ready KPI packs without spreadsheet gymnastics.",
+      },
+      {
+        title: "Flexible commission science",
+        description:
+          "Match payout logic to the nuances of checking, lending, wealth, or card programs so every incentive reinforces profitable growth.",
+        bullets: [
+          "Publisher- and product-specific payout matrices.",
+          "Performance bonuses triggered by approved applications or funded accounts.",
+          "Automated commission tiers adjust when goals are exceeded.",
+        ],
+        outcome: "Partners stay motivated even as rate cards or product lines shift.",
+      },
+      {
+        title: "Compliance & security guardrails",
+        description:
+          "Built-in privacy controls and infrastructure choices align with GDPR, CCPA, and bank-grade security expectations.",
+        bullets: [
+          "GDPR, CCPA, and FFIEC-inspired controls with exportable audit logs.",
+          "Isolated storage and Google Cloud infrastructure for sensitive data.",
+          "Routine security testing plus encryption across data in transit and at rest.",
+        ],
+        outcome: "Security teams see exactly how partner marketing stays compliant.",
       },
     ],
   },
@@ -296,14 +533,63 @@ export const footerPageContent = {
     },
     sections: [
       {
-        title: "Marketplace quality",
+        title: "Efficient partner management",
         description:
-          "Score partners on compliance, conversion, and retention to surface your strongest supply.",
+          "Give media buyers and publisher managers a shared cockpit for onboarding, communication, and payouts so collaboration stays fast even when the network scales.",
+        bullets: [
+          "Dedicated partner onboarding support tied to each offer.",
+          "Custom dashboards track KPIs for every advertiser and publisher.",
+          "Automated KPI alerts highlight pacing slips or overdeliveries.",
+          "Auto-triggered commission payouts with approvals baked in.",
+        ],
+        outcome: "Fewer back-and-forth threads and cleaner partner satisfaction scores.",
       },
       {
-        title: "Monetization mix",
+        title: "Rapid publisher access management",
         description:
-          "Model CPM, CPA, and hybrid deals with fast what-if analysis to protect margins.",
+          "License-level rules and instant visibility controls keep offers secure while letting qualified publishers move quickly.",
+        bullets: [
+          "Control publisher access, visibility, and caps per campaign.",
+          "One-click blacklist or IP blocks when risk signatures appear.",
+          "Two-factor authentication and audit logs for every login.",
+          "Self-serve portals surface approved offers instantly.",
+        ],
+        outcome: "Networks stay protected without throttling legitimate growth.",
+      },
+      {
+        title: "Multi-channel performance intelligence",
+        description:
+          "Understand how display, mobile, social, and emerging placements contribute to revenue so you can reallocate spend confidently.",
+        bullets: [
+          "Cross-channel attribution cards tie spend to conversions.",
+          "Granular localized reporting filters by geo, format, or placement.",
+          "Manage multiple advertisers inside one workspace with role-based access.",
+          "Real-time monitoring keeps fraud, latency, and margin issues visible.",
+        ],
+        outcome: "Media leads get the narrative they need for every executive review.",
+      },
+      {
+        title: "Marketplace quality controls",
+        description:
+          "Blend compliance scoring, conversion health, and retention data to surface the highest-quality supply.",
+        bullets: [
+          "Score partners on compliance, conversion, and retention trends.",
+          "Bulk updates push disclosures, caps, or asset refreshes in minutes.",
+          "Smartlink routing and testing options steer traffic toward winner offers.",
+          "Alerting workflows notify AMs the moment anomalies appear.",
+        ],
+        outcome: "Inventory stays healthy while ops teams work from one connected view.",
+      },
+      {
+        title: "Monetization mix modeling",
+        description:
+          "Simulate CPM, CPC, CPA, or hybrid deals before launch so finance, sales, and ops agree on the levers that protect margin.",
+        bullets: [
+          "What-if analysis for rate cards, caps, and payout tiers.",
+          "Route traffic intelligently with Smartlink functionality.",
+          "Share board-ready exports with advertisers or internal finance.",
+        ],
+        outcome: "Deal desks move faster with confidence in every scenario.",
       },
     ],
   },

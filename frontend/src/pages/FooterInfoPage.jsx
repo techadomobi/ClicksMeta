@@ -14,7 +14,13 @@ import { footerPageContent } from "@/data/footerContent"
 import { footerDesignConfig } from "@/data/footerDesign"
 import { Button } from "@/components/ui/button"
 import { AutomatedPayoutExperience } from "./AutomatedPayoutExperience"
+import { CampaignManagementExperience } from "./CampaignManagementExperience"
+import { BankingExperience } from "./BankingExperience"
 import { FintechExperience } from "./FintechExperience"
+import { EasyAutomationExperience } from "./EasyAutomationExperience"
+import { FraudDetectionExperience } from "./FraudDetectionExperience"
+import { MarketingAnalyticsExperience } from "./MarketingAnalyticsExperience"
+import { MediaNetworkExperience } from "./MediaNetworkExperience"
 import { SaasExperience } from "./SaasExperience"
 import { TravelExperience } from "./TravelExperience"
 
@@ -125,8 +131,26 @@ export function FooterInfoPage() {
   if (slug === "automated-payout") {
     return <AutomatedPayoutExperience />
   }
+  if (slug === "campaign-management") {
+    return <CampaignManagementExperience />
+  }
+  if (slug === "easy-automation") {
+    return <EasyAutomationExperience />
+  }
+  if (slug === "marketing-analytics") {
+    return <MarketingAnalyticsExperience />
+  }
+  if (slug === "banking") {
+    return <BankingExperience />
+  }
+  if (slug === "fraud-detection") {
+    return <FraudDetectionExperience />
+  }
   if (slug === "fintech") {
     return <FintechExperience />
+  }
+  if (slug === "media-network") {
+    return <MediaNetworkExperience />
   }
   if (slug === "saas") {
     return <SaasExperience />
