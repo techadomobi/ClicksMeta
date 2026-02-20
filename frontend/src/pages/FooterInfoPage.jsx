@@ -18,9 +18,15 @@ import { CampaignManagementExperience } from "./CampaignManagementExperience"
 import { BankingExperience } from "./BankingExperience"
 import { FintechExperience } from "./FintechExperience"
 import { EasyAutomationExperience } from "./EasyAutomationExperience"
+import { PrivacyPolicyExperience } from "./PrivacyPolicyExperience"
+import { TermsOfServiceExperience } from "./TermsOfServiceExperience"
 import { FraudDetectionExperience } from "./FraudDetectionExperience"
 import { MarketingAnalyticsExperience } from "./MarketingAnalyticsExperience"
 import { MediaNetworkExperience } from "./MediaNetworkExperience"
+import { DocumentationExperience } from "./DocumentationExperience"
+import { ApiReferenceExperience } from "./ApiReferenceExperience"
+import { CaseStudiesExperience } from "./CaseStudiesExperience"
+import { HelpCenterExperience } from "./HelpCenterExperience"
 import { SaasExperience } from "./SaasExperience"
 import { TravelExperience } from "./TravelExperience"
 
@@ -137,6 +143,12 @@ export function FooterInfoPage() {
   if (slug === "easy-automation") {
     return <EasyAutomationExperience />
   }
+  if (slug === "privacy-policy") {
+    return <PrivacyPolicyExperience />
+  }
+  if (slug === "terms-of-service") {
+    return <TermsOfServiceExperience />
+  }
   if (slug === "marketing-analytics") {
     return <MarketingAnalyticsExperience />
   }
@@ -157,6 +169,18 @@ export function FooterInfoPage() {
   }
   if (slug === "travel") {
     return <TravelExperience />
+  }
+  if (slug === "documentation") {
+    return <DocumentationExperience />
+  }
+  if (slug === "api-reference") {
+    return <ApiReferenceExperience />
+  }
+  if (slug === "case-studies") {
+    return <CaseStudiesExperience />
+  }
+  if (slug === "help-center") {
+    return <HelpCenterExperience />
   }
   const content = footerPageContent[slug]
 

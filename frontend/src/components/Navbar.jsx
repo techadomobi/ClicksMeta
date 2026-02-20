@@ -29,30 +29,30 @@ const platformSections = [
   {
     title: "Essential Suite",
     items: [
-      { label: "Marketing Analytics", icon: BarChart3 },
-      { label: "Automated Invoicing", icon: Receipt },
-      { label: "Campaign Management", icon: Megaphone },
-      { label: "Marketing Automation", icon: Bot },
-      { label: "Fraud Prevention", icon: ShieldCheck },
+      { label: "Marketing Analytics", icon: BarChart3, href: "/marketing-analytics" },
+      { label: "Automated Invoicing", icon: Receipt, href: "/automated-payout" },
+      { label: "Campaign Management", icon: Megaphone, href: "/campaign-management" },
+      { label: "Marketing Automation", icon: Bot, href: "/easy-automation" },
+      { label: "Fraud Prevention", icon: ShieldCheck, href: "/fraud-detection" },
     ],
   },
   {
     title: "Built for You",
     items: [
-      { label: "E-Commerce", icon: ShoppingBag },
-      { label: "Banking", icon: Banknote },
-      { label: "Fintech", icon: CreditCard },
-      { label: "Travel", icon: Plane },
-      { label: "Media & Networks", icon: Radio },
-      { label: "SaaS", icon: Cloud },
+      { label: "E-Commerce", icon: ShoppingBag, href: "/ecommerce" },
+      { label: "Banking", icon: Banknote, href: "/banking" },
+      { label: "Fintech", icon: CreditCard, href: "/fintech" },
+      { label: "Travel", icon: Plane, href: "/travel" },
+      { label: "Media & Networks", icon: Radio, href: "/media-network" },
+      { label: "SaaS", icon: Cloud, href: "/saas" },
     ],
   },
 ]
 
 const platformSpotlight = [
-  { label: "Performance Marketing Software", icon: Target },
-  { label: "Affiliate Tracking Software", icon: Share2 },
-  { label: "Partner Ecosystem", icon: Users },
+  { label: "Performance Marketing Software", icon: Target, href: "/campaign-management" },
+  { label: "Affiliate Tracking Software", icon: Share2, href: "/automated-payout" },
+  { label: "Partner Ecosystem", icon: Users, href: "/case-studies" },
 ]
 
 const navItems = [
@@ -68,8 +68,10 @@ const navItems = [
     type: "list",
     items: [
       { label: "Blog", href: "/blog" },
-      { label: "Case Studies", href: "/#testimonials" },
-      { label: "Documentation", href: "/contact" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Documentation", href: "/documentation" },
+      { label: "API Reference", href: "/api-reference" },
+      { label: "Help Center", href: "/help-center" },
     ],
   },
   {
@@ -155,17 +157,18 @@ export function Navbar() {
                             {item.sections[col].title}
                           </p>
                           <div className="space-y-3">
-                            {item.sections[col].items.map(({ label, icon: Icon }) => (
-                              <a
+                            {item.sections[col].items.map(({ label, icon: Icon, href }) => (
+                              <Link
                                 key={label}
-                                href="#"
+                                to={href}
+                                onClick={() => setOpenDropdown(null)}
                                 className="flex items-center gap-4 rounded-[26px] border border-transparent bg-[#f5f6ff] px-4 py-3 text-sm font-semibold text-[#152046] transition hover:-translate-y-0.5 hover:border-[#ebedff]"
                               >
                                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-inner shadow-white/70">
                                   <Icon className="h-5 w-5 text-[#0f1a3d]" />
                                 </span>
                                 {label}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -174,10 +177,11 @@ export function Navbar() {
                       <div className="rounded-[36px] bg-gradient-to-b from-[#fefeff] via-[#f5f7ff] to-[#eef3ff] p-5">
                         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#8d91b0]">Best in Class</p>
                         <div className="space-y-4">
-                          {item.spotlight.map(({ label, icon: Icon }) => (
-                            <a
+                          {item.spotlight.map(({ label, icon: Icon, href }) => (
+                            <Link
                               key={label}
-                              href="#"
+                              to={href}
+                              onClick={() => setOpenDropdown(null)}
                               className="flex items-center justify-between rounded-[30px] bg-white px-4 py-4 text-sm font-semibold text-[#101735] shadow-[0_20px_50px_rgba(16,25,66,0.15)] transition hover:-translate-y-0.5"
                             >
                               <span className="flex items-center gap-3">
@@ -187,7 +191,7 @@ export function Navbar() {
                                 {label}
                               </span>
                               <ArrowRight className="h-4.5 w-4.5 text-[#6b76a9]" />
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -271,10 +275,15 @@ export function Navbar() {
                               <div key={section.title}>
                                 <p className="text-xs font-semibold uppercase tracking-wide text-white/40">{section.title}</p>
                                 <div className="mt-2 space-y-1.5">
-                                  {section.items.map(({ label }) => (
-                                    <p key={label} className="text-sm text-white/60">
+                                  {section.items.map(({ label, href }) => (
+                                    <Link
+                                      key={label}
+                                      to={href}
+                                      onClick={closeMobile}
+                                      className="block text-sm text-white/60"
+                                    >
                                       {label}
-                                    </p>
+                                    </Link>
                                   ))}
                                 </div>
                               </div>
@@ -282,10 +291,15 @@ export function Navbar() {
                             <div>
                               <p className="text-xs font-semibold uppercase tracking-wide text-white/40">Best in Class</p>
                               <div className="mt-2 space-y-1.5">
-                                {item.spotlight.map(({ label }) => (
-                                  <p key={label} className="text-sm text-white/60">
+                                {item.spotlight.map(({ label, href }) => (
+                                  <Link
+                                    key={label}
+                                    to={href}
+                                    onClick={closeMobile}
+                                    className="block text-sm text-white/60"
+                                  >
                                     {label}
-                                  </p>
+                                  </Link>
                                 ))}
                               </div>
                             </div>

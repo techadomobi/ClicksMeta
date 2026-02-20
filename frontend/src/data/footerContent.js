@@ -812,22 +812,95 @@ export const footerPageContent = {
       title: "Data practices you can trust",
       description:
         "We honor global privacy regulations with transparent collection, retention, and access controls.",
+      points: [
+        "Security and compliance sit at the foundation of every Trackier workflow.",
+        "We invest in infrastructure, monitoring, and culture so customers trust every data touchpoint.",
+      ],
     },
     sections: [
       {
-        title: "Data we process",
+        title: "Proactive governance",
         description:
-          "Contact info, usage telemetry, and billing details are collected solely to deliver services.",
+          "Systems are designed to prevent threats before they materialize. Automated compliance frameworks align with global regulations while privacy-first design guides every feature.",
         bullets: [
-          "We never sell customer data.",
-          "Subprocessors complete regular security reviews.",
-          "Data retention defaults to 24 months unless contracts specify otherwise.",
+          "Regular risk assessments and automated controls anticipate problems early.",
+          "Privacy-first design principles are embedded across the platform.",
         ],
+        outcome: "Governance is proactive, not reactive.",
       },
       {
-        title: "Your controls",
+        title: "Resilient infrastructure",
         description:
-          "Access, correction, deletion, and export requests route through privacy@clicksmeta.com with a 30-day SLA.",
+          "Trackier runs on Google Cloud Platform with redundant backups, disaster recovery, and automated monitoring so campaigns run without interruption.",
+        bullets: [
+          "Global footprint with GCP, CDN distribution, and automated recovery drills.",
+          "Continuous monitoring via Cloudflare Security Center, GCP Security Command Center, and partner tools.",
+        ],
+        outcome: "Operations stay online even when threats evolve.",
+      },
+      {
+        title: "Intelligent vigilance & security culture",
+        description:
+          "Dedicated security teams run AI-driven anomaly detection, penetration testing, and vulnerability management while every employee trains on data protection.",
+        bullets: [
+          "24/7 scanning and logging surfaces issues faster than manual processes.",
+          "Mandatory security awareness and data handling training for all employees.",
+        ],
+        outcome: "Security is everyone's job.",
+      },
+      {
+        title: "How we protect your data",
+        description:
+          "Identity is the new perimeter, so we layer SSO, zero trust networking, and endpoint protection to keep access secure.",
+        bullets: [
+          "Google Workspace SSO enforces strong authentication across apps.",
+          "Cloudflare Zero Trust applies 'never trust, always verify' for every request.",
+          "Enterprise-grade endpoint protection shields workstations on Windows, macOS, and Linux.",
+        ],
+        outcome: "Secure access, every time.",
+      },
+      {
+        title: "Continuous monitoring & encryption",
+        description:
+          "Monitoring, logging, and AES-256 encryption protect data in transit and at rest. Automated alerts trigger rapid responses when anomalies appear.",
+        bullets: [
+          "Tools like Astra Security and Cloudflare Security Center scan for misconfigurations.",
+          "HTTPS/TLS everywhere plus AES-256 protects clicks, conversions, and custom dimensions end-to-end.",
+          "Data anonymization and pseudonymization guard visitor privacy.",
+        ],
+        outcome: "Data remains protected at every point in its journey.",
+      },
+      {
+        title: "Visitor data storage & retention",
+        description:
+          "We collect only the telemetry needed for accurate attribution. Retention defaults to 24 months unless contracts specify otherwise, with secure destruction upon request.",
+        bullets: [
+          "Anonymized IP, device, and referral data stay in Trackier without directly accessing your backend.",
+          "Accounts retain data for historical reporting until closure, then delete within 45–90 days.",
+          "Customers can submit deletion, correction, and export requests via privacy@clicksmeta.com with a 30-day SLA.",
+        ],
+        outcome: "You stay in control while Trackier handles analytics on top.",
+      },
+      {
+        title: "Compliance & incident response",
+        description:
+          "We maintain GDPR, CCPA, and other frameworks through third-party audits, penetration tests, and structured incident response playbooks.",
+        bullets: [
+          "Cross-border transfers follow GDPR transfer requirements and secure data centers with strict access controls.",
+          "Incident response notifies affected customers within 48 hours and supports regulatory obligations.",
+        ],
+        outcome: "Trust is defended even when the unexpected happens.",
+      },
+      {
+        title: "What it means for your business",
+        description:
+          "Security and privacy investments let you scale confidently, maintain partner trust, and stay compliant automatically.",
+        bullets: [
+          "Focus on growth instead of data risk thanks to built-in safeguards.",
+          "Partners know their data is protected from collection through retention.",
+          "Global reliability ensures low latency and zero single points of failure.",
+        ],
+        outcome: "Security becomes a competitive edge.",
       },
     ],
   },
@@ -842,19 +915,81 @@ export const footerPageContent = {
     },
     sections: [
       {
-        title: "Customer obligations",
+        title: "Shared success commitments",
         description:
-          "Keep credentials secure, follow acceptable use, and pay invoices on time.",
+          "We each bring important responsibilities. Customers keep credentials secure, follow acceptable use, and ensure invoices are paid on time while we provide the tooling, context, and alerts needed for safe growth.",
+        bullets: [
+          "Define authorized users and protect credentials with SSO or MFA.",
+          "Use the platform only for lawful programs that respect partner agreements.",
+          "Pay invoices within agreed terms so services remain active.",
+        ],
+        outcome: "Clear expectations keep partnerships healthy.",
       },
       {
-        title: "Our obligations",
+        title: "Security & compliance partnership",
         description:
-          "Provide 99.5% uptime, proactive security notifications, and fair API limits.",
+          "ClicksMeta operates on secure infrastructure with privacy-first processes, while customers configure permissions, data retention choices, and custom compliance workflows.",
+        bullets: [
+          "We run on hardened cloud infrastructure with 24/7 monitoring.",
+          "Customers set role-based access so each teammate sees only what they need.",
+          "Shared audit logs record login, configuration, and payout events for future review.",
+        ],
+        outcome: "Security becomes a joint discipline rather than a handoff.",
       },
       {
-        title: "Liability",
+        title: "Usage guidelines & acceptable behavior",
         description:
-          "Standard cap at 12 months of fees with carve-outs for confidentiality breaches.",
+          "Automations are powerful, so rules outline what’s prohibited—abuse, illegal content, and attempts to reverse engineer or overload the platform.",
+        bullets: [
+          "No sending malware, spam, or fraudulent traffic through tracking links.",
+          "Respect API rate limits, automation quotas, and partner-facing SLAs.",
+          "Do not resell or white-label the service without written approval.",
+        ],
+        outcome: "Every customer enjoys consistent, reliable performance.",
+      },
+      {
+        title: "Billing, renewals, and changes",
+        description:
+          "Contracts specify term lengths, renewal windows, and how overages are calculated so finance teams avoid surprises.",
+        bullets: [
+          "Plans renew automatically unless notice is provided per agreement.",
+          "Usage beyond contracted volumes is billed at documented overage rates.",
+          "Feature upgrades or downgrades follow mutually agreed change orders.",
+        ],
+        outcome: "Forecasting is easier when pricing mechanics stay transparent.",
+      },
+      {
+        title: "Support, uptime, and remediation",
+        description:
+          "We commit to 99.5% uptime with proactive notifications, published maintenance windows, and collaborative issue resolution.",
+        bullets: [
+          "Access 24/5 support plus optional premium response SLAs.",
+          "Scheduled maintenance is announced in advance with status-page updates.",
+          "If incidents occur, we share timelines, root causes, and remediation steps.",
+        ],
+        outcome: "Customers always know who is working the problem.",
+      },
+      {
+        title: "Data handling & continuity",
+        description:
+          "Contracts outline data retention, export rights, and deletion timelines so customers stay in control.",
+        bullets: [
+          "Export data anytime through APIs or dashboards during the subscription.",
+          "When accounts end, we delete customer data within 30–90 days unless laws require longer retention.",
+          "Mutual confidentiality clauses protect proprietary information on both sides.",
+        ],
+        outcome: "Even contract sunsets feel predictable and respectful.",
+      },
+      {
+        title: "Liability & dispute resolution",
+        description:
+          "Standard liability caps equal twelve months of fees with carve-outs for confidentiality breaches and misuse. Disputes follow the governing law and venue noted in your order form.",
+        bullets: [
+          "Neither party is liable for indirect or consequential damages.",
+          "Each party indemnifies the other for claims tied to their own misuse or IP infringement.",
+          "Governing law, venue, and escalation paths are documented in the MSA.",
+        ],
+        outcome: "Both sides know how risks are managed before work begins.",
       },
     ],
   },
