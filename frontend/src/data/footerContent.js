@@ -389,138 +389,248 @@ export const footerPageContent = {
     title: "E-Commerce",
     hero: {
       eyebrow: "Solutions / E-Commerce",
-      title: "Merchandising intelligence for omnichannel retail",
+      title: "ClicksMeta x Trackier: Ecommerce Affiliate Marketing Software",
       description:
-        "Track the shopper journey from first touch to repeat purchase while keeping pacing and inventory realities front and center.",
+        "Mirror Trackier's ecommerce affiliate management layout to coordinate influencers, coupon partners, and agencies with transparent analytics, payouts, and compliance controls.",
     },
     sections: [
       {
-        title: "Merch performance",
+        title: "Understand Revenue Impact Across Every SKU",
         description:
-          "Sku-level dashboards show which inventory, influencers, and promo codes actually convert.",
+          "Sku-level reporting keeps merchandising, performance marketing, and finance aligned around the same truth while matching the reference page's hero promise.",
         bullets: [
-          "Merged funnels across paid, affiliate, and marketplace channels.",
-          "Automatic callouts for net-new vs. returning revenue.",
+          "Blend online store, marketplace, and partner conversions inside one canvas.",
+          "Segment performance by SKU, bundle, coupon, or creator in seconds.",
+          "Highlight net-new vs returning revenue to guide merchandising bets.",
+          "Trigger alerts whenever ROAS, margin, or inventory thresholds change.",
         ],
       },
       {
-        title: "Partnership scaling",
+        title: "Streamline Partner and Influencer Collaboration",
         description:
-          "Onboard creators, coupon partners, and publishers with curated sign-up flows and automated payouts.",
+          "Onboard affiliates, creators, and agencies using pre-built flows that echo Trackier's walkthrough so everyone knows what to do from day one.",
+        bullets: [
+          "Custom signup paths with compliance steps for coupon, cashback, or creator partners.",
+          "Centralized creative lockers and product feeds with instant refresh.",
+          "Track deliverables, promo codes, and social posts in a shared workspace.",
+          "Surface coaching tips, reminders, and recognition to the right partner tier.",
+        ],
+      },
+      {
+        title: "Keep Offers Safe with Adaptive Fraud Shields",
+        description:
+          "Replica of Trackier's fraud-focused section featuring layered defenses that protect your campaigns without slowing revenue.",
+        bullets: [
+          "Auto-detect suspicious spikes tied to bot rings, VPNs, or reused coupons.",
+          "Queue questionable orders for finance and compliance review in one click.",
+          "Stop stacked coupons or unauthorized codes before they erode margin.",
+          "Export ready-to-share audit packets for leadership or payment providers.",
+        ],
+      },
+      {
+        title: "Automate Reporting and Payout Operations",
+        description:
+          "Modernize insights, pacing reviews, and partner commissions with templates that mirror Trackier's CTA blocks.",
+        bullets: [
+          "Designer-ready dashboards with saved filters for merchandisers and execs.",
+          "Schedule recap emails or Slack summaries for partners and agencies.",
+          "Flexible commission logic for CPS, CPA, and hybrid deals by vertical or SKU set.",
+          "Instant reconciliation between ecommerce platforms, CRMs, and finance tools.",
+        ],
       },
     ],
+    cta: {
+      title: "See How Trackier's Ecommerce Affiliate Software Works",
+      description: "Request your demo to review analytics, influencer workflows, and fraud defenses crafted for retail brands.",
+      primary: { label: "Request Your Demo Now", href: "/demorequest" },
+      secondary: { label: "Talk to Sales", href: "/contact" },
+    },
   },
   fintech: {
     category: "Solutions",
     title: "Fintech",
     hero: {
       eyebrow: "Solutions / Fintech",
-      title: "Acquisition clarity for regulated teams",
+      title: "ClicksMeta x Trackier: Fintech Affiliate Marketing Software",
       description:
-        "Blend geo controls, KYC checkpoints, and funnel analytics keyed to cards, wallets, and credit products.",
+        "Give regulated growth teams the same guardrails, onboarding flows, and analytics Trackier showcases so card, lending, and wallet programs scale responsibly.",
     },
     sections: [
       {
-        title: "Regulation-ready",
+        title: "Compliance-Ready Partner Onboarding",
         description:
-          "Geo-fencing, offer caps, and disclosure reminders keep every affiliate compliant.",
+          "Recreate Trackier's compliance fold with hosted forms, automated KYC, and review boards tuned to each fintech product.",
+        bullets: [
+          "Gate access by license, geo, document set, or product line.",
+          "Route approvals to compliance, legal, or partner ops using playbooks.",
+          "Log every decision with exportable audit trails for regulators.",
+          "Standardize disclosures, offer terms, and creative packs per partner type.",
+        ],
       },
       {
-        title: "Lifecycle clarity",
+        title: "Connect Acquisition to Activation and Funding",
         description:
-          "Connect acquisition metrics to funded accounts so incentives reward real value.",
+          "Tie affiliate and media signals directly to account approval, card activation, or funded loan milestones.",
+        bullets: [
+          "Ingest KYC, underwriting, and activation events from your core systems.",
+          "Reward partners only when qualified customers hit contract-ready stages.",
+          "Spot drop-off between application, approval, and activation instantly.",
+          "Blend CRM and payout data so finance validates ROI every review.",
+        ],
+      },
+      {
+        title: "Continuous Monitoring with Decision-Grade Dashboards",
+        description:
+          "Mirror the reference layout's analytics chapters with curated cards for risk, volume, and partner health.",
+        bullets: [
+          "Portfolio views of cards, lending, BNPL, and wallet products in one tab.",
+          "Geography filters keep regional compliance and licensing teams aligned.",
+          "Embed fraud indicators next to volume stats for faster escalation.",
+          "Export board-ready reports without spending hours in spreadsheets.",
+        ],
+      },
+      {
+        title: "Smart Incentives Without Manual Overhead",
+        description:
+          "Design CPA, CPL, revenue share, or hybrid payouts to reflect the exact KPIs Trackier highlights.",
+        bullets: [
+          "Tier rewards by quality metrics like funded accounts or balance held.",
+          "Trigger bonuses for premium card activations or deposits above thresholds.",
+          "Auto-adjust rates when compliance flags or risk limits change.",
+          "Share live statements with partners so they trust every calculation.",
+        ],
       },
     ],
+    cta: {
+      title: "Explore ClicksMeta's Fintech Affiliate Blueprint",
+      description: "Schedule a session to align partner onboarding, compliance, and payouts with Trackier-level confidence.",
+      primary: { label: "Book Fintech Demo", href: "/demorequest" },
+      secondary: { label: "Talk to Compliance Experts", href: "/contact" },
+    },
   },
   banking: {
     category: "Solutions",
     title: "Banking",
     hero: {
       eyebrow: "Solutions / Banking",
-      title: "Partner marketing for modern banks",
+      title: "ClicksMeta x Trackier: Bank Affiliate Marketing Software",
       description:
-        "Offer governance, co-branded asset libraries, and ROI reporting designed for financial institutions.",
+        "Pair growth automation with bank-grade compliance, reporting, and payout controls so branch, digital, and partner teams move in sync.",
     },
     sections: [
       {
-        title: "Secure tracking & offer orchestration",
+        title: "Acquire Qualified Customers Across Every Banking Product",
         description:
-          "Bundle localized offers, disclosures, and creatives before launch so branch teams, affiliates, and media partners distribute only approved assets.",
+          "Route pre-approved offers, localized disclosures, and rate cards to partners so deposits, cards, and lending funnels stay healthy.",
         bullets: [
-          "Automate approvals with compliance notes tracked per market.",
-          "Auto-expire creatives when rates, APRs, or eligibility windows change.",
-          "One workspace keeps copy decks, disclosures, and creative history auditable.",
+          "Launch geo-aware campaigns with locked disclosures and APR notes.",
+          "Prioritize partners by channel, product, or license requirements.",
+          "Compare deposit, lending, and wealth KPIs without stitching spreadsheets.",
+          "Surface loyalty and branch referrals alongside digital affiliates.",
         ],
-        outcome: "Faster launches with a provable compliance trail.",
       },
       {
-        title: "White-label partner experiences",
+        title: "Compliance-First Partner Experiences",
         description:
-          "Mirror your brand across portals so agencies, branches, and influencers log into a trustworthy, cohesive banking hub.",
+          "Replica of Trackier's compliance fold with white-labeled portals, approval journals, and policy reminders.",
         bullets: [
-          "Consistent branding across domains, palettes, and typography.",
-          "Customizable partner dashboards surface only the KPIs each role needs.",
-          "Dedicated support workflows route requests to the right analyst or RM.",
+          "Hosted partner hub with brand-safe themes and secure authentication.",
+          "Appointment-style review queues keep legal and compliance inside the workflow.",
+          "Auto-expire creatives when rates or eligibility language changes.",
+          "Downloadable audit logs for regulators, risk teams, or FFIEC requests.",
         ],
-        outcome: "Franchise-ready experiences without spawning extra microsites.",
       },
       {
-        title: "Decision-grade reporting",
+        title: "Decision-Ready Reporting for Deposits, Cards, and Loans",
         description:
-          "Granular analytics expose which partners, audiences, and journeys drive visible deposit, card, and lending growth.",
+          "Executive-ready scorecards show pipeline, funding, and retention metrics the same way Trackier frames outcomes.",
         bullets: [
-          "Real-time performance snapshots for funnel KPIs and geography.",
-          "Report templates tuned to each banking product or leadership audience.",
-          "Fraud signals appear alongside results so risky traffic is filtered fast.",
-          "Automated digests keep RM and finance teams aligned without exports.",
+          "Drill into KPIs by channel, partner tier, or banking product.",
+          "Highlight conversion, approval, and funding rates per geography.",
+          "Blend fraud and quality indicators with growth stats for faster context.",
+          "Schedule PDF, CSV, or Slack digests for RM, product, and finance teams.",
         ],
-        outcome: "Executives get board-ready KPI packs without spreadsheet gymnastics.",
       },
       {
-        title: "Flexible commission science",
+        title: "Flexible Incentives With Bank-Grade Governance",
         description:
-          "Match payout logic to the nuances of checking, lending, wealth, or card programs so every incentive reinforces profitable growth.",
+          "Reward branches, agencies, and digital partners using payout models tuned to regulated products.",
         bullets: [
-          "Publisher- and product-specific payout matrices.",
-          "Performance bonuses triggered by approved applications or funded accounts.",
-          "Automated commission tiers adjust when goals are exceeded.",
+          "Create CPA, CPL, balance, or revenue share tiers per product family.",
+          "Hold or claw back commissions when compliance flags appear.",
+          "Connect payouts to funding milestones, not just approvals.",
+          "Share transparent statements with partners to build trust.",
         ],
-        outcome: "Partners stay motivated even as rate cards or product lines shift.",
-      },
-      {
-        title: "Compliance & security guardrails",
-        description:
-          "Built-in privacy controls and infrastructure choices align with GDPR, CCPA, and bank-grade security expectations.",
-        bullets: [
-          "GDPR, CCPA, and FFIEC-inspired controls with exportable audit logs.",
-          "Isolated storage and Google Cloud infrastructure for sensitive data.",
-          "Routine security testing plus encryption across data in transit and at rest.",
-        ],
-        outcome: "Security teams see exactly how partner marketing stays compliant.",
       },
     ],
+    cta: {
+      title: "Review Bank Affiliate Workflows With Our Team",
+      description: "Book a tailored walkthrough to see disclosure management, partner governance, and KPI reporting in action.",
+      primary: { label: "Request Banking Demo", href: "/demorequest" },
+      secondary: { label: "Talk to Sales", href: "/contact" },
+    },
   },
   travel: {
     category: "Solutions",
     title: "Travel",
     hero: {
       eyebrow: "Solutions / Travel",
-      title: "Inventory-aware travel marketing",
+      title: "Make Your Travel Affiliate Programs Soar with Trackier",
       description:
-        "Blend demand forecasts, region pacing, and partner performance for OTAs, airlines, and hospitality groups.",
+        "Drive more travel bookings, expand partner reach, and optimize ROI with advanced partner management, omni-channel tracking, flexible payouts, and compliant reporting.",
     },
     sections: [
       {
-        title: "Route-specific insights",
+        title: "Real-Time Insights with Dynamic Attribution Modeling",
         description:
-          "Overlay availability, fare classes, and partner mixes to avoid overselling while maximizing load factor.",
+          "Centralize first-party data from OTAs, airlines, hospitality brands, and travel creators so every campaign report reflects the full traveler journey.",
+        bullets: [
+          "Identify best-performing channels, travel influencers, and bloggers",
+          "Optimize channel spend by spotlighting profitable routes",
+          "Deliver personalized affiliate links and content bundles",
+          "Enable customized anti-fraud and compliance controls",
+        ],
       },
       {
-        title: "Traveler trust",
+        title: "Simplify Global Campaigns with Multi-Currency Tracking",
         description:
-          "Creative approvals and compliance snapshots keep partners on brand across every region.",
+          "Run geo-specific promotions, manage billing rules, and keep finance teams confident with transparent conversion tracking and payout workflows.",
+        bullets: [
+          "Customize invoicing and approval paths for each market",
+          "Optimize payouts, taxes, and fees by region or partner tier",
+          "Compare performance across geos, currencies, and channels",
+          "Publish reconciled financial reports without spreadsheets",
+        ],
+      },
+      {
+        title: "Package Tracking and Bundled Booking Insights",
+        description:
+          "Monitor bundled fares, hotel + flight combos, and curated experiences to highlight upsell opportunities and protect brand standards.",
+        bullets: [
+          "Upsell and cross-sell with precise performance signals",
+          "Quantify unauthorized brand keyword usage instantly",
+          "Set competitive pricing strategies backed by partner data",
+          "Spot underperforming package elements before they hurt revenue",
+        ],
+      },
+      {
+        title: "Real-Time Tracking for Market Fluctuations",
+        description:
+          "Use real-time dashboards to react to demand surges, loyalty campaigns, and seasonality shifts so every travel affiliate stays aligned.",
+        bullets: [
+          "See campaign results as they happen across every channel",
+          "Blend first-party data for precise retargeting and personalization",
+          "Deliver timely rewards for loyalty programs and VIP travelers",
+          "Keep customizable dashboards for operations, finance, and CX",
+        ],
       },
     ],
+    cta: {
+      title: "See How Trackier's Marketing Analytics Work for Campaigns Across Industries",
+      description: "Request your demo now to revisit attribution, payouts, and analytics tailored to travel affiliate teams.",
+      primary: { label: "Request Your Demo Now", href: "/demorequest" },
+      secondary: { label: "Get Started", href: "/signup" },
+    },
   },
   "media-network": {
     category: "Solutions",
@@ -598,22 +708,62 @@ export const footerPageContent = {
     title: "SaaS",
     hero: {
       eyebrow: "Solutions / SaaS",
-      title: "Recurring revenue clarity",
+      title: "From Sign-Up to Scale-Up SaaS Affiliate Programs Done Right",
       description:
-        "Connect acquisition campaigns to product adoption, renewals, and partner-sourced ARR across your SaaS ecosystem.",
+        "Build, manage, and scale high-performing SaaS affiliate programs with campaign management. Improve ROI with advanced tracking, flexible commission structures, influencer and affiliate management, and detailed analytics and reporting.",
     },
     sections: [
       {
-        title: "Pipeline to ARR",
+        title: "Improve SaaS Affiliate Programs with Robust Customer Acquisition",
         description:
-          "Track the journey from lead to activation to renewal in a single view.",
+          "Trackier helps you acquire high-quality customers with granular reporting that informs your partner and digital marketing initiatives. Identify and onboard the right partners, track their performance, and optimize campaigns for precise lead generation and customer acquisition, focusing on customer retention and long-term subscribers.",
+        bullets: [
+          "Track partner journeys across the entire funnel",
+          "Assign credit accurately across key touchpoints",
+          "Accurately measure campaign effectiveness",
+          "Target specific users via customer segmentation",
+        ],
       },
       {
-        title: "Ecosystem growth",
+        title: "High-Value Partnerships with Incentivized Performance Payouts",
         description:
-          "Give resellers, affiliates, and tech partners transparent revenue sharing and certification paths.",
+          "Boost partner engagement and ROI with performance-based incentives. Create custom commission structures rewarding partners for achieving KPIs like free trials, paid subscriptions, subscription management milestones, or qualified leads for lead generation. Build mutually beneficial relationships through aligned incentives.",
+        bullets: [
+          "Tailor payouts to action types",
+          "Reward top performers in tiers",
+          "Simplify commission management",
+          "Monitor partner progress daily",
+        ],
+      },
+      {
+        title: "Expand Your SaaS Reach with Influencer Partnerships",
+        description:
+          "Identify key influencers in your niche and collaborate on targeted campaigns for influencer marketing and social media management to expand reach of your SaaS affiliate program, support brand management, and build brand awareness. Manage influencer collaborations, track campaign performance, and measure the impact on your bottom line.",
+        bullets: [
+          "Access KPIs instantly with automated reporting",
+          "Quickly track influencer performance per campaign",
+          "Measure affiliate impact through clear attribution",
+          "Uplift omni channel campaigns with real insights",
+        ],
+      },
+      {
+        title: "Sustainable Partner Marketing with Revenue Generation",
+        description:
+          "Build a marketing program that can grow alongside your SaaS business. Create a scalable partner marketing program that encourages sustainable, measurable revenue growth. Automate key processes with marketing automation, optimize campaigns, and gain insights into partner performance.",
+        bullets: [
+          "Refine campaign strategies using revenue-focused insights for growth",
+          "Build strong relationships via transparent partner check-ins and support",
+          "Protect your program with built-in anti-fraud and compliance tools",
+          "Track overall performance across partners, payouts, and revenue outcomes",
+        ],
       },
     ],
+    cta: {
+      title: "See How Trackier's In-Depth Reporting Works for Campaigns Across Industries",
+      description: "Request your demo now to walk through recurring commission management, attribution, and analytics tailored to SaaS teams.",
+      primary: { label: "Request Your Demo Now", href: "/demorequest" },
+      secondary: { label: "Get Started", href: "/signup" },
+    },
   },
   blog: {
     category: "Resources",
