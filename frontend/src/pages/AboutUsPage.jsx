@@ -1,4 +1,5 @@
 ﻿import { Link } from "react-router-dom"
+import { PageShell } from "@/components/PageShell"
 import { Button } from "@/components/ui/button"
 import { Globe2, Users, Sparkles, Activity, Compass, Rocket, Quote, MapPin, ShieldCheck } from "lucide-react"
 
@@ -82,6 +83,7 @@ const leadershipQuotes = [
 
 export function AboutUsPage() {
   return (
+    <PageShell tone="mint">
     <div className="bg-[#f5f7fe] text-[#0f1a3d]">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#131c33] to-[#0b1120] px-4 py-24 sm:px-6">
         <div className="absolute inset-0 opacity-60">
@@ -245,5 +247,6 @@ export function AboutUsPage() {
         </div>
       </section>
     </div>
+    </PageShell>
   )
 }

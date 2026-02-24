@@ -1,146 +1,129 @@
 import { BadgeCheck, CheckCircle2, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PageShell } from "@/components/PageShell"
+import { PageHero } from "@/components/PageHero"
+import { SectionHeading } from "@/components/SectionHeading"
 
 const plans = [
   {
-    name: "Starter",
-    price: "$49",
-    period: "/mo",
-    tagline: "Best suited for early stage business",
-    features: [
-      "5,00,000 Clicks",
-      "Unlimited Conversions",
-      "Unlimited Campaigns",
-      "Smart Reports",
-      "Technical Support",
-      "API Access",
-      "Smart Offer Access",
-      "Link Testing Tool",
-    ],
-    badgeColor: "from-[#0f172a] to-[#020617]",
+    name: "Launch",
+    price: "Free",
+    period: "15 days",
+    tagline: "Rebuild every hero, proof rail, and CTA using OffersMeta presets.",
+    features: ["All experience kits", "Live preview links", "Email support", "Strategy checklist"],
+    highlight: "Start designing",
   },
   {
-    name: "Professional",
+    name: "Studio",
     price: "$149",
-    period: "/mo",
-    tagline: "Best plan for professionals",
-    features: [
-      "15,000 Conversions",
-      "Unlimited Clicks",
-      "Unlimited Campaigns",
-      "Smart Reports",
-      "$0.010 per additional conversion",
-      "Fully Whitelabel",
-      "API Access",
-      "24/7 Support",
-      "Dedicated Account Manager",
-    ],
-    highlight: "Most Popular",
-    badgeColor: "from-[#0f172a] to-[#050f24]",
+    period: "/month",
+    tagline: "For teams refreshing multiple industries in parallel.",
+    features: ["Unlimited variants", "Automation triggers", "Snapshots & approvals", "Priority support"],
+    highlight: "Most loved",
+    primary: true,
   },
   {
     name: "Enterprise",
-    price: "$249",
-    period: "/mo",
-    tagline: "Best plan for enterprise",
-    features: [
-      "40,000 Conversions",
-      "Unlimited Clicks",
-      "Unlimited Campaigns",
-      "$0.008 per additional conversion",
-      "Fully Whitelabel",
-      "API Access",
-      "Premium Support",
-      "Dedicated Account Manager",
-    ],
-    badgeColor: "from-[#0f172a] to-[#020617]",
+    price: "Let’s talk",
+    period: "",
+    tagline: "Dedicated pods to replatform large catalogs with security reviews.",
+    features: ["Compliance reviews", "Custom integrations", "24/5 coverage", "Migration support"],
+    highlight: "White-glove",
   },
 ]
 
-const perks = [
-  "Cancel anytime during trial",
-  "No setup fees or hidden charges",
-  "Data encryption & GDPR compliant",
-  "Migration support for existing networks",
+const faqs = [
+  { q: "Is the free trial really the full OffersMeta kit?", a: "Yes. All hero, stat, CTA, and proof components are unlocked for 15 days so you can mirror the site before paying." },
+  { q: "Can I switch plans later?", a: "Upgrade or downgrade anytime. Content, previews, and automation rules stay intact." },
+  { q: "Do you help migrate existing pages?", a: "Studio and Enterprise plans include guided migrations so every URL inherits the new UI without downtime." },
 ]
-
-const cyanButton =
-  "bg-gradient-to-r from-[#1fb6ff] to-[#36d1ff] text-[#02121f] hover:from-[#17a9ef] hover:to-[#2fc9fa]"
 
 export function PricingPage() {
   return (
-    <section className="min-h-screen w-full bg-gradient-to-b from-[#f8fbff] via-[#eef4ff] to-[#020617] pb-24 pt-16">
-      <div className="mx-auto w-full max-w-5xl px-4 text-center sm:px-6">
-        <p className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-          <span className="text-[#006fbd]">Start </span>
-          <span className="text-[#1f6bff]">15 days </span>
-          <span className="text-[#006fbd]">free trial!</span>
-        </p>
-        <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#1fb6ff]/20 bg-white px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-[#2177ff]">
-          <Sparkles className="h-4 w-4 text-[#1fb6ff]" />
-          Pricing
-        </div>
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight text-[#112251] md:text-5xl">
-          Choose the{" "}
-          <span className="bg-gradient-to-r from-[#1f6bff] to-[#7c3aed] bg-clip-text text-transparent">Best Plan</span>
-        </h1>
-        <p className="mt-4 text-base text-[#4b5676] md:text-lg">
-          Scale confidently with plans that include unlimited tracking, automation and real human support.
-        </p>
-      </div>
+    <PageShell tone="mint">
+      <PageHero
+        eyebrow="Pricing"
+        title="Transparent plans for an OffersMeta-grade refresh"
+        description="Pick the kit that matches your launch velocity. Every plan mirrors the gradients, typography, and storytelling patterns you loved on OffersMeta."
+        stats={[
+          { label: "Pages refreshed", value: "140+", description: "per customer" },
+          { label: "Avg. uplift", value: "+37%", description: "conversion lift" },
+        ]}
+        primary={{ label: "Start free trial", href: "/signup" }}
+        secondary={{ label: "Talk to us", href: "/contact" }}
+        tone="mint"
+      />
 
-      <div className="mx-auto mt-12 grid w-full max-w-6xl gap-6 px-4 md:grid-cols-3 md:px-6">
-        {plans.map((plan) => (
-          <article
-            key={plan.name}
-            className="group relative rounded-[32px] border border-white/70 bg-gradient-to-b from-[#050f23] to-[#020617] p-7 text-white shadow-2xl shadow-[#010309]/50 transition-all duration-300 hover:-translate-y-2 hover:border-[#1fb6ff] hover:shadow-[#1fb6ff]/30"
-          >
-            {plan.highlight && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#ffb347] px-4 py-1 text-xs font-semibold text-[#1d1405] shadow-lg">
-                {plan.highlight}
-              </div>
-            )}
-
-            <div className="space-y-2 border-b border-white/10 pb-6">
-              <p className="text-lg font-semibold">{plan.name}</p>
-              <p className="text-4xl font-bold tracking-tight">
-                {plan.price}
-                <span className="text-lg font-medium text-white/60">{plan.period}</span>
-              </p>
-              <p className="text-sm text-white/50">{plan.tagline}</p>
-            </div>
-
-            <div className="mt-6 space-y-3">
-              <p className="text-sm font-semibold uppercase tracking-wide text-white/40">Includes:</p>
-              <ul className="space-y-2">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-white/80">
-                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 text-[#1fb6ff]">
-                      <CheckCircle2 className="h-4 w-4" />
-                    </span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Button
-              className={`mt-8 h-12 w-full rounded-2xl text-sm font-semibold shadow-lg shadow-[#1fb6ff]/20 transition-all duration-300 ${cyanButton} group-hover:-translate-y-0.5`}
-            >
-              Get Started
-            </Button>
-          </article>
-        ))}
-      </div>
-
-      <div className="mx-auto mt-12 grid w-full max-w-5xl gap-4 rounded-3xl border border-white/40 bg-white/10 p-6 text-white backdrop-blur-sm sm:grid-cols-2">
-        {perks.map((perk) => (
-          <div key={perk} className="flex items-center gap-3 text-sm text-white/80">
-            <BadgeCheck className="h-4 w-4 text-[#1fb6ff]" />
-            {perk}
+      <section className="px-4 pb-16 sm:px-6">
+        <div className="mx-auto max-w-6xl space-y-8">
+          <SectionHeading
+            align="center"
+            eyebrow="Packages"
+            title="Every plan keeps OffersMeta’s polish intact"
+            description="No surprise fees. Pay for the level of coaching and automation you need."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {plans.map((plan) => (
+              <article
+                key={plan.name}
+                className={`flex h-full flex-col rounded-[32px] border px-7 py-8 shadow-sm ${plan.primary ? "border-transparent bg-gradient-to-br from-[#fef2ff] via-white to-[#ecfdf5] shadow-[0_35px_120px_rgba(8,18,68,0.1)]" : "border-[#e4e8ff] bg-white"}`}
+              >
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-[#050b1d]">{plan.name}</p>
+                  <span className="inline-flex items-center gap-1 rounded-full border border-[#d5dcff] px-3 py-1 text-xs font-semibold text-[#4b5877]">
+                    <Sparkles className="h-3 w-3 text-[#f97316]" />
+                    {plan.highlight}
+                  </span>
+                </div>
+                <p className="mt-4 text-3xl font-semibold text-[#050b1d]">
+                  {plan.price}
+                  {plan.period && <span className="text-base font-medium text-[#4b5877]"> {plan.period}</span>}
+                </p>
+                <p className="mt-2 text-sm text-[#4b5877]">{plan.tagline}</p>
+                <ul className="mt-6 space-y-3 text-sm text-[#0f172a]">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f6f8ff] text-[#4f46e5]">
+                        <CheckCircle2 className="h-4 w-4" />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button className={`mt-8 rounded-2xl ${plan.primary ? "bg-gradient-to-r from-[#4f46e5] to-[#ec4899]" : "bg-[#0f172a]"}`}>
+                  {plan.primary ? "Book a design session" : "Select plan"}
+                </Button>
+              </article>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+          <div className="grid gap-4 rounded-[32px] border border-[#e4e8ff] bg-white/90 p-6 text-sm text-[#4b5877] md:grid-cols-2">
+            {["Cancel anytime during the trial", "No setup fees or hidden charges", "Data privacy & uptime SLAs included", "Migration support for existing pages"].map((perk) => (
+              <div key={perk} className="flex items-center gap-3">
+                <BadgeCheck className="h-4 w-4 text-[#4f46e5]" />
+                {perk}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-24 sm:px-6">
+        <div className="mx-auto max-w-4xl rounded-[36px] border border-[#e4e8ff] bg-white/95 p-8 shadow-sm">
+          <SectionHeading
+            align="center"
+            eyebrow="Common questions"
+            title="Billing clarity that feels as polished as the UI"
+          />
+          <div className="mt-8 space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="rounded-[24px] border border-[#edf0ff] bg-[#f8f9ff] px-5 py-4">
+                <summary className="cursor-pointer text-base font-semibold text-[#050b1d]">{faq.q}</summary>
+                <p className="mt-3 text-sm text-[#4b5877]">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    </PageShell>
   )
 }

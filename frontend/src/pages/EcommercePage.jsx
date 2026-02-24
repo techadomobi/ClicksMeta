@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { PageShell } from "@/components/PageShell"
 import {
   ArrowRight,
   BarChart3,
@@ -89,6 +90,7 @@ const Pill = ({ icon: Icon, label }) => (
 const IllustrationCard = ({ variant }) => {
   const accent = variant === "mint" ? "#c1f5db" : variant === "blush" ? "#ffdce8" : "#dfe9ff"
   return (
+    <PageShell tone="dusk">
     <div className="relative flex h-full min-h-[320px] items-center justify-center overflow-hidden rounded-[32px] bg-white shadow-[0_30px_80px_rgba(8,18,68,0.08)]">
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[rgba(255,255,255,0.6)]" />
       <div className="absolute -top-10 -left-6 h-40 w-40 rounded-full" style={{ background: accent, opacity: 0.6 }} />
@@ -97,7 +99,7 @@ const IllustrationCard = ({ variant }) => {
         <div className="rounded-3xl border border-[#f1f1ff] bg-gradient-to-br from-[#f4f7ff] to-white p-6 text-center shadow-inner">
           <div className="text-sm font-semibold uppercase tracking-[0.4em] text-[#9aa4d6]">Flow</div>
           <p className="mt-2 text-3xl font-bold text-[#121b3f]">Live Metrics</p>
-          <p className="text-xs text-[#6d7398]">cart · affiliate · crm</p>
+          <p className="text-xs text-[#6d7398]">cart  affiliate  crm</p>
         </div>
         <div className="grid grid-cols-2 gap-3 text-sm">
           {metrics.map((metric) => (
@@ -110,6 +112,7 @@ const IllustrationCard = ({ variant }) => {
         </div>
       </div>
     </div>
+    </PageShell>
   )
 }
 

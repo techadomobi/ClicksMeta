@@ -1,6 +1,4 @@
-"use client"
-
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import {
   Menu,
@@ -74,15 +72,15 @@ const navItems = [
       { label: "Help Center", href: "/help-center" },
     ],
   },
-      {
-        label: "Why ClicksMeta",
-        type: "list",
-        items: [
-          { label: "Customer Success", href: "/customer-success" },
-          { label: "Security & Compliance", href: "/security-compliance" },
-          { label: "About Us", href: "/about-us" },
-        ],
-      },
+  {
+    label: "Why ClicksMeta",
+    type: "list",
+    items: [
+      { label: "Customer Success", href: "/customer-success" },
+      { label: "Security & Compliance", href: "/security-compliance" },
+      { label: "About Us", href: "/about-us" },
+    ],
+  },
 ]
 
 export function Navbar() {
@@ -91,7 +89,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -102,254 +100,191 @@ export function Navbar() {
   }
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-[#0a1628]/95 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-black/10 py-2"
-        : "bg-transparent py-4"
-        }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="text-xl font-bold text-white tracking-tight">
-            <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto brightness-0 invert" />
-          </span>
-        </Link>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pb-4 pt-4 sm:px-6">
+      <div
+        className={`pointer-events-auto flex w-full max-w-6xl items-center gap-4 rounded-[30px] border border-[#e4e8ff] transition-all duration-500 ${scrolled ? "bg-white/95 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl" : "bg-white/85 shadow-[0_10px_40px_rgba(15,23,42,0.06)] backdrop-blur-lg"}`}
+      >
+        <div className="flex flex-1 items-center gap-3 px-4 py-2">
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="Clicksmeta Logo" className="h-9 w-auto" />
+            <span className="hidden text-base font-semibold tracking-tight text-[#050b1d] sm:inline">ClicksMeta</span>
+          </Link>
 
-        <div className="relative hidden items-center gap-1.5 lg:flex">
-          {navItems.map((item) => {
-            const isMega = item.type === "mega"
-            const isList = item.type === "list"
-            const hasDropdown = isMega || isList
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+            {navItems.map((item) => {
+              const isMega = item.type === "mega"
+              const isList = item.type === "list"
+              const hasDropdown = isMega || isList
 
-            return (
-              <div
-                key={item.label}
-                className={isMega ? "" : "relative"}
-                onMouseEnter={() => hasDropdown && setOpenDropdown(item.label)}
-                onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
-              >
-                {hasDropdown ? (
-                  <button
-                    type="button"
-                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-                  >
-                    {item.label}
-                    <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`} />
-                  </button>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
-                )}
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => hasDropdown && setOpenDropdown(item.label)}
+                  onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
+                >
+                  {hasDropdown ? (
+                    <button
+                      type="button"
+                      className="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold text-[#4b5877] transition hover:bg-[#eef2ff] hover:text-[#050b1d]"
+                    >
+                      {item.label}
+                      <ChevronDown className={`h-3.5 w-3.5 transition ${openDropdown === item.label ? "rotate-180" : ""}`} />
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="rounded-full px-4 py-2 text-sm font-semibold text-[#4b5877] transition hover:bg-[#eef2ff] hover:text-[#050b1d]"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
 
-                {openDropdown === item.label && isMega && (
-                  <div
-                    className="absolute left-1/2 top-full -translate-x-1/2 pt-3 animate-scale-in"
-                    style={{ transformOrigin: "top center" }}
-                  >
-                    <div className="grid min-w-[960px] max-w-[960px] grid-cols-[1.35fr_1.35fr_0.9fr] gap-8 rounded-[42px] border border-[#f0e9da] bg-white px-10 py-8 text-[#0f1a3d] shadow-[0_28px_70px_rgba(5,10,29,0.35)]">
-                      {[0, 1].map((col) => (
-                        <div key={col}>
-                          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#8d91b0]">
-                            {item.sections[col].title}
-                          </p>
-                          <div className="space-y-3">
-                            {item.sections[col].items.map(({ label, icon: Icon, href }) => (
+                  {openDropdown === item.label && isMega && (
+                    <div className="absolute left-1/2 top-[calc(100%+0.5rem)] -translate-x-1/2">
+                      <div className="grid min-w-[940px] grid-cols-[1.25fr_1.25fr_0.9fr] gap-6 rounded-[36px] border border-[#e4e8ff] bg-white p-8 shadow-[0_35px_120px_rgba(8,18,68,0.12)]">
+                        {[0, 1].map((index) => (
+                          <div key={index}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#94a3b8]">{item.sections[index].title}</p>
+                            <div className="mt-4 space-y-3">
+                              {item.sections[index].items.map(({ label, icon: Icon, href }) => (
+                                <Link
+                                  key={label}
+                                  to={href}
+                                  className="flex items-center gap-3 rounded-[26px] border border-transparent bg-[#f6f8ff] px-4 py-3 text-sm font-semibold text-[#0f172a] transition hover:-translate-y-0.5 hover:border-[#dfe5ff]"
+                                  onClick={() => setOpenDropdown(null)}
+                                >
+                                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-[0_10px_25px_rgba(15,23,42,0.08)]">
+                                    <Icon className="h-5 w-5 text-[#3b82f6]" />
+                                  </span>
+                                  {label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                        <div className="rounded-[30px] bg-gradient-to-br from-[#fef9f5] via-[#f5f7ff] to-[#f3fbff] p-5">
+                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#94a3b8]">Spotlight</p>
+                          <div className="mt-4 space-y-4">
+                            {item.spotlight.map(({ label, icon: Icon, href }) => (
                               <Link
                                 key={label}
                                 to={href}
+                                className="flex items-center justify-between rounded-[28px] bg-white px-4 py-4 text-sm font-semibold text-[#0f172a] shadow-[0_18px_60px_rgba(15,23,42,0.12)] transition hover:-translate-y-0.5"
                                 onClick={() => setOpenDropdown(null)}
-                                className="flex items-center gap-4 rounded-[26px] border border-transparent bg-[#f5f6ff] px-4 py-3 text-sm font-semibold text-[#152046] transition hover:-translate-y-0.5 hover:border-[#ebedff]"
                               >
-                                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-inner shadow-white/70">
-                                  <Icon className="h-5 w-5 text-[#0f1a3d]" />
+                                <span className="flex items-center gap-3">
+                                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eef2ff] text-[#6366f1]">
+                                    <Icon className="h-5 w-5" />
+                                  </span>
+                                  {label}
                                 </span>
-                                {label}
+                                <ArrowRight className="h-4 w-4 text-[#94a3b8]" />
                               </Link>
                             ))}
                           </div>
                         </div>
-                      ))}
+                      </div>
+                    </div>
+                  )}
 
-                      <div className="rounded-[36px] bg-gradient-to-b from-[#fefeff] via-[#f5f7ff] to-[#eef3ff] p-5">
-                        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#8d91b0]">Best in Class</p>
-                        <div className="space-y-4">
-                          {item.spotlight.map(({ label, icon: Icon, href }) => (
+                  {openDropdown === item.label && isList && (
+                    <div className="absolute left-1/2 top-[calc(100%+0.5rem)] -translate-x-1/2">
+                      <div className="rounded-3xl border border-[#e4e7ec] bg-white p-4 shadow-[0_25px_100px_rgba(8,18,68,0.12)]">
+                        <div className="grid gap-2">
+                          {item.items.map((link) => (
                             <Link
-                              key={label}
-                              to={href}
+                              key={link.label}
+                              to={link.href}
+                              className="rounded-2xl px-4 py-2 text-sm font-semibold text-[#0f172a] transition hover:bg-[#eef2ff]"
                               onClick={() => setOpenDropdown(null)}
-                              className="flex items-center justify-between rounded-[30px] bg-white px-4 py-4 text-sm font-semibold text-[#101735] shadow-[0_20px_50px_rgba(16,25,66,0.15)] transition hover:-translate-y-0.5"
                             >
-                              <span className="flex items-center gap-3">
-                                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#dfebff] text-[#0f2f88]">
-                                  <Icon className="h-5 w-5" />
-                                </span>
-                                {label}
-                              </span>
-                              <ArrowRight className="h-4.5 w-4.5 text-[#6b76a9]" />
+                              {link.label}
                             </Link>
                           ))}
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
+              )
+            })}
+          </nav>
 
-                {openDropdown === item.label && isList && (
-                  <div className="absolute left-0 top-full pt-3 animate-scale-in" style={{ transformOrigin: "top left" }}>
-                    <div className="min-w-[220px] rounded-2xl border border-white/10 bg-[#0f1f3d]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-2xl">
-                      {item.items.map((child) => (
-                        <Link
-                          key={child.label}
-                          to={child.href}
-                          className="block rounded-xl px-4 py-2.5 text-sm text-white/60 transition-all duration-200 hover:bg-white/5 hover:text-white"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
+          <div className="hidden items-center gap-3 pr-4 lg:flex">
+            <Link to="/login" className="rounded-full px-4 py-2 text-sm font-semibold text-[#4b5877] hover:bg-[#eef2ff] hover:text-[#050b1d]">
+              Log in
+            </Link>
+            <Button asChild className="rounded-full bg-gradient-to-r from-[#4f46e5] via-[#7c3aed] to-[#ec4899] px-5 text-sm font-semibold shadow-lg shadow-[#4f46e5]/25">
+              <Link to="/demorequest">Book a demo</Link>
+            </Button>
+          </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button
-            asChild
-            variant="outline"
-            className="rounded-full border-white/20 bg-white/5 px-6 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+          <button
+            type="button"
+            className="ml-auto flex h-11 w-11 items-center justify-center rounded-2xl border border-[#e4e7ec] text-[#050b1d] lg:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
           >
-            <Link to="/demorequest">Request Demo</Link>
-          </Button>
-          <Button
-            asChild
-            className="rounded-full bg-[#1fb6ff] px-6 text-sm font-semibold text-[#031124] shadow-lg shadow-[#1fb6ff]/30 transition hover:bg-[#17a9ef]"
-          >
-            <Link to="/signup">Get Started</Link>
-          </Button>
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-
-        <button
-          type="button"
-          className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`overflow-hidden transition-all duration-300 lg:hidden ${mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-      >
-        <div className="border-t border-white/5 bg-[#0a1628]/98 px-4 pb-6 pt-2 backdrop-blur-2xl sm:px-6">
-          {navItems.map((item) => {
-            const hasDropdown = item.type === "mega" || item.type === "list"
-            return (
-              <div key={item.label} className="border-b border-white/5 py-3">
-                {hasDropdown ? (
-                  <div>
+      {mobileOpen && (
+        <div className="pointer-events-auto absolute inset-x-4 top-[calc(100%+0.5rem)] rounded-[26px] border border-[#e4e7ec] bg-white p-5 shadow-[0_25px_90px_rgba(8,18,68,0.12)] lg:hidden">
+          <div className="space-y-3">
+            {navItems.map((item) => (
+              <div key={item.label} className="rounded-2xl bg-[#f6f8ff] p-4">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-[#050b1d]">{item.label}</p>
+                  {(item.type === "mega" || item.type === "list") && (
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between text-left text-sm font-medium text-white/80"
-                      onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                      className="rounded-full p-1 text-[#4b5877]"
+                      onClick={() => setOpenDropdown((prev) => (prev === item.label ? null : item.label))}
                     >
-                      {item.label}
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
-                      />
+                      <ChevronDown className={`h-4 w-4 transition ${openDropdown === item.label ? "rotate-180" : ""}`} />
                     </button>
-                    {openDropdown === item.label && (
-                      <div className="mt-3 space-y-4 pl-3">
-                        {item.type === "mega" ? (
-                          <>
-                            {item.sections.map((section) => (
-                              <div key={section.title}>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-white/40">{section.title}</p>
-                                <div className="mt-2 space-y-1.5">
-                                  {section.items.map(({ label, href }) => (
-                                    <Link
-                                      key={label}
-                                      to={href}
-                                      onClick={closeMobile}
-                                      className="block text-sm text-white/60"
-                                    >
-                                      {label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                            <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-white/40">Best in Class</p>
-                              <div className="mt-2 space-y-1.5">
-                                {item.spotlight.map(({ label, href }) => (
-                                  <Link
-                                    key={label}
-                                    to={href}
-                                    onClick={closeMobile}
-                                    className="block text-sm text-white/60"
-                                  >
-                                    {label}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          </>
-                        ) : (
-                          item.items.map((child) => (
-                            <Link
-                              key={child.label}
-                              to={child.href}
-                              onClick={closeMobile}
-                              className="block text-sm text-white/60"
-                            >
-                              {child.label}
-                            </Link>
-                          ))
-                        )}
-                      </div>
+                  )}
+                </div>
+                {item.type === "mega" && openDropdown === item.label && (
+                  <div className="mt-3 space-y-4 text-sm font-medium text-[#4b5877]">
+                    {item.sections.flatMap((section) =>
+                      section.items.map(({ label, href }) => (
+                        <Link key={label} to={href} className="block rounded-xl bg-white px-3 py-2" onClick={closeMobile}>
+                          {label}
+                        </Link>
+                      )),
                     )}
                   </div>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className="text-sm font-medium text-white/80"
-                    onClick={closeMobile}
-                  >
-                    {item.label}
+                )}
+                {item.type === "list" && openDropdown === item.label && (
+                  <div className="mt-3 space-y-2 text-sm font-medium text-[#4b5877]">
+                    {item.items.map(({ label, href }) => (
+                      <Link key={label} to={href} className="block rounded-xl bg-white px-3 py-2" onClick={closeMobile}>
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                {!item.type && (
+                  <Link to={item.href} className="mt-3 inline-flex text-sm font-semibold text-[#4f46e5]" onClick={closeMobile}>
+                    Visit
                   </Link>
                 )}
               </div>
-            )
-          })}
-          <div className="mt-4 flex flex-col gap-3">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full border-white/20 text-white hover:bg-white/10"
-              onClick={closeMobile}
-            >
-              <Link to="/demorequest">Request Demo</Link>
-            </Button>
-            <Button
-              asChild
-              className="rounded-full bg-[#1fb6ff] text-[#031124] hover:bg-[#17a9ef]"
-              onClick={closeMobile}
-            >
-              <Link to="/signup">Get Started</Link>
-            </Button>
+            ))}
+            <div className="grid gap-3 border-t border-[#e4e7ec] pt-4">
+              <Button asChild variant="outline" className="rounded-2xl border-[#d7dbec] text-[#050b1d]" onClick={closeMobile}>
+                <Link to="/login">Log in</Link>
+              </Button>
+              <Button asChild className="rounded-2xl bg-gradient-to-r from-[#4f46e5] to-[#ec4899] text-white" onClick={closeMobile}>
+                <Link to="/demorequest">Book a demo</Link>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </header>
   )
 }

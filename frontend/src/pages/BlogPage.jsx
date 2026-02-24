@@ -4,6 +4,7 @@ import { Search, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { blogPosts } from "../data/blogPosts"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { PageShell } from "@/components/PageShell"
 
 const POSTS_PER_PAGE = 9
 
@@ -86,7 +87,7 @@ export function BlogPage() {
     if (!heroPost) {
       return (
         <div className="rounded-[36px] bg-white/80 p-10 text-center text-[#0d1550] shadow-[0_20px_70px_rgba(4,10,32,0.15)]">
-          <p className="text-lg font-semibold">No articles match “{searchTerm}”.</p>
+          <p className="text-lg font-semibold">No articles match {searchTerm}.</p>
           <p className="mt-2 text-sm text-[#4c5480]">Try searching for a different topic or reset the filter.</p>
         </div>
       )
@@ -101,7 +102,7 @@ export function BlogPage() {
           <div className="flex flex-col justify-center text-[#0c1542]">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#f15b8a]">Featured</p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#08123c]">{heroPost.title}</h2>
-            <p className="mt-2 text-sm font-medium text-[#5f678f]">{heroPost.date} · {heroPost.readingTime}</p>
+            <p className="mt-2 text-sm font-medium text-[#5f678f]">{heroPost.date}  {heroPost.readingTime}</p>
             <p className="mt-5 text-base leading-relaxed text-[#1b244f]">{heroPost.excerpt}</p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-[#44507a]">
               <span className="rounded-full bg-white/80 px-4 py-1 font-semibold">{heroPost.category}</span>
@@ -120,7 +121,8 @@ export function BlogPage() {
   }
 
   return (
-    <div className="bg-[#e8eeff] pb-16 pt-8 text-[#0b1134]">
+    <PageShell tone="dusk">
+    <div className="pb-16 pt-8 text-[#0b1134]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mb-10 border-b border-white/40 pb-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -206,7 +208,7 @@ export function BlogPage() {
                         {item}
                       </button>
                     ) : (
-                      <span key={item} className="px-2 text-sm text-[#7d86b6]">…</span>
+                      <span key={item} className="px-2 text-sm text-[#7d86b6]"></span>
                     ),
                   )}
                   <button
@@ -225,5 +227,6 @@ export function BlogPage() {
         )}
       </div>
     </div>
+    </PageShell>
   )
 }

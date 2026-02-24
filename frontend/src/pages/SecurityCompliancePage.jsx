@@ -1,4 +1,5 @@
 ﻿import { Link } from "react-router-dom"
+import { PageShell } from "@/components/PageShell"
 import { Button } from "@/components/ui/button"
 import {
   ShieldCheck,
@@ -80,6 +81,7 @@ const businessBenefits = [
 
 export function SecurityCompliancePage() {
   return (
+    <PageShell tone="iris">
     <div className="bg-[#f8fbff] text-[#0f1a3d]">
       <section className="bg-[#f3f6ff] px-4 py-24 sm:px-6">
         <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -249,6 +251,7 @@ export function SecurityCompliancePage() {
         </div>
       </section>
     </div>
+    </PageShell>
   )
 }
 

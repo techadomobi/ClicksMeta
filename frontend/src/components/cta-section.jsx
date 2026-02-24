@@ -1,71 +1,43 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { useInView } from "@/hooks/use-in-view"
 import logo from "../assets/clicksmeta-logo.png"
 
 export function CTASection() {
-  const { ref, isInView } = useInView()
+  const { ref, isInView } = useInView(0.2)
 
   return (
-    <section className="py-28 bg-gradient-to-br from-[#0a1628] via-[#0f2847] to-[#0a1628] relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-gradient-to-r from-[#2563eb]/15 to-[#06b6d4]/15 rounded-full blur-[150px] animate-gradient-shift" />
-      </div>
-
+    <section className="px-4 pb-24 pt-12 sm:px-6">
       <div
         ref={ref}
-        className={`relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center transition-all duration-700 ${
-          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`mx-auto max-w-5xl rounded-[40px] border border-[#e4e8ff] bg-gradient-to-br from-[#fef2ff] via-white to-[#ecfdf5] px-8 py-12 text-center shadow-[0_40px_140px_rgba(8,18,68,0.1)] ${isInView ? "opacity-100" : "opacity-0"}`}
       >
-        {/* Updated Logo Section */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-sm">
-          <img
-            src={logo}
-            alt="ClicksMeta Logo"
-            className="h-5 w-auto brightness-0 invert"
-          />
-          <Sparkles className="w-3.5 h-3.5 text-[#06b6d4]" />
-          <span className="text-sm text-white/60 font-medium">
-            Built for performance teams
-          </span>
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-4 py-1 text-xs font-semibold text-[#4b5877]">
+          <img src={logo} alt="ClicksMeta" className="h-5 w-auto" />
+          <Sparkles className="h-3.5 w-3.5 text-[#f97316]" />
+          OffersMeta-ready UI
         </div>
-
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-7 leading-tight">
-          Ready to Scale Your Campaign{" "}
-          <span className="bg-gradient-to-r from-[#2563eb] to-[#06b6d4] bg-clip-text text-transparent">
-            Performance?
-          </span>
+        <h2 className="mt-5 text-3xl font-semibold text-[#050b1d] sm:text-4xl">
+          Ready to deploy the OffersMeta aesthetic on every ClicksMeta page?
         </h2>
-
-        <p className="text-lg lg:text-xl text-white/40 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Join thousands of marketers already using ClicksMeta to track, optimize,
-          and scale their affiliate campaigns.
+        <p className="mt-4 text-base text-[#4b5877]">
+          We&apos;ll audit your current experience, map the gaps, and ship a refreshed UI kit that mirrors the site you linked—hero to footer.
         </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="w-full sm:w-auto bg-gradient-to-r from-[#2563eb] to-[#06b6d4] hover:from-[#1d4ed8] hover:to-[#0891b2] text-white border-0 rounded-full px-10 py-7 text-base font-semibold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Start Free Trial
-            <ArrowRight className="w-4 h-4 ml-2" />
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Button asChild className="rounded-full bg-gradient-to-r from-[#4f46e5] via-[#7c3aed] to-[#ec4899] px-8 text-base font-semibold">
+            <Link to="/demorequest">
+              Book the redesign
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
-
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto border-white/15 text-white hover:bg-white/10 rounded-full px-10 py-7 text-base font-semibold bg-transparent hover:border-white/25 transition-all duration-300"
-          >
-            Book Demo
+          <Button asChild variant="outline" className="rounded-full border-[#b5c2ff] px-8 text-base font-semibold text-[#050b1d]">
+            <Link to="/contact">Talk to design leads</Link>
           </Button>
         </div>
-
-        <p className="mt-8 text-sm text-white/25">
-          No credit card required. 15-day free trial.
-        </p>
+        <p className="mt-5 text-xs text-[#4b5877]">Includes audit, UI kit, and implementation guidance.</p>
       </div>
     </section>
   )
