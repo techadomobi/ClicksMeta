@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, PhoneCall } from "lucide-react"
 import { buildApiUrl } from "@/lib/api-base"
-import { PageShell } from "@/components/PageShell"
-import { PageHero } from "@/components/PageHero"
+import logo from "../assets/clicksmeta-logo.png"
 
 const defaultContactMethods = [
   {
@@ -131,23 +130,33 @@ export function ContactPage() {
   }
 
   return (
-    <PageShell tone="mint">
-      <PageHero
-        eyebrow="Let’s talk"
-        title="Bring OffersMeta-grade polish to every ClicksMeta page"
-        description="Share your existing experience and we’ll map the gradients, proof rails, and CTA stacks you admired."
-        stats={[
-          { label: "Avg. reply time", value: "2h", description: "Studio & Enterprise" },
-          { label: "Pages refreshed", value: "140+", description: "per customer" },
-        ]}
-        primary={{ label: "Book a call", href: "/demorequest" }}
-        secondary={{ label: "See pricing", href: "/pricing" }}
-        tone="mint"
-      />
+    <section className="min-h-screen w-full bg-gradient-to-br from-[#fdfdff] via-[#eef3ff] to-[#d9e6ff] py-16">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 text-[#0d1b3d] sm:px-6 lg:flex-row">
+        <div className="flex-1 space-y-8">
+          <div className="flex items-center gap-4">
+            <img
+              src={logo}
+              alt="ClicksMeta Logo"
+              className="h-10 w-auto"
+            />
+            <span className="inline-flex w-max items-center gap-2 rounded-full border border-[#dfe4ff] bg-white px-5 py-2 text-sm font-semibold text-[#4d5cd8] shadow-[0_10px_30px_rgba(77,92,216,0.15)]">
+              Contact Us
+            </span>
+          </div>
 
-      <section className="pb-24 pt-4">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 text-[#0d1b3d] sm:px-6 lg:flex-row">
-          <div className="flex-1 space-y-4">
+          <div>
+            <p className="text-4xl font-bold leading-tight text-[#142152] sm:text-5xl">
+              Let&apos;s Create Something Amazing Together
+            </p>
+            <p className="mt-4 text-lg text-[#566181]">
+              Ready to transform your ideas into reality? We&apos;re here to help you every step of the way.
+              <a href="mailto:support@clicksmeta.com" className="ml-1 text-[#4d5cd8] underline decoration-dotted">
+                Let&apos;s start the conversation.
+              </a>
+            </p>
+          </div>
+
+          <div className="space-y-4">
             {resolvedContactMethods.map(({ title, description, value, href, icon: Icon, accent }) => (
               <a
                 key={title}
@@ -165,81 +174,82 @@ export function ContactPage() {
               </a>
             ))}
           </div>
-
-          <form
-            onSubmit={handleSubmit}
-            className="flex-1 space-y-5 rounded-[36px] border border-white bg-white/90 p-6 shadow-[0_25px_80px_rgba(34,54,114,0.18)] backdrop-blur-md sm:p-8"
-          >
-            <div>
-              <p className="text-2xl font-semibold text-[#17214a]">Send us a message</p>
-              <p className="mt-2 text-sm text-[#8991b5]">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
-            </div>
-            {infoError && <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{infoError}</p>}
-            <div className="grid gap-5 md:grid-cols-2">
-              <label className="text-sm font-semibold text-[#4d597b]">
-                Full Name *
-                <input
-                  name="name"
-                  placeholder="Enter your full name"
-                  required
-                  minLength={2}
-                  aria-invalid={Boolean(localErrors.name)}
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={inputClasses}
-                />
-                {localErrors.name && <p className="mt-1 text-xs text-red-500">{localErrors.name}</p>}
-              </label>
-              <label className="text-sm font-semibold text-[#4d597b]">
-                Email Address *
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                  aria-invalid={Boolean(localErrors.email)}
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={inputClasses}
-                />
-                {localErrors.email && <p className="mt-1 text-xs text-red-500">{localErrors.email}</p>}
-              </label>
-            </div>
-
-            <label className="text-sm font-semibold text-[#4d597b]">
-              Your Message *
-              <textarea
-                rows={5}
-                name="message"
-                className={textareaClasses}
-                placeholder={contactInfo?.sampleMessage || "Tell us about your project or how we can help you..."}
-                required
-                minLength={10}
-                aria-invalid={Boolean(localErrors.message)}
-                value={formData.message}
-                onChange={handleChange}
-              />
-              {localErrors.message && <p className="mt-1 text-xs text-red-500">{localErrors.message}</p>}
-            </label>
-
-            {status.message && (
-              <p
-                className={`rounded-3xl px-4 py-3 text-sm ${status.type === "success" ? "bg-[#e5fbef] text-[#1a7f43]" : "bg-[#ffe6e6] text-[#b42318]"}`}
-              >
-                {status.message}
-              </p>
-            )}
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="mt-2 h-14 w-full rounded-full bg-gradient-to-r from-[#3956ff] via-[#4d5cd8] to-[#7c4dff] text-base font-semibold text-white shadow-[0_18px_40px_rgba(79,96,255,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </Button>
-          </form>
         </div>
-      </section>
-    </PageShell>
+
+        <form
+          onSubmit={handleSubmit}
+          className="flex-1 space-y-5 rounded-[36px] border border-white bg-white/90 p-6 shadow-[0_25px_80px_rgba(34,54,114,0.18)] backdrop-blur-md sm:p-8"
+        >
+          <div>
+            <p className="text-2xl font-semibold text-[#17214a]">Send us a message</p>
+            <p className="mt-2 text-sm text-[#8991b5]">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
+          </div>
+          {infoError && <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{infoError}</p>}
+          <div className="grid gap-5 md:grid-cols-2">
+            <label className="text-sm font-semibold text-[#4d597b]">
+              Full Name *
+              <input
+                name="name"
+                placeholder="Enter your full name"
+                required
+                minLength={2}
+                aria-invalid={Boolean(localErrors.name)}
+                value={formData.name}
+                onChange={handleChange}
+                className={inputClasses}
+              />
+              {localErrors.name && <p className="mt-1 text-xs text-red-500">{localErrors.name}</p>}
+            </label>
+            <label className="text-sm font-semibold text-[#4d597b]">
+              Email Address *
+              <input
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                aria-invalid={Boolean(localErrors.email)}
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClasses}
+              />
+              {localErrors.email && <p className="mt-1 text-xs text-red-500">{localErrors.email}</p>}
+            </label>
+          </div>
+
+          <label className="text-sm font-semibold text-[#4d597b]">
+            Your Message *
+            <textarea
+              rows={5}
+              name="message"
+              className={textareaClasses}
+              placeholder={contactInfo?.sampleMessage || "Tell us about your project or how we can help you..."}
+              required
+              minLength={10}
+              aria-invalid={Boolean(localErrors.message)}
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {localErrors.message && <p className="mt-1 text-xs text-red-500">{localErrors.message}</p>}
+          </label>
+
+          {status.message && (
+            <p
+              className={`rounded-3xl px-4 py-3 text-sm ${status.type === "success" ? "bg-[#e5fbef] text-[#1a7f43]" : "bg-[#ffe6e6] text-[#b42318]"
+                }`}
+            >
+              {status.message}
+            </p>
+          )}
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-2 h-14 w-full rounded-full bg-gradient-to-r from-[#3956ff] via-[#4d5cd8] to-[#7c4dff] text-base font-semibold text-white shadow-[0_18px_40px_rgba(79,96,255,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </Button>
+        </form>
+      </div>
+    </section>
   )
 }

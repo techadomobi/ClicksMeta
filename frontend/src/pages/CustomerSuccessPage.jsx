@@ -1,5 +1,4 @@
 ﻿import { Link } from "react-router-dom"
-import { PageShell } from "@/components/PageShell"
 import { Button } from "@/components/ui/button"
 import { Sparkles, HeartHandshake, Users, Leaf, Globe, Megaphone } from "lucide-react"
 
@@ -66,7 +65,6 @@ const initiativeSections = [
 
 export function CustomerSuccessPage() {
   return (
-    <PageShell tone="mint">
     <div className="bg-[#f4f6fb] text-[#0f1a3d]">
       <section className="px-4 py-20 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -231,7 +229,6 @@ export function CustomerSuccessPage() {
         </div>
       </section>
     </div>
-    </PageShell>
   )
 }
 

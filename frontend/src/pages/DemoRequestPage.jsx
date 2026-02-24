@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { PageShell } from "@/components/PageShell"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ShieldCheck, Users, Zap, Globe2 } from "lucide-react"
 import { buildApiUrl } from "@/lib/api-base"
@@ -144,7 +143,6 @@ export function DemoRequestPage() {
   }
 
   return (
-    <PageShell tone="mint">
     <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 text-white sm:px-6">
       <div className="mb-10 text-center space-y-4">
         <div className="flex justify-center">
@@ -356,6 +354,5 @@ export function DemoRequestPage() {
         </form>
       </div>
     </section>
-    </PageShell>
   )
 }

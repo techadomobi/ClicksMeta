@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { Gift, GraduationCap, Heart, Home, MessageSquareQuote, Sparkles, Users } from "lucide-react"
-import { PageShell } from "@/components/PageShell"
 
 const benefits = [
     {
@@ -61,8 +60,7 @@ const cultureHighlights = [
 
 export function CareerPage() {
     return (
-        <PageShell tone="iris">
-        <div className="text-[#111322]">
+        <div className="bg-white text-[#111322]">
             {/* Hero */}
             <section className="relative overflow-hidden bg-[#fdeef6]">
                 <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 py-24 lg:flex-row">
@@ -238,6 +236,5 @@ export function CareerPage() {
                 </div>
             </section>
         </div>
-        </PageShell>
     )
 }

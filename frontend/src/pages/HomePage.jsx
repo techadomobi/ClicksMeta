@@ -6,7 +6,6 @@ import { FeaturesTabs } from "@/components/Features-tabs"
 import { DashboardPreview } from "@/components/DashboardPreview"
 import { Testimonials } from "@/components/Testimonials"
 import { Pricing } from "@/components/Pricing"
-import { CTASection } from "@/components/cta-section"
 
 export function HomePage() {
   const location = useLocation()
@@ -30,7 +29,6 @@ export function HomePage() {
       <DashboardPreview />
       <Testimonials />
       <Pricing />
-      <CTASection />
     </div>
   )
 }

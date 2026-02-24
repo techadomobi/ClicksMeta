@@ -1,8 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, BarChart3, CheckCircle2, CreditCard, LineChart, Shield, Zap } from "lucide-react"
-import { SectionHeading } from "./SectionHeading"
+import {
+  BarChart3,
+  LineChart,
+  CreditCard,
+  Zap,
+  Shield,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react"
 import { useInView } from "@/hooks/use-in-view"
 
 const tabs = [
@@ -11,133 +18,178 @@ const tabs = [
     icon: BarChart3,
     label: "Campaign Management",
     description:
-      "Drag-and-drop campaign builders, premium hero templates, and instant device previews—matching the polish of OffersMeta rollouts.",
+      "Effortlessly manage, analyze, and optimize your campaigns in a centralized platform. Quickly create and launch campaigns with pre-built templates and customizable options.",
     features: [
-      { title: "Campaign wizards", desc: "Spin up OffersMeta-like hero blocks with aligned typography.", pct: "+92%" },
-      { title: "Allowed traffic channels", desc: "Lock media rules with one toggle per creative." },
-      { title: "Bulk targeting", desc: "Update tens of offers with mirrored content blocks." },
+      { title: "Campaign Wizards", desc: "Streamline campaign setup with easy-to-use wizards and pre-built templates.", pct: 92 },
+      { title: "Allowed Traffic Channels", desc: "Control traffic sources, ensuring targeted reach at minimal spend.", pct: 85 },
+      { title: "Bulk Targeting", desc: "Apply changes to multiple campaigns simultaneously, saving time and resources.", pct: 78 },
     ],
-    accent: "#4f46e5",
   },
   {
     id: "analytics",
     icon: LineChart,
     label: "Marketing Analytics",
-    description: "Observe how every scroll depth and CTA replicates OffersMeta's conversion blueprint across pages.",
+    description:
+      "Get real-time insights to assess partner performance, evaluate traffic quality, and adjust investments for maximum returns. Define specific KPIs and analyze historical data.",
     features: [
-      { title: "Realtime tracking", desc: "Blend commerce & affiliate data with scroll telemetry.", pct: "+95%" },
-      { title: "Flexible reporting", desc: "Share Looker-ready decks for stakeholders." },
-      { title: "QR & coupon tracking", desc: "Match offline activations with digital journeys." },
+      { title: "Real-Time Tracking", desc: "Create tailored dashboards with key parameters such as segments, location, device.", pct: 95 },
+      { title: "Flexible Reporting", desc: "Customizable reports such as cohort analysis, global goal tracking, and CAP.", pct: 88 },
+      { title: "QR & Coupon Tracking", desc: "Generate unique coupons and smart link powered QR codes for secure campaigns.", pct: 72 },
     ],
-    accent: "#0ea5e9",
   },
   {
     id: "payout",
     icon: CreditCard,
     label: "Automated Payout",
-    description: "Mirror OfferMeta's transparent commission panels while finance gets one-click reconciliations.",
+    description:
+      "Streamline your payout process with automated invoicing. Set up custom payout rules, seamlessly integrate with payment providers, and incentivize desired behaviors.",
     features: [
-      { title: "Cost ETL", desc: "See burn-down by hero, decor, and CTA." },
-      { title: "Scaling payouts", desc: "Auto-escalate partners after defined scroll %." },
-      { title: "Delegated processing", desc: "Compliance ready invoices with brand-safe skins." },
+      { title: "Cost ETL", desc: "Identify touchpoints that drain maximum resources and tweak them for better outcomes.", pct: 90 },
+      { title: "Scaling Payouts", desc: "Incentivize publisher campaigns with customized payout models that reward top performers.", pct: 82 },
+      { title: "Delegated Processing", desc: "Ensure compliance with tax regulations, mitigate delays and delegate payments seamlessly.", pct: 76 },
     ],
-    accent: "#f97316",
   },
   {
     id: "automation",
     icon: Zap,
     label: "Easy Automation",
-    description: "Trigger creative swaps, variant tests, and modals when a visitor mirrors OffersMeta behaviors.",
+    description:
+      "Streamline your marketing operations with seamless integrations that connect all your essential tools in one place. Optimize traffic distribution with intelligent link management.",
     features: [
-      { title: "Automated workflows", desc: "If hero view + CTA hover, fire tailored follow-ups.", pct: "+94%" },
-      { title: "Smart links & deep links", desc: "Keep the same aesthetic across every funnel." },
-      { title: "Offer checker tools", desc: "Validate variant parity before publishing." },
+      { title: "Automated Workflows", desc: "Create complex workflows for targeted automation and schedule actions for optimal delivery.", pct: 94 },
+      { title: "Smart Links & Deep Links", desc: "Create dynamic links that personalize user experience and drive enhanced engagement.", pct: 87 },
+      { title: "Offer Checker Tools", desc: "Ensure campaigns run smoothly with tools that validate offers and test links for performance.", pct: 80 },
     ],
-    accent: "#22c55e",
   },
   {
     id: "fraud",
     icon: Shield,
     label: "Fraud Detection",
-    description: "OffersMeta finish with ClicksMeta level guardrails—spot anomalies before humans notice.",
+    description:
+      "End-to-end protection across your marketing funnel with cutting-edge anti-fraud tools. AI-powered algorithms detect and prevent click fraud, geo-fraud, and invalid traffic.",
     features: [
-      { title: "Protect your budget", desc: "Block suspicious scroll signatures instantly.", pct: "+96%" },
-      { title: "Validate traffic", desc: "Layer device, geo, and creative fingerprinting." },
-      { title: "Industry-grade shield", desc: "Share compliance snapshots with legal." },
+      { title: "Protect Your Budget", desc: "Detect and filter out invalid clicks, bot traffic, and fraudulent sources in real-time.", pct: 96 },
+      { title: "Validate Your Traffic", desc: "Set up multiple fraud rules customized for each campaign and partner.", pct: 89 },
+      { title: "Industry Leading Protection", desc: "State-of-the-art fraud detection technology trusted by top brands worldwide.", pct: 93 },
     ],
-    accent: "#ec4899",
   },
 ]
 
 export function FeaturesTabs() {
-  const [activeTab, setActiveTab] = useState(tabs[0].id)
-  const current = tabs.find((tab) => tab.id === activeTab) ?? tabs[0]
-  const { ref, isInView } = useInView(0.15)
+  const [activeTab, setActiveTab] = useState("campaign")
+  const current = tabs.find((t) => t.id === activeTab) ?? tabs[0]
+  const { ref, isInView } = useInView()
 
   return (
-    <section className="px-4 py-16 sm:px-6" id="features">
-      <div ref={ref} className="mx-auto max-w-6xl space-y-10">
-        <div className={`transition-all duration-700 ${isInView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
-          <SectionHeading
-            align="center"
-            eyebrow="Product suite"
-            title="Recreate the OffersMeta buying journey with modular ClicksMeta blocks"
-            description="Toggle between suites to see how each capability keeps every page cinematic, trusted, and conversion-ready."
-          />
+    <section className="py-28 bg-gradient-to-b from-[#050b16] via-[#050b16] to-[#020617] relative" id="features">
+      <div ref={ref} className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className={`text-center mb-16 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b1b33] text-[#6ea8ff] text-sm font-medium mb-5 border border-white/10">
+            Product Suite
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-balance leading-tight">
+            Elevate Partnerships,{" "}
+            <span className="bg-gradient-to-r from-[#2563eb] to-[#06b6d4] bg-clip-text text-transparent">
+              Amplify Performance
+            </span>
+          </h2>
         </div>
 
-        <div className={`grid gap-3 lg:grid-cols-5 ${isInView ? "opacity-100" : "opacity-0"}`}>
+        {/* Tab buttons (click to switch, responsive layout) */}
+        <div className={`flex flex-wrap justify-center gap-3 mb-14 transition-all duration-700 delay-100 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id)}
-              className={`rounded-[28px] border px-4 py-4 text-left transition hover:-translate-y-1 ${
-                activeTab === tab.id ? "border-transparent bg-gradient-to-br from-white via-white to-[#f6f8ff] shadow-[0_20px_60px_rgba(8,18,68,0.12)]" : "border-[#e4e8ff] bg-white"
+              onMouseEnter={() => setActiveTab(tab.id)}
+              onFocus={() => setActiveTab(tab.id)}
+              aria-pressed={activeTab === tab.id}
+              className={`flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer w-full sm:w-auto sm:min-w-[200px] ${
+                activeTab === tab.id
+                  ? "bg-gradient-to-r from-[#2563eb] to-[#06b6d4] text-white shadow-lg shadow-blue-500/20 scale-105 ring-2 ring-offset-2 ring-offset-[#020617] ring-[#2563eb]"
+                  : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/20 hover:shadow-md hover:-translate-y-0.5"
               }`}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl" style={{ background: `${tab.accent}14`, color: tab.accent }}>
-                <tab.icon className="h-5 w-5" />
-              </span>
-              <p className="mt-3 text-sm font-semibold text-[#0f172a]">{tab.label}</p>
-              <p className="text-xs text-[#4b5877]">{tab.description.substring(0, 56)}...</p>
+              <tab.icon className="w-4 h-4" />
+              <span className="truncate">{tab.label}</span>
             </button>
           ))}
         </div>
 
-        <div className="rounded-[36px] border border-[#e4e8ff] bg-white p-8 shadow-[0_35px_120px_rgba(8,18,68,0.08)]">
-          <div className="flex flex-col gap-6 lg:flex-row">
-            <div className="flex-1">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#f6f8ff] px-4 py-1 text-xs font-semibold text-[#4b5877]">
-                <span className="h-2 w-2 rounded-full" style={{ background: current.accent }} />
-                {current.label}
-              </div>
-              <p className="mt-4 text-2xl font-semibold text-[#050b1d]">{current.description}</p>
-              <div className="mt-5 space-y-4">
-                {current.features.map((feature) => (
-                  <div key={feature.title} className="rounded-[24px] border border-[#edf0ff] bg-[#f8f9ff] px-4 py-3">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold text-[#0f172a]">{feature.title}</p>
-                      {feature.pct && <span className="text-xs font-semibold text-[#4f46e5]">{feature.pct}</span>}
+        {/* Tab content */}
+        <div className={`grid lg:grid-cols-2 gap-10 xl:gap-14 items-start transition-all duration-700 delay-200 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div key={activeTab} className="animate-fade-in-up w-full flex justify-center lg:justify-start">
+            <div className="w-full max-w-xl">
+              <h3 className="text-2xl font-bold text-white mb-4">{current.label}</h3>
+              <p className="text-white/50 text-lg leading-relaxed mb-10">{current.description}</p>
+              <div className="flex flex-col gap-7">
+                {current.features.map((f) => (
+                  <div key={f.title} className="flex gap-4 group">
+                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#2563eb] to-[#06b6d4] flex items-center justify-center mt-0.5 shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                      <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-sm text-[#4b5877]">{feature.desc}</p>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-white mb-1.5">{f.title}</h4>
+                      <p className="text-sm text-white/45 leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-              <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#4f46e5]">
-                Explore playbooks
-                <ArrowRight className="h-4 w-4" />
-              </button>
+
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 mt-8 px-6 py-3 rounded-full bg-[#0a1628] text-white text-sm font-medium hover:bg-[#0a1628]/90 transition-colors group w-full sm:w-auto"
+              >
+                Explore {current.label}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
-            <div className="flex-1 rounded-[30px] border border-[#e4e8ff] bg-gradient-to-br from-[#f6f8ff] via-white to-[#fef4ff] p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#94a3b8]">What this unlocks</p>
-              <div className="mt-5 space-y-4">
-                <Highlight label="Hero parity" value="1:1" description="Match OffersMeta typography + layout tokens." />
-                <Highlight label="Launch velocity" value="12 days" description="Average time to ship full experience." />
-                <Highlight label="Conversion lift" value="+37%" description="After updating every page." />
-              </div>
-              <div className="mt-6 rounded-[24px] border border-dashed border-[#d7dbec] bg-white/80 px-4 py-3 text-sm text-[#4b5877]">
-                Each feature tile is purpose-built to replicate OffersMeta&apos;s airy gradients, layered cards, and confident typography.
+          </div>
+
+          {/* Visual preview card */}
+          <div key={`preview-${activeTab}`} className="animate-slide-in-right w-full flex justify-center lg:justify-end">
+            <div className="bg-gradient-to-br from-[#0a1628] to-[#0f2847] rounded-2xl p-5 sm:p-8 shadow-2xl shadow-[#0a1628]/20 border border-white/5 relative overflow-hidden w-full max-w-xl">
+              {/* Subtle glow */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#2563eb]/10 rounded-full blur-3xl" />
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-8">
+                  <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-400/80" />
+                  <span className="ml-auto text-[11px] text-white/20 font-mono">{current.label}</span>
+                </div>
+
+                <div className="flex flex-col gap-5">
+                  {current.features.map((f, i) => (
+                    <div key={f.title} className="flex items-center gap-4 bg-white/[0.04] rounded-xl p-5 border border-white/5 hover:bg-white/[0.07] hover:border-white/10 transition-all duration-300 group">
+                      <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${
+                        i === 0 ? "from-blue-500 to-cyan-400" : i === 1 ? "from-cyan-400 to-teal-500" : "from-teal-500 to-emerald-400"
+                      } flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
+                        <current.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-2.5">
+                          <p className="text-white text-sm font-medium truncate">{f.title}</p>
+                          <span className="text-[11px] text-[#06b6d4] font-semibold">{f.pct}%</span>
+                        </div>
+                        <div className="h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-[#2563eb] to-[#06b6d4] rounded-full transition-all duration-1000 ease-out"
+                            style={{ width: `${f.pct}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Summary stat */}
+                <div className="mt-6 flex items-center justify-between bg-gradient-to-r from-[#2563eb]/10 to-[#06b6d4]/10 rounded-xl p-4 border border-white/5">
+                  <span className="text-sm text-white/50">Overall Score</span>
+                  <span className="text-lg font-bold text-white">{Math.round(current.features.reduce((sum, f) => sum + f.pct, 0) / current.features.length)}%</span>
+                </div>
               </div>
             </div>
           </div>
@@ -147,15 +199,3 @@ export function FeaturesTabs() {
   )
 }
 
-function Highlight({ label, value, description }) {
-  return (
-    <div className="rounded-[24px] border border-[#e4e8ff] bg-white px-4 py-3">
-      <p className="text-xs uppercase tracking-[0.3em] text-[#94a3b8]">{label}</p>
-      <p className="text-2xl font-semibold text-[#050b1d]">{value}</p>
-      <p className="text-sm text-[#4b5877]">{description}</p>
-      <div className="mt-3 h-2 rounded-full bg-[#eef2ff]">
-        <div className="h-2 rounded-full bg-gradient-to-r from-[#4f46e5] to-[#38bdf8]"></div>
-      </div>
-    </div>
-  )
-}

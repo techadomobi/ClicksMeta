@@ -230,7 +230,7 @@ export function FooterInfoPage() {
   const quickLinks = buildQuickLinks(cta)
 
   return (
-    <div className="bg-gradient-to-b from-[#f4f7ff] via-white to-[#fef3ff] text-[#050b1d]">
+    <div className="bg-[#010818] text-white">
       {renderHero({ content, theme, heroStats, heroPoints, cta })}
       {renderSignalRail(bodyStats, theme)}
       {renderQuickLinks(quickLinks, theme)}
@@ -277,28 +277,49 @@ function renderModules(sequence = [], context) {
 function renderHero({ content, theme, heroStats, heroPoints, cta }) {
   const { hero, category } = content
   return (
-    <section className="px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-6xl rounded-[40px] border border-[#e4e8ff] bg-white/95 px-8 py-12 shadow-[0_45px_140px_rgba(8,18,68,0.08)]">
-        <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#8b94c5]">
-          <Link to="/" className="hover:text-[#050b1d]">
+    <section className={`relative overflow-hidden border-b border-white/5 bg-gradient-to-br ${theme.heroGradient}`}>
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-x-0 top-[-140px] mx-auto h-64 w-[520px] rounded-full blur-[150px]"
+          style={{ background: `${theme.glow}44` }}
+        />
+        <div
+          className="absolute bottom-[-180px] right-[-120px] h-72 w-72 rounded-full blur-[120px]"
+          style={{ background: `${theme.accent}33` }}
+        />
+        <div
+          className="absolute left-[-160px] top-16 hidden h-60 w-60 rounded-full blur-[130px] sm:block"
+          style={{ background: `${theme.accent}22` }}
+        />
+      </div>
+      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+        <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+          <Link to="/" className="hover:text-white">
             Home
           </Link>
           <span>/</span>
           <span>{category}</span>
           <span>/</span>
-          <span className="text-[#050b1d]">{hero?.title || content.title}</span>
+          <span className="text-white/80">{hero?.title || content.title}</span>
         </nav>
         <div className="mt-10 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
-              <p className="section-tag bg-[#eef2ff] text-xs text-[#4f46e5]">{hero?.eyebrow || category}</p>
-              <h1 className="mt-5 text-4xl font-semibold leading-tight text-[#050b1d] md:text-5xl">{hero?.title || content.title}</h1>
-              <p className="mt-4 text-lg text-[#4b5877]">{hero?.description}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
+                {hero?.eyebrow || category}
+              </p>
+              <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
+                {hero?.title || content.title}
+              </h1>
+              <p className="mt-5 text-lg text-white/75 md:text-xl">{hero?.description}</p>
             </div>
             {heroPoints.length > 0 && (
               <div className="flex flex-wrap gap-3">
                 {heroPoints.map((point) => (
-                  <span key={point} className="rounded-full border border-[#e4e8ff] bg-[#f8f9ff] px-4 py-1.5 text-xs font-semibold text-[#4b5877]">
+                  <span
+                    key={point}
+                    className="rounded-full border border-white/10 bg-black/20 px-4 py-1.5 text-xs font-semibold text-white/70"
+                  >
                     {point}
                   </span>
                 ))}
@@ -306,7 +327,10 @@ function renderHero({ content, theme, heroStats, heroPoints, cta }) {
             )}
             <div className="flex flex-wrap gap-4">
               {cta.primary && (
-                <Button asChild className="rounded-full bg-gradient-to-r from-[#4f46e5] via-[#7c3aed] to-[#ec4899] px-6 text-sm font-semibold shadow-[0_20px_60px_rgba(79,70,229,0.3)]">
+                <Button
+                  asChild
+                  className="rounded-full bg-white px-6 text-sm font-semibold text-[#050a1a] shadow-lg shadow-black/20 hover:bg-white/90"
+                >
                   <Link to={cta.primary.href}>
                     {cta.primary.label}
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -314,23 +338,27 @@ function renderHero({ content, theme, heroStats, heroPoints, cta }) {
                 </Button>
               )}
               {cta.secondary && (
-                <Button asChild variant="outline" className="rounded-full border-[#d4dafb] px-6 text-sm font-semibold text-[#050b1d]">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full border-white/40 bg-transparent text-sm text-white hover:bg-white/10"
+                >
                   <Link to={cta.secondary.href}>{cta.secondary.label}</Link>
                 </Button>
               )}
             </div>
           </div>
-          <div className="rounded-[32px] border border-[#e4e8ff] bg-[#f8f9ff] p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8b94c5]">Key signals</p>
+          <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Key signals</p>
             <div className="mt-5 grid gap-4">
               {heroStats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-[#edf0ff] bg-white px-4 py-4">
-                  <p className="text-3xl font-semibold text-[#050b1d]">{stat.value}</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-[#8b94c5]">{stat.label}</p>
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4">
+                  <p className="text-3xl font-semibold text-white">{stat.value}</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/50">{stat.label}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-4 rounded-2xl border border-dashed border-[#d7dbec] bg-white px-4 py-4 text-sm text-[#4b5877]">
+            <div className="mt-4 rounded-2xl border border-white/10 bg-black/20 px-4 py-4 text-sm text-white/70">
               Inspired by Trackier&apos;s glassy hero panels yet written for ClicksMeta&apos;s voice.
             </div>
           </div>
@@ -343,14 +371,14 @@ function renderHero({ content, theme, heroStats, heroPoints, cta }) {
 function renderSignalRail(items = [], theme) {
   if (!items.length) return null
   return (
-    <section className="border-b border-[#e4e8ff] bg-white/60">
+    <section className="border-b border-white/5 bg-gradient-to-r from-white/5 via-transparent to-white/5">
       <div className="mx-auto flex max-w-6xl gap-4 overflow-x-auto px-4 py-6 sm:px-6">
         {items.map((stat) => (
           <div
             key={stat.label}
-            className="min-w-[220px] rounded-3xl border border-[#e4e8ff] bg-white px-5 py-4 text-[#4b5877] shadow-[0_15px_45px_rgba(8,18,68,0.08)]"
+            className="min-w-[220px] rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-white/80 shadow-[0_15px_45px_rgba(3,10,35,0.35)]"
           >
-            <p className="text-2xl font-semibold text-[#050b1d]">{stat.value}</p>
+            <p className="text-2xl font-semibold text-white">{stat.value}</p>
             <p className="text-xs uppercase tracking-[0.3em]" style={{ color: theme.accent }}>
               {stat.label}
             </p>
@@ -393,20 +421,20 @@ function buildQuickLinks(cta) {
 function renderQuickLinks(links = [], theme) {
   if (!links.length) return null
   return (
-    <section className="border-b border-[#e4e8ff] bg-white/80">
-      <div className="mx-auto grid max-w-6xl gap-4 px-4 py-10 text-sm text-[#4b5877] sm:px-6 lg:grid-cols-3">
+    <section className="border-b border-white/5 bg-[#030c22]">
+      <div className="mx-auto grid max-w-6xl gap-4 px-4 py-10 text-sm text-white/70 sm:px-6 lg:grid-cols-3">
         {links.map((link) => (
           <Link
             key={link.href}
             to={link.href}
-            className="rounded-[28px] border border-[#e4e8ff] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#d7dbec]"
+            className="rounded-[28px] border border-white/5 bg-white/5 p-5 transition hover:border-white/20 hover:bg-white/10"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: theme.accent }}>
               Quick link
             </p>
-            <p className="mt-3 text-lg font-semibold text-[#050b1d]">{link.label}</p>
-            <p className="mt-2 text-sm text-[#4b5877]">{link.description}</p>
-            <span className="mt-4 inline-flex items-center text-xs font-semibold text-[#4f46e5]">
+            <p className="mt-3 text-lg font-semibold text-white">{link.label}</p>
+            <p className="mt-2 text-sm text-white/70">{link.description}</p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-white/70">
               Explore
               <ArrowRight className="ml-2 h-4 w-4" />
             </span>
@@ -422,14 +450,14 @@ function renderStatGrid(items = [], theme, label) {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8b94c5]">{label}</p>
-        <span className="text-xs text-[#8b94c5]">Live benchmarks</span>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">{label}</p>
+        <span className="text-xs text-white/50">Live benchmarks</span>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {items.map((stat) => (
-          <div key={stat.label} className="rounded-3xl border border-[#e4e8ff] bg-white px-5 py-6">
-            <p className="text-3xl font-semibold text-[#050b1d]">{stat.value}</p>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#8b94c5]">{stat.label}</p>
+          <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-6">
+            <p className="text-3xl font-semibold text-white">{stat.value}</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-white/50">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -443,12 +471,12 @@ function renderFeaturePanels(panels = [], theme) {
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <div className="grid gap-4 lg:grid-cols-3">
         {panels.map((panel) => (
-          <article key={panel.title} className="rounded-[32px] border border-[#e4e8ff] bg-white p-6">
+          <article key={panel.title} className="rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10/50 via-transparent to-transparent p-6">
             <span className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: theme.accent }}>
               {panel.badge}
             </span>
-            <h3 className="mt-3 text-xl font-semibold text-[#050b1d]">{panel.title}</h3>
-            <p className="mt-3 text-sm text-[#4b5877]">{panel.description}</p>
+            <h3 className="mt-3 text-xl font-semibold">{panel.title}</h3>
+            <p className="mt-3 text-sm text-white/70">{panel.description}</p>
           </article>
         ))}
       </div>
@@ -461,19 +489,19 @@ function renderHighlights(highlights = [], theme) {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <div className="mb-6 flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8b94c5]">Why operators care</p>
-        <span className="text-xs text-[#8b94c5]">Modeled after Trackier layouts</span>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">Why operators care</p>
+        <span className="text-xs text-white/50">Modeled after Trackier layouts</span>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {highlights.map((item, index) => {
           const Icon = highlightIcons[index % highlightIcons.length]
           return (
-            <div key={item.title} className="rounded-3xl border border-[#e4e8ff] bg-white p-5">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#eef2ff] text-[#4f46e5]">
+            <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
                 <Icon className="h-5 w-5" />
               </div>
-              <h4 className="text-base font-semibold text-[#050b1d]">{item.title}</h4>
-              <p className="mt-2 text-sm text-[#4b5877]">{item.description}</p>
+              <h4 className="text-base font-semibold text-white">{item.title}</h4>
+              <p className="mt-2 text-sm text-white/70">{item.description}</p>
             </div>
           )
         })}
@@ -787,13 +815,13 @@ function renderCultureMoments(moments = []) {
 function renderCta(cta) {
   return (
     <section className="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
-      <div className="rounded-[32px] border border-[#e4e8ff] bg-gradient-to-r from-[#fef2ff] via-white to-[#ecfdf5] px-8 py-10 text-[#050b1d] shadow-[0_30px_90px_rgba(8,18,68,0.08)]">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#8b94c5]">Next step</p>
+      <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-[#1fb6ff] to-[#6366f1] px-8 py-10 text-white">
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/80">Next step</p>
         <h3 className="mt-4 text-2xl font-semibold">{cta.title}</h3>
-        <p className="mt-3 text-[#4b5877]">{cta.description}</p>
+        <p className="mt-3 text-white/80">{cta.description}</p>
         <div className="mt-6 flex flex-wrap gap-4">
           {cta.primary && (
-            <Button asChild className="rounded-full bg-gradient-to-r from-[#4f46e5] via-[#7c3aed] to-[#ec4899] px-6 text-sm font-semibold text-white">
+            <Button asChild className="rounded-full bg-white px-6 text-sm font-semibold text-[#0f172a] hover:bg-white">
               <Link to={cta.primary.href}>{cta.primary.label}</Link>
             </Button>
           )}
@@ -801,7 +829,7 @@ function renderCta(cta) {
             <Button
               asChild
               variant="outline"
-              className="rounded-full border-[#d4dafb] bg-white/80 text-sm text-[#050b1d] hover:bg-white"
+              className="rounded-full border-white/70 bg-transparent text-sm text-white hover:bg-white/10"
             >
               <Link to={cta.secondary.href}>{cta.secondary.label}</Link>
             </Button>

@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { PageShell } from "@/components/PageShell"
 import { Link } from "react-router-dom"
 import logo from "../assets/clicksmeta-logo.png"
 
@@ -8,7 +7,6 @@ const inputClasses =
 
 export function LoginPage() {
   return (
-    <PageShell tone="iris">
     <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-white sm:px-6 lg:pb-24">
       <div className="space-y-3 text-center">
         <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
@@ -69,6 +67,5 @@ export function LoginPage() {
         </p>
       </form>
     </section>
-    </PageShell>
   )
 }

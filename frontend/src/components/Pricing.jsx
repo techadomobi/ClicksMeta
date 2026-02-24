@@ -3,85 +3,171 @@
 import { Check, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useInView } from "@/hooks/use-in-view"
-import { SectionHeading } from "./SectionHeading"
+
+const cyanButton =
+  "bg-gradient-to-r from-[#1fb6ff] to-[#36d1ff] text-[#02121f] hover:from-[#17a9ef] hover:to-[#2fc9fa] shadow-[#1fb6ff]/30"
 
 const plans = [
   {
-    name: "Launch",
+    name: "Free Trial",
     price: "Free",
-    period: "for 15 days",
-    description: "Preview OffersMeta-inspired UI on every core page.",
-    badge: "Start here",
-    features: ["All builder modules", "Hero + proof templates", "Live preview links"],
+    period: "15 Days",
+    description: "Full access. No credit card required.",
+    features: [
+      "All core features unlocked",
+      "Real-time analytics",
+      "Unlimited campaigns",
+      "Upgrade anytime",
+    ],
+    cta: "Start Free Trial",
+    popular: false,
+    gradient: false,
   },
   {
-    name: "Studio",
+    name: "Starter Plan",
+    price: "$49",
+    period: "/ month",
+    description: "For small teams getting started.",
+    features: [
+      "Complex Tracking",
+      "4 Seats Included",
+      "Priority Processing",
+      "Email Support",
+    ],
+    cta: "Get Started",
+    popular: false,
+    gradient: false,
+  },
+  {
+    name: "Professional Plan",
     price: "$149",
-    period: "/month",
-    description: "For teams refreshing multiple industry pages in parallel.",
-    badge: "Most loved",
-    highlight: true,
-    features: ["Unlimited variants", "Snapshots & approvals", "Automation triggers", "Priority support"],
+    period: "/ month",
+    description: "For growing marketing teams.",
+    features: [
+      "Everything in Starter",
+      "Unlimited Seats",
+      "Advanced Analytics",
+      "API Access",
+      "Priority Support",
+    ],
+    cta: "Get Started",
+    popular: true,
+    gradient: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "annual",
-    description: "White-glove rollouts, security reviews, and migration help.",
-    badge: "Talk to us",
-    features: ["Dedicated partner pod", "Compliance reviews", "Custom integrations", "24/5 coverage"],
+    name: "Enterprise Plan",
+    price: "$249",
+    period: "/ month",
+    description: "For large organizations.",
+    features: [
+      "Everything in Professional",
+      "Dedicated Account Manager",
+      "Custom Integrations",
+      "SLA Guarantee",
+    ],
+    cta: "Get Started",
+    popular: false,
+    gradient: false,
   },
 ]
 
 export function Pricing() {
-  const { ref, isInView } = useInView(0.15)
+  const { ref, isInView } = useInView()
 
   return (
-    <section className="px-4 pb-24 pt-16 sm:px-6" id="pricing">
-      <div ref={ref} className="mx-auto max-w-6xl space-y-10">
-        <div className={`transition-all duration-700 ${isInView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
-          <SectionHeading
-            align="center"
-            eyebrow="Pricing"
-            title="Invest once, ship OffersMeta polish everywhere"
-            description="Flexible plans for startups, studios, and enterprises. All include access to the experience lab and pastel-perfect component library."
-          />
+    <section className="pt-16 pb-24 lg:pt-20 lg:pb-28 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] relative overflow-hidden" id="pricing">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2563eb]/[0.15] rounded-full blur-[160px]" />
+
+      <div ref={ref} className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+        <div className={`text-center mb-20 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b1b33] text-[#6ea8ff] text-sm font-medium mb-5 border border-white/10">
+            Pricing Plans
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-balance leading-tight">
+            Simple, transparent{" "}
+            <span className="bg-gradient-to-r from-[#2563eb] to-[#06b6d4] bg-clip-text text-transparent">
+              pricing
+            </span>
+          </h2>
+          <p className="mt-5 text-white/40 text-lg max-w-xl mx-auto">
+            Start free, upgrade when you{"'"}re ready. No hidden charges.
+          </p>
         </div>
 
-        <div className={`grid gap-6 lg:grid-cols-3 ${isInView ? "opacity-100" : "opacity-0"}`}>
-          {plans.map((plan) => (
-            <article
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {plans.map((plan, i) => (
+            <div
               key={plan.name}
-              className={`flex h-full flex-col rounded-[32px] border px-7 py-8 shadow-sm ${plan.highlight ? "border-transparent bg-gradient-to-br from-[#fef2ff] via-white to-[#ecfdf5] shadow-[0_35px_120px_rgba(8,18,68,0.1)]" : "border-[#e4e8ff] bg-white"}`}
+              className={`card-glow relative flex h-full flex-col rounded-2xl p-7 transition-all duration-700 ${
+                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              } ${
+                plan.gradient
+                  ? "border border-white/10 bg-gradient-to-br from-[#0a1628] to-[#0f2847] text-white shadow-2xl shadow-blue-500/15 ring-1 ring-[#1fb6ff]/30"
+                  : "border border-white/5 bg-[#050b16] text-white shadow-md shadow-black/40 hover:border-white/15 hover:shadow-xl"
+              }`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-[#050b1d]">{plan.name}</p>
-                <span className="inline-flex items-center gap-1 rounded-full border border-[#d5dcff] px-3 py-1 text-xs font-semibold text-[#4b5877]">
-                  {plan.highlight && <Sparkles className="h-3 w-3 text-[#f97316]" />}
-                  {plan.badge}
+              {plan.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#2563eb] to-[#06b6d4] text-white text-xs font-semibold shadow-lg shadow-blue-500/30 flex items-center gap-1.5">
+                    <Sparkles className="w-3 h-3" />
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+              <h3 className={`text-lg font-semibold mb-2 ${plan.gradient ? "text-white" : "text-white"}`}>
+                {plan.name}
+              </h3>
+
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className={`text-4xl font-bold ${plan.gradient ? "text-white" : "text-white"}`}>
+                  {plan.price}
                 </span>
+                {plan.period !== "15 Days" && (
+                  <span className={`text-sm ${plan.gradient ? "text-white/40" : "text-white/40"}`}>
+                    {plan.period}
+                  </span>
+                )}
               </div>
-              <p className="mt-4 text-3xl font-semibold text-[#050b1d]">
-                {plan.price} <span className="text-base font-medium text-[#4b5877]">{plan.period}</span>
+
+              {plan.period === "15 Days" && (
+                <span className={`text-sm mb-4 ${plan.gradient ? "text-white/40" : "text-white/40"}`}>
+                  {plan.period}
+                </span>
+              )}
+
+              <p className={`text-sm mb-8 ${plan.gradient ? "text-white/40" : "text-white/40"}`}>
+                {plan.description}
               </p>
-              <p className="mt-2 text-sm text-[#4b5877]">{plan.description}</p>
-              <ul className="mt-6 space-y-3 text-sm text-[#0f172a]">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f6f8ff] text-[#4f46e5]">
-                      <Check className="h-4 w-4" />
-                    </span>
-                    {feature}
+
+              <ul className="flex flex-col gap-3.5 mb-8 flex-1">
+                {plan.features.map((f) => (
+                  <li key={f} className="flex items-center gap-3">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      plan.gradient ? "bg-[#06b6d4]/15" : "bg-[#2563eb]/8"
+                    }`}>
+                      <Check className={`w-3 h-3 ${plan.gradient ? "text-[#06b6d4]" : "text-[#6ea8ff]"}`} />
+                    </div>
+                    <span className={`text-sm ${plan.gradient ? "text-white/60" : "text-white/60"}`}>{f}</span>
                   </li>
                 ))}
               </ul>
-              <Button className={`mt-8 rounded-2xl ${plan.highlight ? "bg-gradient-to-r from-[#4f46e5] to-[#ec4899] text-white" : "bg-[#0f172a] text-white"}`}>
-                {plan.highlight ? "Book a design session" : "Start now"}
+
+              <Button
+                className={`w-full rounded-full py-5 font-semibold transition-all duration-300 ${
+                  plan.gradient
+                    ? `${cyanButton} border-0 shadow-lg`
+                    : "bg-[#0a1628] text-white hover:bg-[#0a1628]/90 border-0 hover:shadow-lg"
+                }`}
+              >
+                {plan.cta}
               </Button>
-            </article>
+            </div>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
