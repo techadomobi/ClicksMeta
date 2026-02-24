@@ -21,7 +21,7 @@ export function CTASection() {
         }`}
       >
         {/* Updated Logo Section */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-sm">
+         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-sm">
           <img
             src={logo}
             alt="ClicksMeta Logo"

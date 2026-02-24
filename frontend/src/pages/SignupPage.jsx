@@ -9,7 +9,7 @@ export function SignupPage() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-4 pb-16 pt-6 text-white sm:px-6 lg:pb-24 lg:pt-10">
       <header className="space-y-3 text-center">
-        <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
+         <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
           <img
             src={logo}
             alt="ClicksMeta Logo"
