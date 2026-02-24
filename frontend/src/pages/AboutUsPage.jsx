@@ -182,7 +182,7 @@ export function AboutUsPage() {
             <span className="inline-flex items-center rounded-full bg-[#f1fff2] px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[#0ead69]">
               OffersMeta energy
             </span>
-            <h2 className="mt-6 text-4xl font-semibold text-[#022c3b]">ClicksMeta DSP</h2>
+            <h2 className="mt-6 text-4xl font-semibold text-[#022c3b]">ClicksMeta</h2>
             <p className="mt-4 text-[#0f3050]/80">
               We empower brands and apps to grow smarter—not harder. Our all-in-one platform simplifies ad creation, optimization,
               and partner payouts with transparent analytics. Backed by AI copilots and revenue strategists, every impression is
@@ -232,20 +232,6 @@ export function AboutUsPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-6xl rounded-[48px] border border-white/70 bg-white px-8 py-12 shadow-[0_40px_80px_rgba(3,25,45,0.08)]">
-          <h3 className="text-center text-2xl font-semibold text-[#022c3b]">Our Partners: Operators & OEMs</h3>
-          <p className="mt-2 text-center text-sm text-[#0f3050]/70">
-            Collaborating with industry leaders to connect you to a global audience.
-          </p>
-          <div className="mt-8 grid gap-4 text-center text-sm font-semibold text-[#022c3b] sm:grid-cols-2 lg:grid-cols-5">
-            {partnerLogos.map((brand) => (
-              <div key={brand} className="rounded-3xl border border-[#e2e8f0] bg-[#f8fbff] px-4 py-6">{brand}</div>
-            ))}
           </div>
         </div>
       </section>
