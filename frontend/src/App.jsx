@@ -14,6 +14,7 @@ import { EcommercePage } from "./pages/EcommercePage"
 import { CustomerSuccessPage } from "./pages/CustomerSuccessPage"
 import { SecurityCompliancePage } from "./pages/SecurityCompliancePage"
 import { AboutUsPage } from "./pages/AboutUsPage"
+import { ExclusiveOfferPage } from "./pages/ExclusiveOfferPage"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/exclusive-offer" element={<ExclusiveOfferPage />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/demorequest" element={<DemoRequestPage />} />

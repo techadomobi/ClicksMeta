@@ -1,4 +1,5 @@
-import { BadgeCheck, CheckCircle2, Sparkles } from "lucide-react"
+import { BadgeCheck, CheckCircle2, Sparkles, Star } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 
 const plans = [
@@ -55,6 +56,24 @@ const plans = [
     ],
     badgeColor: "from-[#0f172a] to-[#020617]",
   },
+  {
+    name: "Exclusive Offer",
+    price: "$3,252",
+    oldPrice: "$3,900",
+    msrp: "$4,500",
+    period: "/year",
+    tagline: "₹3,00,000 annual plan • elite access",
+    features: [
+      "Unlimited campaigns + priority routing",
+      "Dedicated solutions architect",
+      "Custom SLA + quarterly strategy review",
+      "Premium API & data exports",
+      "White-glove onboarding",
+    ],
+    highlight: "Limited Access",
+    badgeColor: "from-[#111827] to-[#0f172a]",
+    cta: { label: "View Details", href: "/exclusive-offer" },
+  },
 ]
 
 const perks = [
@@ -89,24 +108,37 @@ export function PricingPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid w-full max-w-6xl gap-6 px-4 md:grid-cols-3 md:px-6">
+      <div className="mx-auto mt-12 grid w-full max-w-6xl gap-6 px-4 md:grid-cols-2 lg:grid-cols-4 md:px-6">
         {plans.map((plan) => (
           <article
             key={plan.name}
-            className="group relative rounded-[32px] border border-white/70 bg-gradient-to-b from-[#050f23] to-[#020617] p-7 text-white shadow-2xl shadow-[#010309]/50 transition-all duration-300 hover:-translate-y-2 hover:border-[#1fb6ff] hover:shadow-[#1fb6ff]/30"
+            className="group relative flex h-full flex-col rounded-[32px] border border-white/70 bg-gradient-to-b from-[#050f23] to-[#020617] p-7 text-white shadow-2xl shadow-[#010309]/50 transition-all duration-300 hover:-translate-y-2 hover:border-[#1fb6ff] hover:shadow-[#1fb6ff]/30"
           >
             {plan.highlight && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#ffb347] px-4 py-1 text-xs font-semibold text-[#1d1405] shadow-lg">
-                {plan.highlight}
+                <span className="inline-flex items-center gap-1">
+                  {plan.name === "Exclusive Offer" && <Star className="h-3 w-3" />}
+                  {plan.highlight}
+                </span>
               </div>
             )}
 
             <div className="space-y-2 border-b border-white/10 pb-6">
               <p className="text-lg font-semibold">{plan.name}</p>
-              <p className="text-4xl font-bold tracking-tight">
-                {plan.price}
-                <span className="text-lg font-medium text-white/60">{plan.period}</span>
-              </p>
+              <div className="space-y-1">
+                {plan.msrp && (
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35 line-through">
+                    {plan.msrp}
+                  </p>
+                )}
+                {plan.oldPrice && (
+                  <p className="text-sm font-semibold text-white/40 line-through">{plan.oldPrice}</p>
+                )}
+                <p className="text-4xl font-bold tracking-tight">
+                  {plan.price}
+                  <span className="text-lg font-medium text-white/60">{plan.period}</span>
+                </p>
+              </div>
               <p className="text-sm text-white/50">{plan.tagline}</p>
             </div>
 
@@ -125,9 +157,10 @@ export function PricingPage() {
             </div>
 
             <Button
-              className={`mt-8 h-12 w-full rounded-2xl text-sm font-semibold shadow-lg shadow-[#1fb6ff]/20 transition-all duration-300 ${cyanButton} group-hover:-translate-y-0.5`}
+              asChild={Boolean(plan.cta?.href)}
+              className={`h-12 w-full rounded-2xl text-sm font-semibold shadow-lg shadow-[#1fb6ff]/20 transition-all duration-300 ${cyanButton} group-hover:-translate-y-0.5 mt-auto`}
             >
-              Get Started
+              {plan.cta?.href ? <Link to={plan.cta.href}>{plan.cta.label}</Link> : "Get Started"}
             </Button>
           </article>
         ))}
