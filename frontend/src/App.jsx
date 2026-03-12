@@ -15,6 +15,7 @@ import { CustomerSuccessPage } from "./pages/CustomerSuccessPage"
 import { SecurityCompliancePage } from "./pages/SecurityCompliancePage"
 import { AboutUsPage } from "./pages/AboutUsPage"
 import { ExclusiveOfferPage } from "./pages/ExclusiveOfferPage"
+import { StarterPlanPage } from "./pages/StarterPlanPage"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/exclusive-offer" element={<ExclusiveOfferPage />} />
+          <Route path="/starter-plan" element={<StarterPlanPage />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/demorequest" element={<DemoRequestPage />} />

@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button"
 const plans = [
   {
     name: "Starter",
-    price: "$49",
-    period: "/mo",
+    price: "Free",
+    period: "",
+    oldPrice: "$49/mo",
+    promoNote: "for 12 months",
     tagline: "Best suited for early stage business",
     features: [
-      "5,00,000 Clicks",
+      "3,00,000 Clicks",
       "Unlimited Conversions",
       "Unlimited Campaigns",
       "Smart Reports",
@@ -56,24 +58,6 @@ const plans = [
     ],
     badgeColor: "from-[#0f172a] to-[#020617]",
   },
-  {
-    name: "Exclusive Offer",
-    price: "$3,252",
-    oldPrice: "$3,900",
-    msrp: "$4,500",
-    period: "/year",
-    tagline: "₹3,00,000 annual plan • elite access",
-    features: [
-      "Unlimited campaigns + priority routing",
-      "Dedicated solutions architect",
-      "Custom SLA + quarterly strategy review",
-      "Premium API & data exports",
-      "White-glove onboarding",
-    ],
-    highlight: "Limited Access",
-    badgeColor: "from-[#111827] to-[#0f172a]",
-    cta: { label: "View Details", href: "/exclusive-offer" },
-  },
 ]
 
 const perks = [
@@ -108,7 +92,17 @@ export function PricingPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid w-full max-w-6xl gap-6 px-4 md:grid-cols-2 lg:grid-cols-4 md:px-6">
+      <div className="mx-auto mt-10 w-full max-w-6xl px-4 md:px-6">
+        <div className="inline-flex items-start gap-4 rounded-3xl border border-[#ffd6d6] bg-[#fff5f5] px-5 py-4 text-left text-[#8b1d1d] shadow-[0_18px_40px_rgba(168,43,43,0.15)]">
+          <div className="h-3 w-3 rounded-full bg-[#e11d48] mt-2" />
+          <div>
+            <p className="text-lg font-semibold">12 Months Free Plans</p>
+            <p className="text-sm font-medium">Limited offers in 30 days only</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-6 grid w-full max-w-6xl gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-6">
         {plans.map((plan) => (
           <article
             key={plan.name}
@@ -126,18 +120,19 @@ export function PricingPage() {
             <div className="space-y-2 border-b border-white/10 pb-6">
               <p className="text-lg font-semibold">{plan.name}</p>
               <div className="space-y-1">
+                {plan.oldPrice && (
+                  <p className="text-sm font-semibold text-white/40 line-through">{plan.oldPrice}</p>
+                )}
                 {plan.msrp && (
                   <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35 line-through">
                     {plan.msrp}
                   </p>
                 )}
-                {plan.oldPrice && (
-                  <p className="text-sm font-semibold text-white/40 line-through">{plan.oldPrice}</p>
-                )}
                 <p className="text-4xl font-bold tracking-tight">
                   {plan.price}
                   <span className="text-lg font-medium text-white/60">{plan.period}</span>
                 </p>
+                {plan.promoNote && <p className="text-xs uppercase tracking-[0.3em] text-white/50">{plan.promoNote}</p>}
               </div>
               <p className="text-sm text-white/50">{plan.tagline}</p>
             </div>

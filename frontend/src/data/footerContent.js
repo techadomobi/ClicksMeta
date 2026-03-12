@@ -818,6 +818,11 @@ export const footerPageContent = {
       description:
         "Auto-generated schemas, try-it consoles, and SDK tabs make integrations fast for any developer persona.",
     },
+    highlights: [
+      { title: "Instant auth setup", description: "Rotate API keys, map scopes, and validate tokens in minutes." },
+      { title: "Live examples", description: "Copy request/response samples across REST and webhook payloads." },
+      { title: "Guaranteed uptime", description: "Dedicated enterprise routing and SLAs for mission-critical traffic." },
+    ],
     sections: [
       {
         title: "Reliable schemas",
@@ -828,6 +833,26 @@ export const footerPageContent = {
         title: "Test-friendly",
         description:
           "Inline environment switching lets teams move between sandbox and production instantly.",
+      },
+      {
+        title: "Authentication and roles",
+        description:
+          "Scope-based tokens, role permissions, and audit logs keep partner data protected while enabling fast automation.",
+      },
+      {
+        title: "Webhooks and event streams",
+        description:
+          "Push conversion and payout events to your stack with retry policies, signatures, and delivery insights.",
+      },
+      {
+        title: "Rate limits and reliability",
+        description:
+          "Transparent rate thresholds, backoff guidance, and priority routing keep integrations stable under load.",
+      },
+      {
+        title: "SDKs and quick starts",
+        description:
+          "Language-specific SDKs and code snippets let teams ship integrations faster without boilerplate.",
       },
     ],
   },

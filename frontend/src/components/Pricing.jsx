@@ -1,6 +1,7 @@
 "use client"
 
 import { Check, Sparkles } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useInView } from "@/hooks/use-in-view"
 
@@ -25,16 +26,19 @@ const plans = [
   },
   {
     name: "Starter Plan",
-    price: "$49",
-    period: "/ month",
+    price: "Free",
+    period: "",
+    oldPrice: "$49 / month",
+    promoNote: "for 12 months",
     description: "For small teams getting started.",
     features: [
       "Complex Tracking",
-      "4 Seats Included",
+      "3,00,000 Clicks",
       "Priority Processing",
       "Email Support",
     ],
     cta: "Get Started",
+    ctaLink: "/starter-plan",
     popular: false,
     gradient: false,
   },
@@ -115,11 +119,18 @@ export function Pricing() {
                   </span>
                 </div>
               )}
-
               <h3 className={`text-lg font-semibold mb-2 ${plan.gradient ? "text-white" : "text-white"}`}>
                 {plan.name}
               </h3>
 
+              {plan.msrp && (
+                <p className="text-[0.65rem] uppercase tracking-[0.25em] text-white/30 line-through mb-1">
+                  {plan.msrp}
+                </p>
+              )}
+              {plan.oldPrice && (
+                <p className="text-xs text-white/40 line-through mb-1">{plan.oldPrice}</p>
+              )}
               <div className="flex items-baseline gap-1 mb-1">
                 <span className={`text-4xl font-bold ${plan.gradient ? "text-white" : "text-white"}`}>
                   {plan.price}
@@ -130,6 +141,10 @@ export function Pricing() {
                   </span>
                 )}
               </div>
+
+              {plan.promoNote && (
+                <p className="text-[0.65rem] uppercase tracking-[0.25em] text-white/50 mb-4">{plan.promoNote}</p>
+              )}
 
               {plan.period === "15 Days" && (
                 <span className={`text-sm mb-4 ${plan.gradient ? "text-white/40" : "text-white/40"}`}>
@@ -155,13 +170,14 @@ export function Pricing() {
               </ul>
 
               <Button
+                asChild={Boolean(plan.ctaLink)}
                 className={`w-full rounded-full py-5 font-semibold transition-all duration-300 ${
                   plan.gradient
                     ? `${cyanButton} border-0 shadow-lg`
                     : "bg-[#0a1628] text-white hover:bg-[#0a1628]/90 border-0 hover:shadow-lg"
                 }`}
               >
-                {plan.cta}
+                {plan.ctaLink ? <Link to={plan.ctaLink}>{plan.cta}</Link> : plan.cta}
               </Button>
             </div>
           ))}
@@ -170,4 +186,5 @@ export function Pricing() {
     </section>
   )
 }
+
 
