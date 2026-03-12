@@ -21,6 +21,7 @@ const plans = [
       "Link Testing Tool",
     ],
     badgeColor: "from-[#0f172a] to-[#020617]",
+    cta: { label: "Get Started", href: "/starter-plan" },
   },
   {
     name: "Professional",
