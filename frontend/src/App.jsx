@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom"
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion"
 import { Navbar } from "./components/Navbar"
 import { Footer } from "./components/Footer"
 import { HomePage } from "./pages/HomePage"
@@ -18,9 +19,29 @@ import { ExclusiveOfferPage } from "./pages/ExclusiveOfferPage"
 import { StarterPlanPage } from "./pages/StarterPlanPage"
 
 function App() {
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll()
+  const progressScale = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 26,
+    mass: 0.25,
+  })
+
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] text-white">
-      <Navbar />
+    <div className="site-light min-h-screen w-full overflow-x-hidden text-slate-900">
+      <div className="site-light-bg" aria-hidden="true" />
+      <motion.div
+        className="scroll-progress"
+        aria-hidden="true"
+        style={{ scaleX: progressScale }}
+      />
+      <motion.div
+        initial={reduceMotion ? false : { opacity: 0, y: -14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: reduceMotion ? 0.01 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Navbar />
+      </motion.div>
 
       <main className="pt-20 md:pt-24">
         <Routes>
@@ -42,7 +63,14 @@ function App() {
         </Routes>
       </main>
 
-      <Footer />
+      <motion.div
+        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+        whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ amount: 0.25, once: true }}
+        transition={{ duration: reduceMotion ? 0.01 : 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Footer />
+      </motion.div>
     </div>
   )
 }

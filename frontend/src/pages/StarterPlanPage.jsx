@@ -87,20 +87,20 @@ const faqs = [
 
 export function StarterPlanPage() {
   return (
-    <section className="min-h-screen w-full bg-gradient-to-b from-[#050917] via-[#0a1226] to-[#020617] py-16 text-white">
+    <section className="min-h-screen w-full bg-gradient-to-b from-[#f8fbff] via-[#f0f7ff] to-[#eef4ff] py-16 text-[#0f1b3d]">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0b1732] via-[#0a1328] to-[#050a19] p-8 shadow-2xl shadow-black/30 md:p-12">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#9fd4ff]">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              <Rocket className="h-4 w-4" />
+        <div className="rounded-[36px] border border-[#1fb6ff]/20 bg-gradient-to-br from-[#f0f7ff] via-[#e6f0ff] to-[#d9e6ff] p-8 shadow-2xl shadow-[#1fb6ff]/20 md:p-12">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#1fb6ff]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#1fb6ff]/30 bg-[#f0f7ff] px-4 py-2">
+              <Rocket className="h-4 w-4 text-[#1fb6ff]" />
               Starter Plan
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              <ShieldCheck className="h-4 w-4" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#1fb6ff]/30 bg-[#f0f7ff] px-4 py-2">
+              <ShieldCheck className="h-4 w-4 text-[#1fb6ff]" />
               Growth Ready
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              <Sparkles className="h-4 w-4" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#1fb6ff]/30 bg-[#f0f7ff] px-4 py-2">
+              <Sparkles className="h-4 w-4 text-[#1fb6ff]" />
               12 Months Free
             </span>
           </div>
@@ -110,12 +110,12 @@ export function StarterPlanPage() {
               <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
                 Launch faster with a Starter plan built for early-stage teams.
               </h1>
-              <p className="text-lg text-white/70">
+              <p className="text-lg text-[#0f1b3d]/70">
                 Everything you need to ship campaigns, track conversions, and build a reliable growth engine.
               </p>
               <div className="grid gap-4 md:grid-cols-3">
                 {highlights.map((item) => (
-                  <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-white/75">
+                  <div key={item} className="rounded-3xl border border-[#1fb6ff]/20 bg-[#f0f7ff] p-4 text-sm text-[#0f1b3d]/75">
                     {item}
                   </div>
                 ))}
@@ -125,14 +125,14 @@ export function StarterPlanPage() {
                   { label: "Go-live speed", value: "7 days", icon: Clock3 },
                   { label: "Included clicks", value: "3,00,000", icon: Zap },
                 ].map(({ label, value, icon: Icon }) => (
-                  <div key={label} className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                  <div key={label} className="rounded-3xl border border-[#1fb6ff]/20 bg-[#f0f7ff] p-4">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10">
-                        <Icon className="h-5 w-5 text-[#7dd3fc]" />
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#e6f0ff]">
+                        <Icon className="h-5 w-5 text-[#1fb6ff]" />
                       </span>
                       <div>
-                        <p className="text-xs uppercase tracking-[0.35em] text-white/50">{label}</p>
-                        <p className="text-lg font-semibold text-white">{value}</p>
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#0f1b3d]/50">{label}</p>
+                        <p className="text-lg font-semibold text-[#0f1b3d]">{value}</p>
                       </div>
                     </div>
                   </div>
@@ -152,24 +152,24 @@ export function StarterPlanPage() {
               </div>
             </div>
 
-            <div className="rounded-[32px] border border-white/10 bg-[#050c1f] p-6 shadow-[0_25px_80px_rgba(5,12,31,0.6)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Starter pricing</p>
-              <p className="mt-4 text-sm font-semibold text-white/40 line-through">$49 / month</p>
-              <p className="mt-2 text-4xl font-semibold text-white">Free</p>
-              <p className="mt-1 text-sm text-white/60">for 12 months • billed $0</p>
+            <div className="rounded-[32px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-6 shadow-[0_25px_80px_rgba(31,182,255,0.2)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0f1b3d]/60">Starter pricing</p>
+              <p className="mt-4 text-sm font-semibold text-[#0f1b3d]/40 line-through">$49 / month</p>
+              <p className="mt-2 text-4xl font-semibold text-[#0f1b3d]">Free</p>
+              <p className="mt-1 text-sm text-[#0f1b3d]/60">for 12 months • billed $0</p>
               <div className="mt-6 space-y-3">
                 {features.map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-sm text-white/75">
-                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 text-[#7dd3fc]">
+                  <div key={item} className="flex items-start gap-3 text-sm text-[#0f1b3d]/75">
+                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#e6f0ff] text-[#1fb6ff]">
                       <BadgeCheck className="h-4 w-4" />
                     </span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-white/60">
+              <div className="mt-6 rounded-2xl border border-[#1fb6ff]/20 bg-[#e6f0ff] p-4 text-xs text-[#0f1b3d]/60">
                 <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-[#7dd3fc]" />
+                  <Zap className="h-4 w-4 text-[#1fb6ff]" />
                   <span>Upgrade to Professional anytime without losing data.</span>
                 </div>
               </div>
@@ -181,84 +181,84 @@ export function StarterPlanPage() {
           {advantageCards.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="rounded-[32px] border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6"
+              className="rounded-[32px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-6"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
-                <Icon className="h-6 w-6 text-[#7dd3fc]" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e6f0ff]">
+                <Icon className="h-6 w-6 text-[#1fb6ff]" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-3 text-sm text-white/70">{description}</p>
+              <h3 className="mt-4 text-xl font-semibold text-[#0f1b3d]">{title}</h3>
+              <p className="mt-3 text-sm text-[#0f1b3d]/70">{description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 rounded-[36px] border border-white/10 bg-[#050c1f] p-8">
+        <div className="mt-12 rounded-[36px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-8">
           <div className="flex items-center justify-between gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">Launch timeline</p>
-            <span className="text-xs text-white/50">First-week acceleration</span>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0f1b3d]/50">Launch timeline</p>
+            <span className="text-xs text-[#0f1b3d]/50">First-week acceleration</span>
           </div>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {timeline.map((item, index) => (
-              <div key={item.step} className="relative rounded-3xl border border-white/10 bg-white/5 p-5">
+              <div key={item.step} className="relative rounded-3xl border border-[#1fb6ff]/20 bg-[#e6f0ff] p-5">
                 <span className="absolute -top-3 left-5 rounded-full bg-[#1fb6ff] px-3 py-1 text-xs font-semibold text-[#04152b]">
                   {index + 1}
                 </span>
-                <p className="text-sm font-semibold text-white">{item.title}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/50">{item.step}</p>
-                <p className="mt-3 text-sm text-white/70">{item.detail}</p>
+                <p className="text-sm font-semibold text-[#0f1b3d]">{item.title}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-[#0f1b3d]/50">{item.step}</p>
+                <p className="mt-3 text-sm text-[#0f1b3d]/70">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">Outcomes</p>
-            <h3 className="mt-3 text-2xl font-semibold text-white">Starter advantages that show up in week one</h3>
+          <div className="rounded-[32px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0f1b3d]/50">Outcomes</p>
+            <h3 className="mt-3 text-2xl font-semibold text-[#0f1b3d]">Starter advantages that show up in week one</h3>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {[
                 { label: "Setup time", value: "< 1 day" },
                 { label: "Click capacity", value: "3,00,000" },
                 { label: "Support SLA", value: "Priority email" },
               ].map((stat) => (
-                <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-                  <p className="text-2xl font-semibold text-white">{stat.value}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/50">{stat.label}</p>
+                <div key={stat.label} className="rounded-3xl border border-[#1fb6ff]/20 bg-[#e6f0ff] p-5 text-center">
+                  <p className="text-2xl font-semibold text-[#0f1b3d]">{stat.value}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.3em] text-[#0f1b3d]/50">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-[32px] border border-white/10 bg-[#050c1f] p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">Customer note</p>
-            <p className="mt-4 text-lg text-white/80">
+          <div className="rounded-[32px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0f1b3d]/50">Customer note</p>
+            <p className="mt-4 text-lg text-[#0f1b3d]/80">
               “We went from spreadsheet chaos to real-time tracking in under a week. The Starter plan was the perfect
               launchpad for our first campaigns.”
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
-                <Star className="h-5 w-5 text-[#7dd3fc]" />
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e6f0ff]">
+                <Star className="h-5 w-5 text-[#1fb6ff]" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-white">Growth Lead, DTC Brand</p>
-                <p className="text-xs text-white/50">Starter customer</p>
+                <p className="text-sm font-semibold text-[#0f1b3d]">Growth Lead, DTC Brand</p>
+                <p className="text-xs text-[#0f1b3d]/50">Starter customer</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0b1732] via-[#0a1328] to-[#050a19] p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">FAQ</p>
+        <div className="mt-12 rounded-[36px] border border-[#1fb6ff]/20 bg-[#f0f7ff] p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#0f1b3d]/50">FAQ</p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                <p className="text-sm font-semibold text-white">{faq.q}</p>
-                <p className="mt-3 text-sm text-white/70">{faq.a}</p>
+              <div key={faq.q} className="rounded-3xl border border-[#1fb6ff]/20 bg-[#e6f0ff] p-5">
+                <p className="text-sm font-semibold text-[#0f1b3d]">{faq.q}</p>
+                <p className="mt-3 text-sm text-[#0f1b3d]/70">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 rounded-[36px] border border-white/10 bg-gradient-to-r from-[#1fb6ff] to-[#6366f1] p-10 text-white">
+        <div className="mt-12 rounded-[36px] border border-[#1fb6ff]/20 bg-gradient-to-r from-[#1fb6ff] to-[#6366f1] p-10 text-white">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">Ready to launch?</p>
           <div className="mt-4 flex flex-wrap items-center justify-between gap-6">
             <div>

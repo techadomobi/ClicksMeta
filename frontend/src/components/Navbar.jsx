@@ -131,7 +131,7 @@ export function Navbar() {
                 {hasDropdown ? (
                   <button
                     type="button"
-                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-[#0f1b3d]/80 transition-colors hover:bg-[#e6f0ff] hover:text-[#0f1b3d]"
                   >
                     {item.label}
                     <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`} />
@@ -139,7 +139,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     to={item.href}
-                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                    className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-[#0f1b3d]/80 transition-colors hover:bg-[#e6f0ff] hover:text-[#0f1b3d]"
                   >
                     {item.label}
                   </Link>
@@ -223,7 +223,7 @@ export function Navbar() {
           <Button
             asChild
             variant="outline"
-            className="rounded-full border-white/20 bg-white/5 px-6 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+            className="rounded-full border-[#1fb6ff]/30 bg-[#f0f7ff] px-6 text-sm font-medium text-[#0f1b3d]/80 hover:bg-[#e6f0ff] hover:text-[#0f1b3d]"
           >
             <Link to="/demorequest">Request Demo</Link>
           </Button>
@@ -250,7 +250,7 @@ export function Navbar() {
         className={`overflow-hidden transition-all duration-300 lg:hidden ${mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
       >
-        <div className="border-t border-white/5 bg-[#0a1628]/98 px-4 pb-6 pt-2 backdrop-blur-2xl sm:px-6">
+      <div className="border-t border-[#1fb6ff]/20 bg-[#f8fbff] px-4 pb-6 pt-2 backdrop-blur-2xl sm:px-6">
           {navItems.map((item) => {
             const hasDropdown = item.type === "mega" || item.type === "list"
             return (

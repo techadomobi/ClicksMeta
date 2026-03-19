@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 import logo from "../assets/clicksmeta-logo.png"
 
 const inputClasses =
-  "mt-2 h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#1fb6ff]"
+  "mt-2 h-14 w-full rounded-2xl border border-[#1fb6ff]/20 bg-[#e6f0ff] px-4 text-[#0f1b3d] placeholder:text-[#0f1b3d]/40 focus:outline-none focus:ring-2 focus:ring-[#1fb6ff]"
 
 export function SignupPage() {
   return (
-    <section className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-4 pb-16 pt-6 text-white sm:px-6 lg:pb-24 lg:pt-10">
+    <section className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-4 pb-16 pt-6 text-[#0f1b3d] sm:px-6 lg:pb-24 lg:pt-10">
       <header className="space-y-3 text-center">
-         <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
+         <div className="flex justify-center items-center gap-3 text-xl font-bold text-[#0f1b3d] tracking-tight">
           <img
             src={logo}
             alt="ClicksMeta Logo"
@@ -18,35 +18,35 @@ export function SignupPage() {
 
         </div>
 
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#a5b4fc]">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1fb6ff]">
           Start today
         </p>
         <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Create your account</h1>
-        <p className="text-base text-white/60 md:text-lg">
+        <p className="text-base text-[#0f1b3d]/60 md:text-lg">
           Start tracking, optimizing and scaling your campaigns
         </p>
       </header>
 
-      <form className="space-y-8 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/25 backdrop-blur-lg sm:p-8">
+      <form className="space-y-8 rounded-3xl border border-[#1fb6ff]/20 bg-[#f0f7ff] p-6 shadow-2xl shadow-[#1fb6ff]/25 backdrop-blur-lg sm:p-8">
         <section className="space-y-5">
           <div>
-            <p className="text-lg font-semibold text-white">Personal Details</p>
-            <p className="text-sm text-white/50">Tell us about yourself so we can personalize your workspace.</p>
+            <p className="text-lg font-semibold text-[#0f1b3d]">Personal Details</p>
+            <p className="text-sm text-[#0f1b3d]/50">Tell us about yourself so we can personalize your workspace.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Full Name
               <input placeholder="Alex Carter" className={inputClasses} />
             </label>
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Email Address
               <input type="email" placeholder="alex@company.com" className={inputClasses} />
             </label>
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Mobile Number
               <input type="tel" placeholder="+1 (555) 123-4567" className={inputClasses} />
             </label>
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Company Name
               <input placeholder="Northwind Media" className={inputClasses} />
             </label>
@@ -55,15 +55,15 @@ export function SignupPage() {
 
         <section className="space-y-5">
           <div>
-            <p className="text-lg font-semibold text-white">Business Details</p>
-            <p className="text-sm text-white/50">Let us know where to send performance insights.</p>
+            <p className="text-lg font-semibold text-[#0f1b3d]">Business Details</p>
+            <p className="text-sm text-[#0f1b3d]/50">Let us know where to send performance insights.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Website / Domain
               <input type="url" placeholder="https://clicksmeta.com" className={inputClasses} />
             </label>
-            <label className="text-sm font-medium text-white/70">
+            <label className="text-sm font-medium text-[#0f1b3d]/70">
               Skype ID (optional)
               <input placeholder="@alexgrowth" className={inputClasses} />
             </label>
@@ -72,10 +72,10 @@ export function SignupPage() {
 
         <section className="space-y-5">
           <div>
-            <p className="text-lg font-semibold text-white">Security</p>
-            <p className="text-sm text-white/50">Set a strong password to keep your workspace protected.</p>
+            <p className="text-lg font-semibold text-[#0f1b3d]">Security</p>
+            <p className="text-sm text-[#0f1b3d]/50">Set a strong password to keep your workspace protected.</p>
           </div>
-          <label className="text-sm font-medium text-white/70">
+          <label className="text-sm font-medium text-[#0f1b3d]/70">
             Password
             <input type="password" placeholder="••••••••" className={inputClasses} />
           </label>
@@ -88,9 +88,9 @@ export function SignupPage() {
           Create Account
         </Button>
 
-        <p className="text-center text-sm text-white/70">
+        <p className="text-center text-sm text-[#0f1b3d]/70">
           Already a user?{" "}
-          <Link to="/login" className="font-medium text-[#c4b5fd] hover:text-white">
+          <Link to="/login" className="font-medium text-[#1fb6ff] hover:text-[#0f1b3d]">
             Log in
           </Link>
         </p>

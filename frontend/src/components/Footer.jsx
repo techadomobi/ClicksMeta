@@ -14,25 +14,25 @@ const socialLinks = [
 
 export function Footer() {
     return (
-        <footer className="bg-[#060e1a] border-t border-white/5 relative overflow-hidden">
+        <footer className="relative overflow-hidden border-t border-[#d7e4ff] bg-linear-to-b from-[#f4f8ff] to-[#eaf1ff]">
             {/* Subtle top glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#2563eb]/[0.04] rounded-full blur-[100px]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-55 w-170 rounded-full bg-[#60a5fa]/15 blur-[110px]" />
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
                 {/* Newsletter strip */}
-                <div className="py-12 border-b border-white/5">
+                <div className="border-b border-[#d7e4ff] py-12">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>
-                            <h3 className="text-lg font-semibold text-white mb-1">Stay up to date</h3>
-                            <p className="text-sm text-white/35">Get the latest news and insights delivered to your inbox.</p>
+                            <h3 className="mb-1 text-lg font-semibold text-[#10244d]">Stay up to date</h3>
+                            <p className="text-sm text-[#5a719a]">Get the latest news and insights delivered to your inbox.</p>
                         </div>
                         <div className="flex flex-col sm:flex-row items-stretch gap-3 w-full md:w-auto">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="w-full sm:flex-1 sm:w-72 px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#2563eb]/50 focus:ring-1 focus:ring-[#2563eb]/30 transition-all"
+                                className="w-full rounded-full border border-[#c7d9ff] bg-white px-5 py-3 text-sm text-[#1d3361] placeholder:text-[#87a0c7] transition-all focus:border-[#2563eb]/50 focus:outline-none focus:ring-1 focus:ring-[#2563eb]/30 sm:w-72 sm:flex-1"
                             />
-                            <Button className="w-full sm:w-auto bg-gradient-to-r from-[#2563eb] to-[#06b6d4] text-white border-0 rounded-full px-6 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all whitespace-nowrap">
+                            <Button className="w-full whitespace-nowrap rounded-full border-0 bg-linear-to-r from-[#2563eb] to-[#06b6d4] px-6 text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/35 sm:w-auto">
                                 Subscribe
                             </Button>
                         </div>
@@ -45,28 +45,28 @@ export function Footer() {
                         {/* Brand */}
                         <div className="lg:col-span-2">
                             <Link to="/" className="flex items-center gap-2.5">
-                                <span className="text-xl font-bold text-white tracking-tight">
-                                    <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto brightness-0 invert" />
+                                <span className="text-xl font-bold tracking-tight text-[#10244d]">
+                                    <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto" />
                                 </span>
                             </Link>
-                            <p className="text-white/35 text-sm leading-relaxed mb-6 max-w-xs">
+                            <p className="mb-6 max-w-xs text-sm leading-relaxed text-[#5a719a]">
                                 Powerful analytics & tracking platform for advertisers, affiliates, and agencies. One platform to manage all your campaigns.
                             </p>
                             <div className="flex flex-col gap-3.5">
-                                <a href="#" className="flex items-center gap-2.5 text-sm text-white/35 hover:text-white/60 transition-colors group">
-                                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <a href="#" className="group flex items-center gap-2.5 text-sm text-[#4f668f] transition-colors hover:text-[#243f73]">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e8f1ff] transition-colors group-hover:bg-[#d9e9ff]">
                                         <Mail className="w-3.5 h-3.5" />
                                     </div>
                                     support@clicksmeta.com
                                 </a>
-                                <a href="#" className="flex items-center gap-2.5 text-sm text-white/35 hover:text-white/60 transition-colors group">
-                                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <a href="#" className="group flex items-center gap-2.5 text-sm text-[#4f668f] transition-colors hover:text-[#243f73]">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e8f1ff] transition-colors group-hover:bg-[#d9e9ff]">
                                         <Phone className="w-3.5 h-3.5" />
                                     </div>
                                     +1 (555) 000-0000
                                 </a>
-                                <a href="#" className="flex items-center gap-2.5 text-sm text-white/35 hover:text-white/60 transition-colors group">
-                                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <a href="#" className="group flex items-center gap-2.5 text-sm text-[#4f668f] transition-colors hover:text-[#243f73]">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e8f1ff] transition-colors group-hover:bg-[#d9e9ff]">
                                         <MapPin className="w-3.5 h-3.5" />
                                     </div>
                                     San Francisco, CA
@@ -77,14 +77,14 @@ export function Footer() {
                         {/* Link columns */}
                         {footerNav.map((col) => (
                             <div key={col.title}>
-                                <h4 className="text-white font-semibold text-sm mb-5">{col.title}</h4>
+                                <h4 className="mb-5 text-sm font-semibold text-[#10244d]">{col.title}</h4>
                                 <ul className="flex flex-col gap-3">
                                     {col.links.map((link) => {
                                         const linkKey = link.slug || link.href || link.label
                                         const destination = link.href || (link.slug ? `/${link.slug}` : "#")
                                         return (
                                             <li key={linkKey}>
-                                                <Link to={destination} className="text-sm text-white/35 hover:text-white/60 transition-colors">
+                                                <Link to={destination} className="text-sm text-[#5a719a] transition-colors hover:text-[#234278]">
                                                     {link.label}
                                                 </Link>
                                             </li>
@@ -97,8 +97,8 @@ export function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="py-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-sm text-white/25">
+                <div className="flex flex-col items-center justify-between gap-4 border-t border-[#d7e4ff] py-8 md:flex-row">
+                    <p className="text-sm text-[#6c82a8]">
                         {new Date().getFullYear()} ClicksMeta. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
@@ -108,7 +108,7 @@ export function Footer() {
                                 href={href}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-all"
+                                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e8f1ff] text-[#43608d] transition-all hover:bg-[#d6e8ff] hover:text-[#1f3f78]"
                                 aria-label={name}
                             >
                                 <Icon className="w-4 h-4" />

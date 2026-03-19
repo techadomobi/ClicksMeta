@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 import logo from "../assets/clicksmeta-logo.png"
 
 const inputClasses =
-  "mt-2 h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#1fb6ff]"
+  "mt-2 h-14 w-full rounded-2xl border border-[#1fb6ff]/20 bg-[#e6f0ff] px-4 text-[#0f1b3d] placeholder:text-[#0f1b3d]/40 focus:outline-none focus:ring-2 focus:ring-[#1fb6ff]"
 
 export function LoginPage() {
   return (
-    <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-white sm:px-6 lg:pb-24">
+    <section className="mx-auto flex w-full max-w-md flex-col gap-6 px-4 pb-16 pt-12 text-[#0f1b3d] sm:px-6 lg:pb-24">
       <div className="space-y-3 text-center">
-        <div className="flex justify-center items-center gap-3 text-xl font-bold text-white tracking-tight">
+        <div className="flex justify-center items-center gap-3 text-xl font-bold text-[#0f1b3d] tracking-tight">
           <img
             src={logo}
             alt="ClicksMeta Logo"
@@ -17,23 +17,23 @@ export function LoginPage() {
           />
         </div>
 
-        <h1 className="text-4xl font-semibold tracking-tight text-white">Welcome back</h1>
-        <p className="text-base text-white/60">Log in to continue to ClicksMeta</p>
+        <h1 className="text-4xl font-semibold tracking-tight text-[#0f1b3d]">Welcome back</h1>
+        <p className="text-base text-[#0f1b3d]/60">Log in to continue to ClicksMeta</p>
       </div>
 
-      <form className="space-y-5 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/25 backdrop-blur-lg sm:p-8">
-        <label className="text-sm font-medium text-white/70">
+      <form className="space-y-5 rounded-3xl border border-[#1fb6ff]/20 bg-[#f0f7ff] p-6 shadow-2xl shadow-[#1fb6ff]/25 backdrop-blur-lg sm:p-8">
+        <label className="text-sm font-medium text-[#0f1b3d]/70">
           Email address
           <input type="email" placeholder="you@email.com" className={inputClasses} />
         </label>
 
-        <label className="text-sm font-medium text-white/70">
+        <label className="text-sm font-medium text-[#0f1b3d]/70">
           Password
           <input type="password" placeholder="••••••••" className={inputClasses} />
         </label>
 
         <div className="text-right">
-          <a href="#" className="text-sm font-medium text-[#c4b5fd] hover:text-white">
+          <a href="#" className="text-sm font-medium text-[#1fb6ff] hover:text-[#0f1b3d]">
             Forgot password?
           </a>
         </div>
@@ -45,23 +45,23 @@ export function LoginPage() {
           Log In
         </Button>
 
-        <div className="flex items-center gap-4 text-sm text-white/40">
-          <span className="h-px flex-1 bg-white/10" />
+        <div className="flex items-center gap-4 text-sm text-[#0f1b3d]/40">
+          <span className="h-px flex-1 bg-[#1fb6ff]/20" />
           OR
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-[#1fb6ff]/20" />
         </div>
 
         <Button
           type="button"
           variant="outline"
-          className="h-12 w-full rounded-2xl border-white/20 bg-transparent text-white hover:bg-white/10"
+          className="h-12 w-full rounded-2xl border-[#1fb6ff]/20 bg-transparent text-[#0f1b3d] hover:bg-[#1fb6ff]/10"
         >
           Continue with SSO
         </Button>
 
-        <p className="text-center text-sm text-white/70">
+        <p className="text-center text-sm text-[#0f1b3d]/70">
           New to ClicksMeta?{" "}
-          <Link to="/signup" className="font-medium text-[#36d1ff] hover:text-white">
+          <Link to="/signup" className="font-medium text-[#1fb6ff] hover:text-[#0f1b3d]">
             Create an account
           </Link>
         </p>

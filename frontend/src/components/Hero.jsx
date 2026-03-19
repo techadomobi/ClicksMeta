@@ -27,7 +27,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden bg-[#020617]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fbff] via-[#f0f7ff] to-[#eef4ff]">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#2563eb]/15 rounded-full blur-[150px] animate-gradient-shift" />
