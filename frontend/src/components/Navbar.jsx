@@ -89,6 +89,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
   const [scrolled, setScrolled] = useState(false)
+  const [logoError, setLogoError] = useState(false)
 
   useEffect(() => {
     let frameId = null
@@ -124,15 +125,24 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-[#0a1628]/95 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-black/10 py-2"
+        ? "bg-white/92 backdrop-blur-2xl border-b border-[#1fb6ff]/25 shadow-lg shadow-[#1fb6ff]/10 py-2"
         : "bg-transparent py-4"
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
          <Link to="/" className="flex items-center gap-2.5">
-          <span className="text-xl font-bold text-white tracking-tight">
-            <img src={logo} alt="Clicksmeta Logo" className="h-8 w-auto brightness-0 invert" />
-          </span>
+          {logoError ? (
+            <span className="text-xl font-bold tracking-tight text-[#0f1b3d]">ClicksMeta</span>
+          ) : (
+            <img
+              src={logo}
+              alt="Clicksmeta Logo"
+              className="h-8 w-auto"
+              loading="eager"
+              decoding="async"
+              onError={() => setLogoError(true)}
+            />
+          )}
         </Link>
 
         <div className="relative hidden items-center gap-1.5 lg:flex">

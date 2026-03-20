@@ -23,12 +23,12 @@ export function HomePage() {
 
   return (
     <div className="home-page space-y-24 md:space-y-32">
-      <Hero />
-      <HeroStatsBar />
-      <FeaturesTabs />
-      <DashboardPreview />
-      <Testimonials />
-      <Pricing />
+      <section className="perf-section"><Hero /></section>
+      <section className="perf-section"><HeroStatsBar /></section>
+      <section className="perf-section"><FeaturesTabs /></section>
+      <section className="perf-section"><DashboardPreview /></section>
+      <section className="perf-section"><Testimonials /></section>
+      <section className="perf-section"><Pricing /></section>
     </div>
   )
 }
