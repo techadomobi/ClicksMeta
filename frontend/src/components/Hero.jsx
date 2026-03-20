@@ -34,8 +34,8 @@ export function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fbff] via-[#f0f7ff] to-[#eef4ff]">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#2563eb]/15 rounded-full blur-[150px] animate-gradient-shift" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#06b6d4]/10 rounded-full blur-[130px] animate-gradient-shift" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#2563eb]/15 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#06b6d4]/10 rounded-full blur-[130px]" />
         <div className="absolute top-1/2 left-1/2 w-[350px] h-[350px] bg-[#7c3aed]/8 rounded-full blur-[100px]" />
         {/* Grid pattern */}
         <div
@@ -137,7 +137,7 @@ export function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-[#2563eb]/20 to-[#06b6d4]/20 rounded-3xl blur-2xl opacity-50" />
 
               {/* Main dashboard card */}
-              <div className="hero-dashboard relative glass rounded-2xl p-6 shadow-2xl animate-pulse-glow">
+              <div className="hero-dashboard relative glass rounded-2xl p-6 shadow-2xl">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-400/80" />
@@ -215,7 +215,7 @@ export function Hero() {
               </div>
 
               {/* Floating accent elements */}
-              <div className="absolute -top-4 -right-4 glass rounded-xl p-3 animate-float shadow-lg shadow-[#1fb6ff]/20">
+              <div className="absolute -top-4 -right-4 glass rounded-xl p-3 shadow-lg shadow-[#1fb6ff]/20">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-lg bg-emerald-500/15 flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-emerald-600" />
@@ -227,7 +227,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-3 -left-3 glass rounded-xl p-3 animate-float-delayed shadow-lg shadow-[#1fb6ff]/20">
+              <div className="absolute -bottom-3 -left-3 glass rounded-xl p-3 shadow-lg shadow-[#1fb6ff]/20">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-lg bg-blue-500/15 flex items-center justify-center">
                     <Users className="w-4 h-4 text-blue-600" />

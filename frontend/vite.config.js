@@ -20,6 +20,11 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    hmr: {
+      overlay: false, // Disable HMR overlay to prevent conflicts
+    },
+  },
 });
 
 function devApiPlugin() {

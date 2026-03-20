@@ -452,3 +452,13 @@ body {
     transition: none;
   }
 }
+
+/* Fix for reloading issue - prevent CSS-in-JS conflicts */
+.site-light * {
+  will-change: auto;
+}
+
+/* Ensure HMR doesn't cause layout shifts */
+body {
+  will-change: auto;
+}
