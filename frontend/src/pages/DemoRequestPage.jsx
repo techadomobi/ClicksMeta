@@ -56,7 +56,7 @@ const initialFormState = {
 }
 
 const inputClasses =
-  "w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#ff6f3c]/60 focus:ring-2 focus:ring-[#ff6f3c]/30 focus:outline-none"
+  "w-full rounded-2xl border border-[#1fb6ff]/25 bg-white/90 px-4 py-3 text-[#0f1b3d] placeholder:text-[#0f1b3d]/45 focus:border-[#ff6f3c]/60 focus:ring-2 focus:ring-[#ff6f3c]/30 focus:outline-none"
 
 export function DemoRequestPage() {
   const [formData, setFormData] = useState(initialFormState)
@@ -143,7 +143,7 @@ export function DemoRequestPage() {
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 text-white sm:px-6">
+    <section className="demo-request-page mx-auto max-w-6xl px-4 pb-20 pt-8 text-[#0f1b3d] sm:px-6">
       <div className="mb-10 text-center space-y-4">
         <div className="flex justify-center">
           <img
@@ -184,24 +184,28 @@ export function DemoRequestPage() {
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-wide text-white/50">Pick your plan</p>
             <div className="grid gap-4 md:grid-cols-3">
-              {planOptions.map((plan) => (
-                <label
-                  key={plan.id}
-                  className={`rounded-2xl border p-4 transition-all cursor-pointer ${formData.plan === plan.id ? "border-[#ff6f3c] bg-[#ff6f3c]/10" : "border-white/10 bg-white/[0.02] hover:border-white/30"}`}
-                >
-                  <input
-                    type="radio"
-                    name="plan"
-                    value={plan.id}
-                    checked={formData.plan === plan.id}
-                    onChange={handleChange}
-                    className="sr-only"
-                  />
-                  <p className="text-base font-semibold">{plan.name}</p>
-                  <p className="text-xs text-[#ffb995] font-semibold uppercase tracking-wide mt-1">{plan.highlight}</p>
-                  <p className="text-sm text-white/60 mt-2">{plan.desc}</p>
-                </label>
-              ))}
+              {planOptions.map((plan) => {
+                const isSelected = formData.plan === plan.id
+
+                return (
+                  <label
+                    key={plan.id}
+                    className={`rounded-2xl border p-4 transition-all cursor-pointer ${isSelected ? "border-[#ff6f3c] bg-[#ff6f3c]/14" : "border-white/10 bg-white/[0.02] hover:border-white/30"}`}
+                  >
+                    <input
+                      type="radio"
+                      name="plan"
+                      value={plan.id}
+                      checked={isSelected}
+                      onChange={handleChange}
+                      className="sr-only"
+                    />
+                    <p className="text-base font-semibold text-[#0f1b3d]">{plan.name}</p>
+                    <p className={`mt-1 text-xs font-semibold uppercase tracking-wide ${isSelected ? "text-[#b93812]" : "text-[#ff6f3c]"}`}>{plan.highlight}</p>
+                    <p className="mt-2 text-sm text-[#0f1b3d]/78">{plan.desc}</p>
+                  </label>
+                )
+              })}
             </div>
             {fieldErrors.plan && <p className="text-xs text-red-400">{fieldErrors.plan}</p>}
           </div>

@@ -237,7 +237,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
+          className="rounded-lg p-2 text-[#0f1b3d] transition-colors hover:bg-[#e6f0ff] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -254,12 +254,12 @@ export function Navbar() {
           {navItems.map((item) => {
             const hasDropdown = item.type === "mega" || item.type === "list"
             return (
-              <div key={item.label} className="border-b border-white/5 py-3">
+              <div key={item.label} className="border-b border-[#1fb6ff]/20 py-3">
                 {hasDropdown ? (
                   <div>
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between text-left text-sm font-medium text-white/80"
+                      className="flex w-full items-center justify-between text-left text-sm font-medium text-[#0f1b3d]/85"
                       onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                     >
                       {item.label}
@@ -273,14 +273,14 @@ export function Navbar() {
                           <>
                             {item.sections.map((section) => (
                               <div key={section.title}>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-white/40">{section.title}</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-[#0f1b3d]/55">{section.title}</p>
                                 <div className="mt-2 space-y-1.5">
                                   {section.items.map(({ label, href }) => (
                                     <Link
                                       key={label}
                                       to={href}
                                       onClick={closeMobile}
-                                      className="block text-sm text-white/60"
+                                      className="block text-sm text-[#0f1b3d]/78"
                                     >
                                       {label}
                                     </Link>
@@ -289,14 +289,14 @@ export function Navbar() {
                               </div>
                             ))}
                             <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-white/40">Best in Class</p>
+                              <p className="text-xs font-semibold uppercase tracking-wide text-[#0f1b3d]/55">Best in Class</p>
                               <div className="mt-2 space-y-1.5">
                                 {item.spotlight.map(({ label, href }) => (
                                   <Link
                                     key={label}
                                     to={href}
                                     onClick={closeMobile}
-                                    className="block text-sm text-white/60"
+                                    className="block text-sm text-[#0f1b3d]/78"
                                   >
                                     {label}
                                   </Link>
@@ -310,7 +310,7 @@ export function Navbar() {
                               key={child.label}
                               to={child.href}
                               onClick={closeMobile}
-                              className="block text-sm text-white/60"
+                              className="block text-sm text-[#0f1b3d]/78"
                             >
                               {child.label}
                             </Link>
@@ -322,7 +322,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-sm font-medium text-white/80"
+                    className="text-sm font-medium text-[#0f1b3d]/85"
                     onClick={closeMobile}
                   >
                     {item.label}
@@ -335,7 +335,7 @@ export function Navbar() {
             <Button
               asChild
               variant="outline"
-              className="rounded-full border-white/20 text-white hover:bg-white/10"
+              className="rounded-full border-[#1fb6ff]/35 text-[#0f1b3d] hover:bg-[#e6f0ff]"
               onClick={closeMobile}
             >
               <Link to="/demorequest">Request Demo</Link>

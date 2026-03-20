@@ -22,7 +22,7 @@ export function HomePage() {
   }, [location])
 
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div className="home-page space-y-24 md:space-y-32">
       <Hero />
       <HeroStatsBar />
       <FeaturesTabs />

@@ -24,7 +24,7 @@ export function HeroStatsBar() {
   const counts = [count0, count1, count2, count3]
 
   return (
-    <section className="relative border-t border-white/5 bg-[#020617] py-14 overflow-hidden">
+    <section className="home-light-section relative border-t border-white/5 bg-[#020617] py-14 overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[#2563eb]/20 blur-[140px]" />

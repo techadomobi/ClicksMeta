@@ -81,7 +81,7 @@ export function FeaturesTabs() {
   const { ref, isInView } = useInView()
 
   return (
-    <section className="py-28 bg-gradient-to-b from-[#050b16] via-[#050b16] to-[#020617] relative" id="features">
+    <section className="home-light-section py-28 bg-gradient-to-b from-[#050b16] via-[#050b16] to-[#020617] relative" id="features">
       <div ref={ref} className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b1b33] text-[#6ea8ff] text-sm font-medium mb-5 border border-white/10">

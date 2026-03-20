@@ -45,7 +45,7 @@ export function Testimonials() {
   const { ref, isInView } = useInView()
 
   return (
-    <section id="testimonials" className="py-28 bg-[#0a1628] relative overflow-hidden">
+    <section id="testimonials" className="home-light-section py-28 bg-[#0a1628] relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#2563eb]/8 rounded-full blur-[150px]" />
         <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-[#06b6d4]/6 rounded-full blur-[120px]" />
