@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import {
   Menu,
@@ -88,32 +88,28 @@ const navItems = [
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
-  const [scrolled, setScrolled] = useState(false)
   const [logoError, setLogoError] = useState(false)
+  const navRef = useRef(null)
 
   useEffect(() => {
-    let frameId = null
-    let ticking = false
-
-    const updateScrollState = () => {
-      setScrolled(window.scrollY > 20)
-      ticking = false
-      frameId = null
-    }
-
-    const handleScroll = () => {
-      if (ticking) return
-      ticking = true
-      frameId = window.requestAnimationFrame(updateScrollState)
-    }
-
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      if (frameId) {
-        window.cancelAnimationFrame(frameId)
+    const handlePointerDown = (event) => {
+      if (!navRef.current?.contains(event.target)) {
+        setOpenDropdown(null)
       }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setOpenDropdown(null)
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown)
+    document.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown)
+      document.removeEventListener("keydown", handleKeyDown)
     }
   }, [])
 
@@ -124,10 +120,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-white/92 backdrop-blur-2xl border-b border-[#1fb6ff]/25 shadow-lg shadow-[#1fb6ff]/10 py-2"
-        : "bg-transparent py-4"
-        }`}
+      ref={navRef}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-2xl border-b border-[#1fb6ff]/25 shadow-lg shadow-[#1fb6ff]/10 py-2"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
          <Link to="/" className="flex items-center gap-2.5">
@@ -155,16 +149,15 @@ export function Navbar() {
               <div
                 key={item.label}
                 className={isMega ? "" : "relative"}
-                onMouseEnter={() => hasDropdown && setOpenDropdown(item.label)}
-                onMouseLeave={() => hasDropdown && setOpenDropdown(null)}
               >
                 {hasDropdown ? (
                   <button
                     type="button"
+                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                     className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-[#0f1b3d]/80 transition-colors hover:bg-[#e6f0ff] hover:text-[#0f1b3d]"
                   >
                     {item.label}
-                    <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`h-3.5 w-3.5 ${openDropdown === item.label ? "rotate-180" : ""}`} />
                   </button>
                 ) : (
                   <Link
@@ -177,7 +170,7 @@ export function Navbar() {
 
                 {openDropdown === item.label && isMega && (
                   <div
-                    className="absolute left-1/2 top-full -translate-x-1/2 pt-3 animate-scale-in"
+                    className="absolute left-1/2 top-full -translate-x-1/2 pt-2"
                     style={{ transformOrigin: "top center" }}
                   >
                     <div className="grid min-w-[960px] max-w-[960px] grid-cols-[1.35fr_1.35fr_0.9fr] gap-8 rounded-[42px] border border-[#f0e9da] bg-white px-10 py-8 text-[#0f1a3d] shadow-[0_28px_70px_rgba(5,10,29,0.35)]">
@@ -192,7 +185,7 @@ export function Navbar() {
                                 key={label}
                                 to={href}
                                 onClick={() => setOpenDropdown(null)}
-                                className="flex items-center gap-4 rounded-[26px] border border-transparent bg-[#f5f6ff] px-4 py-3 text-sm font-semibold text-[#152046] transition hover:-translate-y-0.5 hover:border-[#ebedff]"
+                                className="flex items-center gap-4 rounded-[26px] border border-transparent bg-[#f5f6ff] px-4 py-3 text-sm font-semibold text-[#152046] hover:border-[#ebedff]"
                               >
                                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-inner shadow-white/70">
                                   <Icon className="h-5 w-5 text-[#0f1a3d]" />
@@ -212,7 +205,7 @@ export function Navbar() {
                               key={label}
                               to={href}
                               onClick={() => setOpenDropdown(null)}
-                              className="flex items-center justify-between rounded-[30px] bg-white px-4 py-4 text-sm font-semibold text-[#101735] shadow-[0_20px_50px_rgba(16,25,66,0.15)] transition hover:-translate-y-0.5"
+                              className="flex items-center justify-between rounded-[30px] bg-white px-4 py-4 text-sm font-semibold text-[#101735] shadow-[0_20px_50px_rgba(16,25,66,0.15)]"
                             >
                               <span className="flex items-center gap-3">
                                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#dfebff] text-[#0f2f88]">
@@ -230,13 +223,14 @@ export function Navbar() {
                 )}
 
                 {openDropdown === item.label && isList && (
-                  <div className="absolute left-0 top-full pt-3 animate-scale-in" style={{ transformOrigin: "top left" }}>
+                  <div className="absolute left-0 top-full pt-2" style={{ transformOrigin: "top left" }}>
                     <div className="min-w-[220px] rounded-2xl border border-white/10 bg-[#0f1f3d]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-2xl">
                       {item.items.map((child) => (
                         <Link
                           key={child.label}
                           to={child.href}
-                          className="block rounded-xl px-4 py-2.5 text-sm text-white/60 transition-all duration-200 hover:bg-white/5 hover:text-white"
+                          onClick={() => setOpenDropdown(null)}
+                          className="block rounded-xl px-4 py-2.5 text-sm text-white/60 hover:bg-white/5 hover:text-white"
                         >
                           {child.label}
                         </Link>
@@ -276,10 +270,8 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`overflow-hidden transition-all duration-300 lg:hidden ${mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-      >
+      {mobileOpen && (
+      <div className="lg:hidden">
       <div className="border-t border-[#1fb6ff]/20 bg-[#f8fbff] px-4 pb-6 pt-2 backdrop-blur-2xl sm:px-6">
           {navItems.map((item) => {
             const hasDropdown = item.type === "mega" || item.type === "list"
@@ -380,6 +372,7 @@ export function Navbar() {
           </div>
         </div>
       </div>
+      )}
     </nav>
   )
 }
