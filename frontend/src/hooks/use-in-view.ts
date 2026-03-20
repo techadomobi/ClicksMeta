@@ -5,11 +5,17 @@ import { useEffect, useRef, useState } from "react";
 
 export function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [isInView, setIsInView] = useState(false);
+  // Keep content visible on first paint; observer only enhances animations.
+  const [isInView, setIsInView] = useState(true);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
+
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setIsInView(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -91,9 +91,29 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    let frameId = null
+    let ticking = false
+
+    const updateScrollState = () => {
+      setScrolled(window.scrollY > 20)
+      ticking = false
+      frameId = null
+    }
+
+    const handleScroll = () => {
+      if (ticking) return
+      ticking = true
+      frameId = window.requestAnimationFrame(updateScrollState)
+    }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (frameId) {
+        window.cancelAnimationFrame(frameId)
+      }
+    }
   }, [])
 
   const closeMobile = () => {

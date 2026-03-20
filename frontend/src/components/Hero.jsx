@@ -20,7 +20,7 @@ const rotatingWords = [
 
 export function Hero() {
   const [currentWord, setCurrentWord] = useState(0)
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(true)
 
   useEffect(() => {
     setMounted(true)

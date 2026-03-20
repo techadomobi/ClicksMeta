@@ -82,6 +82,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: -1;
+  will-change: transform;
   opacity: 0.85;
   background:
     radial-gradient(620px 360px at 10% 18%, rgba(37, 99, 235, 0.16), transparent 66%),
@@ -141,6 +142,42 @@ body {
   transform-origin: 0% 50%;
   background: linear-gradient(90deg, #2563eb 0%, #06b6d4 52%, #22c55e 100%);
   box-shadow: 0 0 24px rgba(37, 99, 235, 0.45);
+}
+
+.route-loading {
+  min-height: 44vh;
+  display: grid;
+  place-items: center;
+  color: rgba(15, 27, 61, 0.72);
+  font-weight: 600;
+}
+
+/* Stability mode: reduce heavy motion that causes visual fluctuation */
+.site-light-bg,
+.animate-gradient-shift,
+.animate-pulse-glow,
+.animate-float,
+.animate-float-delayed {
+  animation: none !important;
+}
+
+.site-light .reveal-on-scroll,
+.site-light .reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.site-light * {
+  scroll-behavior: auto;
+}
+
+/* Hard stability mode: stop all animations/transitions to avoid fluctuation */
+.site-light *,
+.site-light *::before,
+.site-light *::after {
+  animation: none !important;
+  transition: none !important;
 }
 
 .site-light a,
@@ -340,6 +377,24 @@ body {
 
 .home-page .hero-stat-block:hover {
   border-color: rgba(31, 182, 255, 0.58) !important;
+}
+
+@media (max-width: 1024px) {
+  .site-light-bg,
+  .animate-gradient-shift,
+  .animate-pulse-glow,
+  .animate-float,
+  .animate-float-delayed {
+    animation: none !important;
+  }
+
+  .site-light-bg {
+    opacity: 0.55;
+  }
+
+  .glass {
+    backdrop-filter: none !important;
+  }
 }
 
 /* Demo request page readability on global light surface */
