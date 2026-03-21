@@ -113,6 +113,17 @@ export function Navbar() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [mobileOpen])
+
   const closeMobile = () => {
     setMobileOpen(false)
     setOpenDropdown(null)
@@ -271,38 +282,38 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-      <div className="lg:hidden">
-      <div className="border-t border-[#1fb6ff]/20 bg-[#f8fbff] px-4 pb-6 pt-2 backdrop-blur-2xl sm:px-6">
+      <div className="absolute left-0 right-0 top-full z-50 lg:hidden">
+      <div className="max-h-[calc(100vh-66px)] min-h-[calc(100vh-66px)] overflow-y-auto border-t border-[#1fb6ff]/20 bg-[#f8fbff] px-4 pb-8 pt-3 backdrop-blur-2xl sm:px-6">
           {navItems.map((item) => {
             const hasDropdown = item.type === "mega" || item.type === "list"
             return (
-              <div key={item.label} className="border-b border-[#1fb6ff]/20 py-3">
+              <div key={item.label} className="border-b border-[#1fb6ff]/20 py-4">
                 {hasDropdown ? (
                   <div>
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between text-left text-sm font-medium text-[#0f1b3d]/85"
+                      className="flex w-full items-center justify-between text-left text-[15px] font-semibold leading-tight tracking-[-0.01em] text-[#0f1b3d]/90"
                       onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                     >
                       {item.label}
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
+                        className={`h-5 w-5 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
                       />
                     </button>
                     {openDropdown === item.label && (
-                      <div className="mt-3 space-y-4 pl-3">
+                      <div className="mt-4 space-y-4 rounded-2xl bg-white/70 px-3 py-3 shadow-sm ring-1 ring-[#1fb6ff]/15">
                         {item.type === "mega" ? (
                           <>
                             {item.sections.map((section) => (
                               <div key={section.title}>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-[#0f1b3d]/55">{section.title}</p>
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0f1b3d]/55">{section.title}</p>
                                 <div className="mt-2 space-y-1.5">
                                   {section.items.map(({ label, href }) => (
                                     <Link
                                       key={label}
                                       to={href}
                                       onClick={closeMobile}
-                                      className="block text-sm text-[#0f1b3d]/78"
+                                      className="block rounded-xl px-3 py-2 text-[14px] font-medium text-[#0f1b3d]/82 transition-colors hover:bg-[#e8f5ff] hover:text-[#0f1b3d]"
                                     >
                                       {label}
                                     </Link>
@@ -311,14 +322,14 @@ export function Navbar() {
                               </div>
                             ))}
                             <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-[#0f1b3d]/55">Best in Class</p>
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0f1b3d]/55">Best in Class</p>
                               <div className="mt-2 space-y-1.5">
                                 {item.spotlight.map(({ label, href }) => (
                                   <Link
                                     key={label}
                                     to={href}
                                     onClick={closeMobile}
-                                    className="block text-sm text-[#0f1b3d]/78"
+                                    className="block rounded-xl bg-[#f1f8ff] px-3 py-2 text-[14px] font-medium text-[#0f1b3d]/82 transition-colors hover:bg-[#def0ff] hover:text-[#0f1b3d]"
                                   >
                                     {label}
                                   </Link>
@@ -332,7 +343,7 @@ export function Navbar() {
                               key={child.label}
                               to={child.href}
                               onClick={closeMobile}
-                              className="block text-sm text-[#0f1b3d]/78"
+                              className="block rounded-xl px-3 py-2 text-[14px] font-medium text-[#0f1b3d]/82 transition-colors hover:bg-[#e8f5ff] hover:text-[#0f1b3d]"
                             >
                               {child.label}
                             </Link>
@@ -344,7 +355,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-sm font-medium text-[#0f1b3d]/85"
+                    className="block text-[15px] font-semibold leading-tight tracking-[-0.01em] text-[#0f1b3d]/90"
                     onClick={closeMobile}
                   >
                     {item.label}
@@ -353,18 +364,18 @@ export function Navbar() {
               </div>
             )
           })}
-          <div className="mt-4 flex flex-col gap-3">
+          <div className="sticky bottom-0 mt-5 flex flex-col gap-3 border-t border-[#1fb6ff]/20 bg-[#f8fbff] pt-4">
             <Button
               asChild
               variant="outline"
-              className="rounded-full border-[#1fb6ff]/35 text-[#0f1b3d] hover:bg-[#e6f0ff]"
+              className="h-12 rounded-full border-[#1fb6ff]/35 bg-white text-base font-medium text-[#0f1b3d] hover:bg-[#e6f0ff]"
               onClick={closeMobile}
             >
               <Link to="/demorequest">Request Demo</Link>
             </Button>
             <Button
               asChild
-              className="rounded-full bg-[#1fb6ff] text-[#031124] hover:bg-[#17a9ef]"
+              className="h-12 rounded-full bg-[#1fb6ff] text-base font-semibold text-[#031124] shadow-lg shadow-[#1fb6ff]/30 hover:bg-[#17a9ef]"
               onClick={closeMobile}
             >
               <Link to="/signup">Get Started</Link>
