@@ -235,13 +235,13 @@ export function Navbar() {
 
                 {openDropdown === item.label && isList && (
                   <div className="absolute left-0 top-full pt-2" style={{ transformOrigin: "top left" }}>
-                    <div className="min-w-[220px] rounded-2xl border border-white/10 bg-[#0f1f3d]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+                    <div className="min-w-[220px] rounded-2xl border border-[#cfe8fb] bg-white/95 p-2 shadow-xl shadow-[#1f67a9]/10 backdrop-blur-2xl">
                       {item.items.map((child) => (
                         <Link
                           key={child.label}
                           to={child.href}
                           onClick={() => setOpenDropdown(null)}
-                          className="block rounded-xl px-4 py-2.5 text-sm text-white/60 hover:bg-white/5 hover:text-white"
+                          className="block rounded-xl px-4 py-2.5 text-sm text-[#0f1b3d]/78 hover:bg-[#eaf5ff] hover:text-[#0f1b3d]"
                         >
                           {child.label}
                         </Link>
