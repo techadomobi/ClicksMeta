@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button"
 const plans = [
   {
     name: "Starter",
-    price: "Free",
+    price: "$49",
     period: "",
-    oldPrice: "$49/mo",
-    promoNote: "for 12 months",
+    // oldPrice: "$49/mo",
+    // promoNote: "for 12 months",
     tagline: "Best suited for early stage business",
     features: [
+      "5000 Conversions",
       "3,00,000 Clicks",
-      "Unlimited Conversions",
       "Unlimited Campaigns",
       "Smart Reports",
       "Technical Support",
@@ -44,11 +44,11 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "$249",
+    price: "$349",
     period: "/mo",
     tagline: "Best plan for enterprise",
     features: [
-      "40,000 Conversions",
+      "50,000 Conversions",
       "Unlimited Clicks",
       "Unlimited Campaigns",
       "$0.008 per additional conversion",
