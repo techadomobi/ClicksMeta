@@ -26,10 +26,10 @@ const plans = [
   },
   {
     name: "Starter Plan",
-    price: "Free",
+    price: "$49",
     period: "",
-    oldPrice: "$49 / month",
-    promoNote: "for 12 months",
+    // oldPrice: "$49 / month",
+    // promoNote: "for 12 months",
     description: "For small teams getting started.",
     features: [
       "Complex Tracking",
@@ -60,7 +60,7 @@ const plans = [
   },
   {
     name: "Enterprise Plan",
-    price: "$249",
+    price: "$349",
     period: "/ month",
     description: "For large organizations.",
     features: [
