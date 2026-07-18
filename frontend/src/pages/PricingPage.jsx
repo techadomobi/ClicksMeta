@@ -1,12 +1,14 @@
+import { useState } from "react"
 import { BadgeCheck, CheckCircle2, Sparkles, Star, Rocket, Zap, Building2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const ANNUAL_DISCOUNT = 0.2 // 20% off when billed annually
 
 const plans = [
   {
     name: "Starter",
     icon: Rocket,
-    price: "$49",
-    period: "",
+    monthlyPrice: 49,
     tagline: "Best suited for early stage business",
     features: [
       "5000 Conversions",
@@ -23,8 +25,7 @@ const plans = [
   {
     name: "Professional",
     icon: Zap,
-    price: "$149",
-    period: "/mo",
+    monthlyPrice: 149,
     tagline: "Best plan for professionals",
     features: [
       "15,000 Conversions",
@@ -43,8 +44,7 @@ const plans = [
   {
     name: "Enterprise",
     icon: Building2,
-    price: "$349",
-    period: "/mo",
+    monthlyPrice: 349,
     tagline: "Best plan for enterprise",
     features: [
       "50,000 Conversions",
@@ -68,6 +68,9 @@ const perks = [
 ]
 
 export function PricingPage() {
+  const [billing, setBilling] = useState("monthly") // "monthly" | "annual"
+  const isAnnual = billing === "annual"
+
   return (
     <section className="relative w-full overflow-hidden bg-[#f6faff] pb-28 pt-20">
       {/* ambient background accents */}
@@ -116,12 +119,44 @@ export function PricingPage() {
           </span>
           15 days free trial on every plan — no card required
         </div>
+
+        {/* Billing toggle */}
+        <div className="mt-8 inline-flex items-center gap-1 rounded-full bg-white p-1.5 shadow-sm shadow-[#1fb6ff]/10 ring-1 ring-[#1fb6ff]/15">
+          <button
+            type="button"
+            onClick={() => setBilling("monthly")}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 ${
+              !isAnnual ? "bg-[#0f1b3d] text-white shadow-md" : "text-[#0f1b3d]/60 hover:text-[#0f1b3d]"
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            type="button"
+            onClick={() => setBilling("annual")}
+            className={`flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 ${
+              isAnnual ? "bg-[#0f1b3d] text-white shadow-md" : "text-[#0f1b3d]/60 hover:text-[#0f1b3d]"
+            }`}
+          >
+            Annual
+            <span
+              className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                isAnnual ? "bg-[#1fb6ff] text-[#031124]" : "bg-[#e8f8ee] text-[#15803d]"
+              }`}
+            >
+              Save 20%
+            </span>
+          </button>
+        </div>
       </div>
 
       <div className="relative mx-auto mt-14 grid w-full max-w-6xl items-stretch gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-6">
         {plans.map((plan) => {
           const isDark = plan.variant === "dark"
           const Icon = plan.icon
+          const displayPrice = isAnnual
+            ? Math.round(plan.monthlyPrice * (1 - ANNUAL_DISCOUNT))
+            : plan.monthlyPrice
 
           return (
             <article
@@ -158,12 +193,24 @@ export function PricingPage() {
 
               <div className={`relative mt-5 space-y-2 border-b pb-6 ${isDark ? "border-white/10" : "border-[#e5edff]"}`}>
                 <p className="text-lg font-semibold">{plan.name}</p>
-                <p className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold tracking-tight">{plan.price}</span>
-                  <span className={`text-lg font-medium ${isDark ? "text-white/50" : "text-[#5b6f99]"}`}>
-                    {plan.period}
+
+                <div className="flex flex-wrap items-baseline gap-2">
+                  {isAnnual && (
+                    <span className={`text-lg font-medium line-through ${isDark ? "text-white/35" : "text-[#9aa8c7]"}`}>
+                      ${plan.monthlyPrice}
+                    </span>
+                  )}
+                  <span className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold tracking-tight">${displayPrice}</span>
+                    <span className={`text-lg font-medium ${isDark ? "text-white/50" : "text-[#5b6f99]"}`}>/mo</span>
                   </span>
-                </p>
+                </div>
+                {isAnnual && (
+                  <p className={`text-xs font-medium ${isDark ? "text-[#1fb6ff]" : "text-[#2177ff]"}`}>
+                    Billed annually at ${displayPrice * 12}
+                  </p>
+                )}
+
                 <p className={`text-sm ${isDark ? "text-white/50" : "text-[#4b5f88]"}`}>{plan.tagline}</p>
               </div>
 
@@ -198,11 +245,18 @@ export function PricingPage() {
                 asChild
                 className={`group/btn relative mt-8 h-12 w-full rounded-2xl text-sm font-semibold transition-all duration-300 ${
                   isDark
-                    ? "bg-white text-[#0a1330] shadow-lg shadow-black/20 hover:bg-[#e8f1ff]"
+                    ? "bg-white shadow-lg shadow-black/20 hover:bg-[#e8f1ff]"
                     : "bg-gradient-to-r from-[#2563eb] to-[#06b6d4] text-white shadow-lg shadow-[#2563eb]/20 hover:from-[#1d4ed8] hover:to-[#0891b2]"
                 }`}
               >
-                <a href="https://www.clicksmeta.com/demorequest" className="flex items-center justify-center gap-2">
+                <a
+                  href="https://www.clicksmeta.com/demorequest"
+                  className="flex items-center justify-center gap-2"
+                  // Inline style forces the text/icon color to win over the Button
+                  // component's own variant classes, which were overriding the
+                  // Tailwind text-color utility and rendering white-on-white.
+                  style={isDark ? { color: "#0a1330" } : undefined}
+                >
                   Get Started
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
                 </a>
