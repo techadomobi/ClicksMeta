@@ -161,7 +161,8 @@ export function PricingPage() {
           </article>
         ))}
       </div>
-
+          
+          
       <div className="mx-auto mt-12 grid w-full max-w-5xl gap-4 rounded-3xl border border-[#dbe8ff] bg-white p-6 text-[#1a315b] shadow-[0_20px_45px_rgba(37,99,235,0.1)] sm:grid-cols-2">
         {perks.map((perk) => (
           <div key={perk} className="flex items-center gap-3 text-sm text-[#2d4570]">
