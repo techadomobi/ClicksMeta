@@ -153,10 +153,10 @@ export function PricingPage() {
             </div>
 
             <Button
-              asChild={Boolean(plan.cta?.href)}
+              asChild
               className={`h-12 w-full rounded-2xl text-sm font-semibold shadow-lg shadow-[#2563eb]/20 transition-all duration-300 ${cyanButton} group-hover:-translate-y-0.5 mt-auto`}
             >
-              {plan.cta?.href ? <Link to={plan.cta.href}>{plan.cta.label}</Link> : "Get Started"}
+              <a href="https://www.clicksmeta.com/demorequest">{plan.cta?.label || "Get Started"}</a>
             </Button>
           </article>
         ))}
